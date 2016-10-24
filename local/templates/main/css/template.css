@@ -1637,4 +1637,14 @@ h2 {
     display: block;
   }
 }
+.callback-trigger {
+  display: block;
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  right: 60px;
+  top: 86%;
+  margin-top: -30px;
+  background: url(../images/call-back.png);
+}
 /*# sourceMappingURL=template.css.map */

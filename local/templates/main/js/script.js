@@ -69,6 +69,8 @@ $(function(){
 
 	    $('body').addClass('popup-opened');
         $('#popup').addClass('is-active');
+
+	    return false;
         /*setPopupHeight();*/
     });
     
@@ -77,6 +79,7 @@ $(function(){
         $(popup).addClass('is-active');
 	    $('body').addClass('popup-opened');
         /*setPopupHeight();*/
+	    return false;
     });
 
     $('.popup-close').on('click', function(){

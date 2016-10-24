@@ -2,6 +2,7 @@
 <? $APPLICATION->SetTitle("HolyBean"); ?>
 
 <main>
+	<div class="container">
     <?  // Профиль.
         $APPLICATION->IncludeComponent(
 			"bitrix:main.profile",
@@ -20,7 +21,8 @@
 		        "AJAX_OPTION_HISTORY" => "N"
     		)
 		);
-	?>	
+	?>
+	</div>
 </main>
 
 <? require ($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php") ?>
