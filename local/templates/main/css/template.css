@@ -965,7 +965,7 @@ body {
   text-decoration: none;
 }
 .headerContacts-links {
-  padding-top: 15px;
+  padding-top: 10px;
 }
 .headerContacts-links li {
   float: left;
@@ -1110,7 +1110,7 @@ body {
 .headerAction {
   font-size: 10px;
   color: #252525;
-  padding-top: 23px;
+  padding-top: 2px;
 }
 .headerAction a {
   color: #252525;
@@ -1482,7 +1482,7 @@ main {
 }
 @media screen and (min-width: 768px) {
   main {
-    padding: 57px 0 240px;
+    padding: 54px 0 240px;
   }
 }
 h2 {
