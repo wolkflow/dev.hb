@@ -44,11 +44,11 @@
 									<ul>
 										<li><a href="/about/">о нас</a>
 											<ul>
-												<li><a href="#">Шеф-повар</a></li>
-												<li><a href="#">Идеология</a></li>
-												<li><a href="#">Как сделать заказ</a></li>
-												<li><a href="#">Наши партнёры</a></li>
-												<li><a href="#">Контакты</a></li>
+												<li><a href="/cook/">Шеф-повар</a></li>
+												<li><a href="/idea/">Идеология</a></li>
+												<li><a href="/order/">Как сделать заказ</a></li>
+												<li><a href="/partners/">Наши партнёры</a></li>
+												<li><a href="/contacts/">Контакты</a></li>
 											</ul>
 										</li>
 										<li><a href="/#programs">программы питания</a></li>
