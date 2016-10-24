@@ -1,3 +1,11 @@
+$.extend($.easing, {
+    def: 'easeOutQuad',
+    easeOutQuart: function (x, t, b, c, d) {
+        return -c * ((t = t/d - 1) * t * t * t - 1) + b;
+    },
+});
+
+
 (function($){
 	$.fn.serializeObject = function(){
 		var self = this,
@@ -51,6 +59,30 @@
 
 
 $(function(){
+    
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop() + $(window).height();
+        var width  = '53%';
+        var height = scroll - 60;
+        if ($(window).width() < 768) {
+            width  = '90%';
+            height = scroll - 20;
+        }
+        
+        $('.cross:not(.animated)').each(function() {
+            var $this = $(this);
+            var $that = $this.find('.cross-line');
+            
+            if (height >= $that.offset().top)  {
+                $that.animate({
+                    width: width
+                }, {duration: 1100, easing: 'easeOutQuart'});
+                $this.addClass('animated');
+            }
+        });
+    });
+    
+    
     $(document).on('click', '.js-submit', function(event) {
         event.preventDefault();
         var $form = $(this).closest('.js-remote-form');
