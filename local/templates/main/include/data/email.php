@@ -1,0 +1,1 @@
+<a href="mailto:info@holybean.ru">info@holybean.ru</a>

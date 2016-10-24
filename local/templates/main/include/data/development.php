@@ -1,0 +1,1 @@
+Создане сайта &mdash; <a href="http://glyf.ru" target="_blank">GLYF</a>
