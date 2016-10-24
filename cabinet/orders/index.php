@@ -2,6 +2,7 @@
 <? $APPLICATION->SetTitle("HolyBean"); ?>
 
 <main>
+	<div class="container">
     <?  // Спсиок заказов.
         $APPLICATION->IncludeComponent(
 			"bitrix:sale.personal.order.list",
@@ -26,7 +27,8 @@
                 "ACTIVE_DATE_FORMAT" => "d.m.Y"
     		)
 		);
-	?>	
+	?>
+	</div>
 </main>
 
 <? require ($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php") ?>
