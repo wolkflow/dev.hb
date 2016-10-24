@@ -956,7 +956,7 @@ body {
 }
 .headerContacts-phone {
   font: 700 12px DINPro, Arial, sans-serif;
-  padding: 28px 0 0;
+  padding: 22px 0 0;
   color: #000;
   border-top: 6px solid #64b357;
   display: inline-block;
@@ -965,7 +965,7 @@ body {
   text-decoration: none;
 }
 .headerContacts-links {
-  padding-top: 10px;
+  padding-top: 16px;
 }
 .headerContacts-links li {
   float: left;
@@ -979,7 +979,7 @@ body {
 }
 @media all and (min-width: 768px) {
   .menu {
-    padding-top: 13px;
+    padding-top: 15px;
     width: auto;
   }
 }

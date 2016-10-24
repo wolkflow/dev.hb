@@ -205,7 +205,7 @@ header {
     position: absolute;
     top: 184px;
     left: 430px;
-    padding: 24px 56px 23px 56px;
+    padding: 24px 56px 25px 56px;
     background-color: rgba(255, 255, 255, 0.5);
     font-size: 60px;
     line-height: 1; }
@@ -221,18 +221,17 @@ header {
     text-transform: uppercase; }
 
 .page-content {
-  padding-top: 67px;
+  padding-top: 108px;
   }
   .page-content__article {
     position: relative;
-    margin-bottom: 67px;
     padding-top: 40px; }
     .page-content__article h2 {
-      margin-bottom: 43px;
+      margin-bottom: 45px;
       font-size: 24px;
       color: #252525; }
     .page-content__article p {
-      margin-bottom: 30px;
+      margin-bottom: 35px;
       line-height: 2;
       color: #878787; }
       .page-content__article p.side {
