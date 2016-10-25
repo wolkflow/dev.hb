@@ -51,8 +51,8 @@ class SMSC
 		
 		$params = array(
 			'phones' => implode(',', $phones),
-			'mes' 	 => $text,
-			'sender' =>  self::SENDER,
+			'mes' 	 => iconv('UTF8', 'CP1251', $text),
+			'sender' => self::SENDER,
 		);
 		
 		$data = $this->request($operation, $params);
@@ -78,7 +78,7 @@ class SMSC
 		$ch = curl_init();
 		
 		curl_setopt($ch, CURLOPT_URL, $url);
-		curl_setopt($ch, CURLOPT_ENCODING, 'utf-8');
+		curl_setopt($ch, CURLOPT_ENCODING, 'windows-1251');
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 120);
 		curl_setopt($ch, CURLOPT_TIMEOUT, 120);
 		curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
@@ -98,7 +98,7 @@ class SMSC
 	/**
 	 * Преобразование номера телефона.
 	 */
-	protected static function prepare($phone)
+	public static function prepare($phone)
 	{
 		$phone = (string) $phone;
 		if (!empty($phone)) {

@@ -45,7 +45,7 @@
                     <span class="label"></span>
                     <div class="input">
                         <button class="js-submit">Войти</button>
-                        <a href="javascript:void(0)" class="zakaz-forgot popup-opener" data-popup="#register-popup">Забыли пароль?</a>
+                        <a href="javascript:void(0)" class="zakaz-forgot popup-opener-remote" data-remote="forgotpassword">Забыли пароль?</a>
                     </div>
                 </div>
             </div>

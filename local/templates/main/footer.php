@@ -89,10 +89,10 @@
                             </div>
                         </div>
                     </div>
-    <!--
+    
                     <button class="button popup-opener" data-popup="#callback-popup">обратный звонок</button>
                     <button class="button popup-opener" data-popup="#basket-popup">корзина</button>
-    -->
+    
                     <a class="popup-opener callback-trigger" href="" data-popup="#callback-popup"></a>
                 </div>
             </footer>

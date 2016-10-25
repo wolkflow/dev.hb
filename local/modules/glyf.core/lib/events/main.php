@@ -73,5 +73,7 @@ class Main
 			$GLOBALS['APPLICATION']->ThrowException('Неверный код из смс');
 			return false;
 		}
+        
+        $fields['PERSONAL_MOBILE'] = \Glyf\Core\Drivers::prepare($fields['PERSONAL_MOBILE']);
 	}
 }

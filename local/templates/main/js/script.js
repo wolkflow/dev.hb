@@ -62,7 +62,7 @@ $(function(){
     
     $(window).scroll(function() {
         var scroll = $(window).scrollTop() + $(window).height();
-        var width  = '53%';
+        var width  = '49%';
         var height = scroll - 60;
         if ($(window).width() < 768) {
             width  = '90%';

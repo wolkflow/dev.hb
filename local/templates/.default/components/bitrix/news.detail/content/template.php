@@ -2,41 +2,57 @@
 
 <? $this->setFrameMode(true); ?>
 <div class="container">
-    <section class="page-header center">
-        <img class="page-header__img" src="/i.php?src=<?= $arResult['DETAIL_PICTURE']['SRC'] ?>&w=550&h=516" />
-        <h1 class="page-header__title">
-            <?= $arResult['NAME'] ?>
-        </h1>
-        <p class="page-header__text">
-            <?= $arResult['PREVIEW_TEXT'] ?>
-        </p>
-    </section>
-    <div class="cross cross-right">
-        <div class="cross-line"></div>
-        <div class="cross-image"></div>
-    </div>
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="container main1">
+				<div class="row">
+					<section class="page-header center">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 main1">
+									<img class="page-header__img" src="/i.php?src=<?= $arResult['DETAIL_PICTURE']['SRC'] ?>&w=550&h=516" />
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 main1">
+									<h1 class="page-header__title">
+										<?= $arResult['NAME'] ?>
+									</h1>
+									<p class="page-header__text">
+										<?= $arResult['PREVIEW_TEXT'] ?>
+									</p>
+								</div>
+							
+					</section>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<div class="cross cross-right cross1">
+		<div class="cross-line"></div>
+		<div class="cross-image"></div>
+	</div>
 </div>
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-12 col-xs-12 col-md-offset-1">
+		<div class="col-md-12 col-xs-12 content1">
 			<section class="page-content center">
 				<div class="row">
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-1">
 						<article class="page-content__article">
 							<?= $arResult['DETAIL_TEXT'] ?>
 						</article>
 					</div>
 				</div>
 				<? if (!empty($arResult['PROPERTIES']['VIDEO']['VALUE'])) { ?>
+					<div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 col-lg-offset-1">
 					<article class="page-content__video">
 						<iframe 
 							src="<?= $arResult['PROPERTIES']['VIDEO']['VALUE'] ?>" 
-							width="950" 
-							height="529"
+							<!--width="950" 
+							height="529"-->
 							frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
 						></iframe>
 					</article>
+					</div>
 				<? } ?>
 			</section>
 		</div>

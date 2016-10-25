@@ -48,7 +48,6 @@ function getBasketPrice()
 
 
 
-
 // Запрос.
 $request = Application::getInstance()->getContext()->getRequest();
 
@@ -194,11 +193,15 @@ switch ($action) {
             'PRICE'            => $price,
             'CURRENCY'         => CURRENCY_DEFAULT,
             'USER_ID'          => CUser::getID(),
+            'PAY_SYSTEM_ID'    => PAYSYSTEM_DEFAULT,
             'DELIVERY_ID'      => DELYVERY_SYSTEM_DEFAULT,
             'TAX_VALUE'        => '',
         ));
         
         if ($orderID > 0) {
+            // Добавление корзин в заказ.
+            CSaleBasket::OrderBasket($orderID, CSaleBasket::GetBasketUserID());
+            
             $order = new \Glyf\Core\HolyBean\Order($orderID);
             $link  = $order->getPaymentURL();
             
@@ -232,7 +235,7 @@ switch ($action) {
 		// Удаление флага успешной проверки кода.
 		unset($_SESSION['SMS_CONFIRM']);
 		
-        file_put_contents($_SERVER['DOCUMENT_ROOT'].'/sms.log', date('d.m.Y H:i:s').PHP_EOL.$_SESSION['SMS_CODE'].PHP_EOL, FILE_APPEND);
+        // file_put_contents($_SERVER['DOCUMENT_ROOT'].'/sms.log', date('d.m.Y H:i:s').PHP_EOL.$_SESSION['SMS_CODE'].PHP_EOL, FILE_APPEND);
         
 		// Отправка смс с кодом подтверждения.
 		$smsclient = new Glyf\Core\Drivers\SMSC();
@@ -270,6 +273,41 @@ switch ($action) {
 		jsonresponse(true);
 		break;
     
+    
+    /**
+     * Восстановление пароля.
+     */
+    case ('restore-password'):
+        $phone = (string) $request->get('phone');
+        
+        if (empty($phone)) {
+            jsonresponse(false, 'Телефон не указан');
+        }
+        
+        $password = randString(6, array(
+            'abcdefghijklnmopqrstuvwxyz',
+            'ABCDEFGHIJKLNMOPQRSTUVWXYZ',
+            '0123456789',
+        ));
+        
+        $res = CUser::getList(($b="ID"), ($o="ASC"), array('PERSONAL_MOBILE' => $phone));
+		if (!($user = $res->fetch())) {
+			jsonresponse(false, 'Телефон не найден');
+		}
+        
+        // Отправка смс с кодом подтверждения.
+		$smsclient = new Glyf\Core\Drivers\SMSC();
+		try {
+			$smsclient->sendSMS($phone, 'Ваш новый пароль: '.$password);
+		} catch (Exception $e) {
+			//jsonresponse(false, $e->getMessage());
+		}
+        
+        $cuser = new CUser();
+        $cuser->Update($user['ID'], array('PASSWORD' => $password));
+        
+		jsonresponse(true, 'На ваш телефон отправлен новый пароль. Обязательно поменяйте пароль после авторизации.');
+        break;
     
     
 	default:

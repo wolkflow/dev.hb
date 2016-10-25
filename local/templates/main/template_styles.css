@@ -206,7 +206,7 @@ header {
   .page-header__title {
     position: absolute;
     top: 184px;
-    left: 430px;
+    left: -155px;
     padding: 24px 56px 25px 56px;
     background-color: rgba(255, 255, 255, 0.5);
     font-size: 60px;
@@ -214,7 +214,7 @@ header {
   .page-header__text {
     position: absolute;
     top: 315px;
-    left: 608px;
+    left: 24px;
     width: 500px;
     color: #878787;
     font-size: 27px;
@@ -223,13 +223,14 @@ header {
     text-transform: uppercase; }
 
 .page-content {
-  padding-top: 108px;
+  padding-top: 38px;
   }
   .page-content__article {
     position: relative;
     padding-top: 40px; }
     .page-content__article h2 {
       margin-bottom: 45px;
+	  margin-top: 65px;
       font-size: 24px;
       color: #252525; }
     .page-content__article p {
@@ -246,7 +247,7 @@ header {
         line-height: 36px;
         font-weight: 300; }
   .page-content__video {
-    margin-top: 50px; }
+    margin-top: 10px; }
 
 
   .footer-content .menu {
@@ -2085,9 +2086,83 @@ h1 {
 .bl_menu_table_day.active .bl_menu_table_day_data span:first-child {
   background-color: #64b357;
   color: white; }
+  
+.page-content__video  iframe 
+{
+	width: 100%;
+	height: 532px;
+}
 
 @media screen and (max-width: 768px) {
 
+.page-content__video  iframe 
+{
+	width: 100%;
+	height: 160px;
+}
+
+.page-header__title {
+    position: absolute;
+    top: -110px;
+    left: 0px;
+    /*padding: padding: 16% 71% 16% 12%;*/
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 35px;
+    line-height: 1; 
+	width: 130%;
+    height: 110px;}
+	
+  .page-header__text {
+    position: absolute;
+    top: 30px;
+    left: -50px;
+    max-width: 130%;
+    color: #878787;
+    font-size: 20px;
+    line-height: 1.33;
+    font-weight: 300;
+    text-transform: uppercase; }
+	
+	.main1 img {
+	    margin-left: -30px;
+		width:130%;
+		height: 250px;
+	}
+	
+	.main1 h1 {
+		font-size: 30px;
+	    margin-left: -50px;
+		max-width:130%;
+		padding-top: 40px;
+	}
+	
+	.cross1 {
+	margin-top: 0px;
+	}
+	
+	.content1 {
+	margin-top: 10px;
+	}
+	
+	.footer-content {
+	margin-left: 15px;
+	}
+	
+	.page-header {
+  position: relative;
+  height: 516px;
+  margin-bottom: 20px; }
+
+  .page-content__article {
+    position: relative;
+    padding-top: 0px; }
+	
+	.page-content {
+  padding-top: 0px;
+  }
+	
+	
+	
 }
 
 .errors {
@@ -2148,4 +2223,5 @@ h1 {
     height: 1px;
     width: 1px;
 }
+
 
