@@ -49,7 +49,7 @@ require ($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.p
             <span class="label"></span>
             <div class="input">
                 <button id="js-submit-form-id">Восстановить пароль</button>
-                <a href="javascript:void(0)" class="zakaz-forgot popup-opener-remote" data-remote="authorize">Вход в систему</a>
+                <a href="javascript:void(0)" class="zakaz-forgot popup-opener-remote" data-remote="authorize-order">Вход в систему</a>
             </div>
         </div>
     </div>

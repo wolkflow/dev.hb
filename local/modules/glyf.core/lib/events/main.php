@@ -74,6 +74,7 @@ class Main
 			return false;
 		}
         
-        $fields['PERSONAL_MOBILE'] = \Glyf\Core\Drivers::prepare($fields['PERSONAL_MOBILE']);
+        
+        $fields['PERSONAL_MOBILE'] = \Glyf\Core\Drivers\SMSC::prepare($fields['PERSONAL_MOBILE']);
 	}
 }

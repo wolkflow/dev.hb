@@ -3,24 +3,59 @@
 <? IncludeComponentTemplateLangFile(__FILE__, $this->GetFolder()) ?>
 
 <? $this->setFrameMode(true); ?>
+<style>
+    .hide {
+        display: none;
+    }
+</style>
 
-<h2>Регистрация</h2>
+<script>
+    $(document).ready(function() {
+        $('#js-submit-phone-id').on('click', function(event) {
+            event.preventDefault();
+            
+            var phone = $('#js-param-phone-id').val();
+            
+            if (phone.length < 7) {
+                $('.js-remote-form .errors').html('Не указан номер телефона');
+            }
+            
+            $.ajax({
+                url: '/remote/',
+                data: {'action': 'register-sms-send', 'phone': phone},
+                success: function(response) {
+                    if (response.status) {
+                        $('#js-phone-confirm-id').removeClass('hide');
+                        
+                        $('#js-submit-phone-id').addClass('hide');
+                        $('#js-submit-form-id').removeClass('hide');
+                    } else {
+                        $('.js-remote-form .errors').html(response.message);
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+<h2>Оформление заказа</h2>
 <div class="zakaz-login__head">
+    <h3>Регистрация</h3>
     <a href="javascript:void(0)" class="popup-opener-remote" data-remote="authorize">Вход в систему</a>
 </div>
 <div class="zakaz-login__form">
     <? if (!CUser::IsAuthorized()) { ?>
-        <form method="post" action="<?= POST_FORM_ACTION_URI ?>" class="js-remote-form" data-link="register">
-            <? if (!empty($arResult['ERRORS'])) { ?>
-                <div class="errors">
+        <form method="post" action="<?= POST_FORM_ACTION_URI ?>" class="js-remote-form" data-link="register-order">
+            <div class="errors">
+                <? if (!empty($arResult['ERRORS'])) { ?>
                     <? foreach ($arResult["ERRORS"] as $key => $error) { ?>
                         <? if (intval($key) == 0 && $key !== 0) { ?>
                             <? $arResult['ERRORS'][$key] = str_replace('#FIELD_NAME#', "&quot;".GetMessage("REGISTER_FIELD_".$key)."&quot;", $error); ?>
                         <? } ?>
                     <? } ?>
                     <?= implode('<br/>', $arResult['ERRORS']) ?>
-                </div>
-            <? } ?>
+                <? } ?>
+            </div>
             
             <input type="hidden" name="REG_FORM" value="Y" />
             <input type="hidden" name="register_submit_button" value="Y" />
@@ -51,19 +86,19 @@
             <div class="form-row">
                 <span class="label big">Пароль</span>
                 <div class="input">
-                    <input type="password" name="REGISTER[PASSWORD]" value="<?= $arResult['VALUES']['PASSWORD'] ?>" />
+                    <input type="password" name="REGISTER[PASSWORD]" value="<?= $arResult['VALUES']['PASSWORD'] ?>" autocomplete="false" />
                 </div>
             </div>
             <div class="form-row">
                 <span class="label big">Подтвердите пароль</span>
                 <div class="input">
-                    <input type="password" name="REGISTER[CONFIRM_PASSWORD]" value="<?= $arResult['VALUES']['CONFIRM_PASSWORD'] ?>" />
+                    <input type="password" name="REGISTER[CONFIRM_PASSWORD]" value="<?= $arResult['VALUES']['CONFIRM_PASSWORD'] ?>" autocomplete="false" />
                 </div>
             </div>
             <div class="form-row">
                 <span class="label big">Телефон</span>
                 <div class="input">
-                    <input type="text" name="REGISTER[PERSONAL_MOBILE]" value="<?= $arResult['VALUES']['PERSONAL_MOBILE'] ?>" />
+                    <input type="text" name="REGISTER[PERSONAL_MOBILE]" value="<?= $arResult['VALUES']['PERSONAL_MOBILE'] ?>" id="js-param-phone-id" />
                 </div>
             </div>
             <div class="form-row">
@@ -85,6 +120,14 @@
                     <input type="text" name="REGISTER[PERSONAL_STREET]" value="<?= $arResult['VALUES']['PERSONAL_STREET'] ?>" />
                 </div>
             </div>
+            
+            <div id="js-phone-confirm-id" class="form-row <?= (1 || empty($_SESSION['SMS_CODE'])) ? ('hide') : ('') ?>">
+                <span class="label big">Код из смс</span>
+                <div class="input">
+                    <input type="text" name="PHONE_CONFIRM" value="<?= strval($_REQUEST['PHONE_CONFIRM']) ?>" id="js-param-smscode-id" />
+                </div>
+            </div>
+            
             <div class="form-row">
                 <span class="label big"><span class="zakaz-required">Все поля обязательны для заполнения</span></span>
                 <div class="input">
@@ -97,7 +140,13 @@
             <div class="form-row form-row-buttons">
                 <span class="label big"></span>
                 <div class="input">
-                    <button class="js-submit">Зарегистрироваться</button>
+                    <? if (1 || empty($_SESSION['SMS_CODE'])) { ?>
+                        <button id="js-submit-phone-id">Подтвердить телефон</button>
+                        <button id="js-submit-form-id" class="js-submit hide">Зарегистироваться</button>
+                    <? } else { ?>
+                        <button id="js-submit-phone-id" class="hide">Подтвердить телефон</button>
+                        <button id="js-submit-form-id" class="js-submit">Зарегистироваться</button>
+                    <? } ?>
                 </div>
             </div>
         </form>
@@ -107,7 +156,7 @@
         <? if (!empty($_REQUEST['REG_FORM'])) { ?>
             <script>
                 $(document).ready(function() {
-                    location.reload();
+                    getRemoteHTML('order', '#js-popup-content');
                 });
             </script>
         <? } ?>

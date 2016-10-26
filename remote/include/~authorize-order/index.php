@@ -6,10 +6,5 @@ require ($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.p
 $APPLICATION->IncludeComponent(
 	"bitrix:system.auth.form",
 	"popup-order",
-	array(
-        "REGISTER_URL" => "",
-        "FORGOT_PASSWORD_URL" => "",
-        "PROFILE_URL" => "/cabinet/",
-        "SHOW_ERRORS" => "Y"
-    )
+	array()
 );

@@ -22,6 +22,7 @@ $APPLICATION->IncludeComponent(
             "NAME",
             "LOGIN",
             "EMAIL",
+            "PERSONAL_MOBILE",
         ),
         "AUTH" => "Y",
         "USE_BACKURL" => "N",

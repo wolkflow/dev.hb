@@ -119,7 +119,7 @@ $(function(){
 	    $('body').removeClass('popup-opened');
     });
 
-    $('.cabinet-orders-table__toggle').on('click', function(event){
+    $(document).on('click', '.cabinet-orders-table__toggle', function(event){
         event.preventDefault();
 
         var $self = $(this);
@@ -129,7 +129,7 @@ $(function(){
         $self.text($item.hasClass('is-active') ? 'Свернуть' : 'Детали');
     });
 
-    $('.basket-item__count-minus').on('click', function(){
+    $(document).on('click', '.basket-item__count-minus', function() {
         var $input = $(this).siblings('.basket-item__count');
         var currentValue = parseInt($input.val());
 
@@ -137,8 +137,8 @@ $(function(){
             $input.val(--currentValue + ' шт');
         }
     });
-
-    $('.basket-item__count-plus').on('click', function(){
+    
+    $(document).on('click', '.basket-item__count-plus', function() {
         var $input = $(this).siblings('.basket-item__count');
 
         $input.val(parseInt($input.val()) + 1 + ' шт');

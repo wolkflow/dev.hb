@@ -91,7 +91,7 @@
                     </div>
     
                     <button class="button popup-opener" data-popup="#callback-popup">обратный звонок</button>
-                    <button class="button popup-opener" data-popup="#basket-popup">корзина</button>
+                    <button class="button popup-opener-remote" data-remote="basket">корзина</button>
     
                     <a class="popup-opener callback-trigger" href="" data-popup="#callback-popup"></a>
                 </div>
@@ -106,11 +106,13 @@
             ?>
             
             <?  // Корзина.
+                /*
                 $APPLICATION->IncludeComponent('bitrix:main.include', '', array(
                     'AREA_FILE_SHOW' => 'file',
                     'PATH' => SITE_TEMPLATE_PATH.'/include/area/basket.php',
                     'EDIT_TEMPLATE' => 'html',
                 ));
+                */
             ?>
             
             <?  // Контейнер дял popup'а.

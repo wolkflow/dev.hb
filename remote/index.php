@@ -235,7 +235,7 @@ switch ($action) {
 		// Удаление флага успешной проверки кода.
 		unset($_SESSION['SMS_CONFIRM']);
 		
-        // file_put_contents($_SERVER['DOCUMENT_ROOT'].'/sms.log', date('d.m.Y H:i:s').PHP_EOL.$_SESSION['SMS_CODE'].PHP_EOL, FILE_APPEND);
+        file_put_contents($_SERVER['DOCUMENT_ROOT'].'/sms.log', date('d.m.Y H:i:s').PHP_EOL.$_SESSION['SMS_CODE'].PHP_EOL, FILE_APPEND);
         
 		// Отправка смс с кодом подтверждения.
 		$smsclient = new Glyf\Core\Drivers\SMSC();
