@@ -1,8 +1,8 @@
 $(document).ready(function() {
-   $('.js-buy').on('click', function() {
-       var product = $(this).data('product');
+    $('.js-buy').on('click', function() {
+        var product = $(this).data('product');
        
-       $.ajax({
+        $.ajax({
             url: '/remote/',
             data: {'action': 'add-to-cart', 'product': product, 'type': 'product'},
             dataType: 'json',
@@ -13,5 +13,5 @@ $(document).ready(function() {
                 }
             }
         });
-   });
+    });
 });

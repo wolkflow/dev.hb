@@ -71,7 +71,7 @@ define('MENU_DAYS', 14);
 /*
  * Количество дней до возможности заказа.
  */
-define('MENU_DAYS_OFFSET', 4);
+define('MENU_DAYS_OFFSET', 2);
 
 /*
  * Точка отсчета смены меню.

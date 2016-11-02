@@ -5,7 +5,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 use \Glyf\Core\HolyBean\Program;
 use \Glyf\Core\HolyBean\MenuList;
 use \Glyf\Core\HolyBean\Menu;
-use  Glyf\Core\Helpers\Text as TextHelper;
+use \Glyf\Core\Helpers\Text as TextHelper;
 
 if ($arResult['PROPERTIES']['INDIVIDUAL']['VALUE'] != 'Y') {
     
@@ -20,6 +20,7 @@ if ($arResult['PROPERTIES']['INDIVIDUAL']['VALUE'] != 'Y') {
         $time = strtotime('+' . ($i + MENU_DAYS_OFFSET) . ' days');
         
         $arResult['MENU'] []= array(
+            'TIME'    => $time,
             'DATE'    => array('DAY' => date('d', $time), 'MONTH' => date('m', $time)),
             'MENU'    => $menuday->getMenu(),
             'WEEKDAY' => TextHelper::i18nday(date('N', $time), true),

@@ -63,7 +63,8 @@ switch ($action) {
 	 */
     case ('add-to-cart'):
         $product  = (int)   $request->get('product');
-        $quantity = (int)   $request->get('quantity');
+        $period   = (int)   $request->get('period');
+        $date     = (string) $request->get('date');
         $days     = (array) $request->get('days');
         
         if (!Bitrix\Main\Loader::includeModule('glyf.core')) {
@@ -84,6 +85,18 @@ switch ($action) {
         
         if (!empty($days)) {
             $props []= array(
+                'NAME'  => 'Количество дней',
+                'CODE'  => 'PERIOD',
+                'VALUE' => $period
+            );
+            
+            $props []= array(
+                'NAME'  => 'Дата доставки',
+                'CODE'  => 'DATE',
+                'VALUE' => $date
+            );
+            
+            $props []= array(
                 'NAME'  => 'Выбранные дни',
                 'CODE'  => 'DAYS',
                 'VALUE' => implode(', ', $days)
@@ -97,7 +110,7 @@ switch ($action) {
             'PRICE'      => $product->getPrice(),
             'MODULE'     => 'catalog',
             'CURRENCY'   => CURRENCY_DEFAULT,
-            'QUANTITY'   => $quantity,
+            'QUANTITY'   => 1,
             'LID'        => SITE_DEFAULT,
             'CAN_BUY'    => 'Y',
             'PROPS'      => $props
@@ -235,7 +248,7 @@ switch ($action) {
 		// Удаление флага успешной проверки кода.
 		unset($_SESSION['SMS_CONFIRM']);
 		
-        file_put_contents($_SERVER['DOCUMENT_ROOT'].'/sms.log', date('d.m.Y H:i:s').PHP_EOL.$_SESSION['SMS_CODE'].PHP_EOL, FILE_APPEND);
+        // file_put_contents($_SERVER['DOCUMENT_ROOT'].'/sms.log', date('d.m.Y H:i:s').PHP_EOL.$_SESSION['SMS_CODE'].PHP_EOL, FILE_APPEND);
         
 		// Отправка смс с кодом подтверждения.
 		$smsclient = new Glyf\Core\Drivers\SMSC();
@@ -309,6 +322,25 @@ switch ($action) {
 		jsonresponse(true, 'На ваш телефон отправлен новый пароль. Обязательно поменяйте пароль после авторизации.');
         break;
     
+    
+    /**
+     * Повторение заказа.
+     */
+    case ('repeat-order'):
+        $oid = (int) $request->get('oid');
+        
+        if (empty($oid)) {
+            jsonresponse(false, 'Заказ не найден');
+        }
+        
+        try {
+            Glyf\Core\HolyBean\Order::repeat($oid);
+        } catch (Exception $e) {
+            jsonresponse(false, $e->getMessage());
+        }
+        jsonresponse(true);
+        break;
+        
     
 	default:
 		jsonresponse(false, '', array(), 'Неверный запрос');

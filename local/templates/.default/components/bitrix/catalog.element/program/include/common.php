@@ -8,6 +8,7 @@
             var variant = $('.js-variant.active');
             var product = variant.data('product');
             var period  = variant.data('period');
+            var date    = $('.js-checked-day:checked:first').data('date');
             
             // Выбранные дни.
             var days = [];
@@ -17,7 +18,7 @@
             
             $.ajax({
                 url: '/remote/',
-                data: {'action': 'add-to-cart', 'product': product, 'days': days, 'type': 'program-common'},
+                data: {'action': 'add-to-cart', 'product': product, 'days': days, 'period': period, 'date': date, 'type': 'program-common'},
                 dataType: 'json',
                 type: 'post',
                 success: function(response) {
@@ -50,7 +51,7 @@
                 <div class="bl_chose_days_c_checkboxs">
                     <? foreach ($arResult['MENU'] as $i => $menu) { ?>
                         <div class="bl_menu_checkbox">
-                            <input class="js-checked-day" type="checkbox" name="days[]" value="<?= $menu['DATE']['DAY'] ?>/<?= $menu['DATE']['MONTH'] ?> <?= $menu['WEEKDAY'] ?>" />
+                            <input class="js-checked-day" type="checkbox" name="days[]" value="<?= $menu['DATE']['DAY'] ?>/<?= $menu['DATE']['MONTH'] ?> <?= $menu['WEEKDAY'] ?>" data-date="<?= date('d.m.Y', $menu['TIME']) ?>" />
                             <label>
                                 <?= $menu['DATE']['DAY'] ?> / <?= $menu['DATE']['MONTH'] ?>, 
                                 <?= mb_strtoupper($menu['WEEKDAY']) ?> 

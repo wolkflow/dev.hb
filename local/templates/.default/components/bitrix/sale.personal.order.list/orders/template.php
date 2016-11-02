@@ -30,25 +30,28 @@
                 <div class="cabinet-orders-table__body">
                     <div class="cabinet-orders-table__item">
                         <? foreach ($arResult['ORDERS'] as $item) { ?>
-                            <? $order = $item['ORDER'] ?>
+                            <? $order = new \Glyf\Core\HolyBean\Order($item['ORDER']['ID']); ?>
                             <? $baskets = $item['BASKET_ITEMS'] ?>
                             
                             <div class="cabinet-orders-table__item">
                                 <div class="cabinet-orders-table__row">
                                     <div class="cabinet-orders-table__cell">
-                                        <?= date('d', strtotime($order['DATE_INSERT'])) ?>
-                                        <?= TextHelper::i18nmonth(date('m', strtotime($order['DATE_INSERT'])), false) ?>
-                                        <?= date('Y', strtotime($order['DATE_INSERT'])) ?>
+                                        <?= date('d', strtotime($item['ORDER']['DATE_INSERT'])) ?>
+                                        <?= TextHelper::i18nmonth(date('m', strtotime($item['ORDER']['DATE_INSERT'])), false) ?>
+                                        <?= date('Y', strtotime($item['ORDER']['DATE_INSERT'])) ?>
                                     </div>
                                     <div class="cabinet-orders-table__cell">
-                                        <?= $arResult['STATUSES'][$order['STATUS_ID']]['NAME'] ?>
+                                        <?= $arResult['STATUSES'][$item['ORDER']['STATUS_ID']]['NAME'] ?>
                                     </div>
                                     <div class="cabinet-orders-table__cell">
                                         <span>
-                                            <?= round($order['PRICE'], 2) ?> Р
+                                            <?= round($item['ORDER']['PRICE'], 2) ?> Р
                                         </span>
                                         <div class="cabinet-orders-table__buttons">
-                                            <a class="button" href="#">Повторить</a>
+                                            <? if (false && $item['ORDER']['PAYED'] != 'Y') { ?>
+                                                <a class="button" href="<?= $order->getPaymentURL() ?>" target="_blank">Оплатить</a>
+                                            <? } ?>
+                                            <a class="button js-order-repeat" href="javascript:void(0)" data-oid="<?= $item['ORDER']['ID'] ?>">Повторить</a>
                                             <a class="button-white cabinet-orders-table__toggle" href="javascrript:void(0)">
                                                 Детали
                                             </a>
@@ -72,7 +75,7 @@
                                     <div class="cabinet-orders-table__row cabinet-orders-table__total">
                                         <div class="cabinet-orders-table__cell">Общая сумма</div>
                                         <div class="cabinet-orders-table__cell">
-                                            <?= round($order['PRICE'], 2) ?> Р
+                                            <?= round($item['ORDER']['PRICE'], 2) ?> Р
                                         </div>
                                     </div>
                                 </div>
