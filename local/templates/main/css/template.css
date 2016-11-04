@@ -311,6 +311,12 @@
     background: #f9f9f9;
     height:100%;
 }
+
+.bg5 {
+    background: #f9f9f9;
+    
+}
+
 .bg2 {
     background: #f9f9f9;
     width: 50%;
@@ -4166,7 +4172,7 @@ min-width: 180px; }
         margin-left: auto;
         padding-left: 15px;
         padding-right: 15px;
-        z-index: 120;
+        z-index: 0;
         position: absolute;
    }
     

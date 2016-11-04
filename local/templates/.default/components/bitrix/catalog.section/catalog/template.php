@@ -6,9 +6,8 @@
 
 <section class="inner-page">
     <div class="bl_catalog_filter clearfix">
-        <div class="container2">
+        <div class="container2 bg5">
             <div class="row">
-                <div class="col-sm-5 col-md-5 col-lg-5 col-sm-offset-7 col-md-offset-7 col-lg-offset-7 bg1">
                     <div class="bl_catalog_filter_right">
                         <div class="bl_filter_item">
                             <span>Сортировка:</span>
@@ -34,7 +33,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                
             </div>
         </div>
         
