@@ -6370,7 +6370,7 @@ button.close {
   content: '\203a';
 }
 .carousel-indicators {
-      position: absolute;
+    position: absolute;
     padding-top: 54px;
     /* left: 50%; */
     /* z-index: 15; */
@@ -6379,6 +6379,7 @@ button.close {
     /* padding-left: 0; */
     list-style: none;
     /* text-align: center; */
+    z-index: 125;
 }
 .carousel-indicators li {
   display: inline-block;
@@ -6392,7 +6393,7 @@ button.close {
   background-color: rgba(0, 0, 0, 0);
 }
 .carousel-indicators .active {
-  margin: 0;
+  /*margin: 0;*/
   width: 12px;
   height: 12px;
   background-color: #64b357;
@@ -6435,9 +6436,9 @@ button.close {
     right: 20%;
     padding-bottom: 30px;
   }
-  .carousel-indicators {
+  /*.carousel-indicators {
     bottom: 20px;
-  }
+  }*/
 }
 .clearfix:before,
 .clearfix:after,
