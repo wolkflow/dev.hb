@@ -6382,11 +6382,10 @@ button.close {
 }
 .carousel-indicators li {
   display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 1px;
+  width: 12px;
+  height: 12px;
   text-indent: -999px;
-  border: 1px solid #ffffff;
+  border: 1px solid #000000;
   /*border-radius: 10px;*/
   cursor: pointer;
   background-color: #000 \9;

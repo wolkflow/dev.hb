@@ -27,11 +27,13 @@
 
 <div id="carousel" class="carousel slide">
   <!-- Индикаторы слайдов -->
+  <div class="container1">
   <ol class="carousel-indicators">
     <li data-target="#carousel" data-slide-to="0" class="active"></li>
     <li data-target="#carousel" data-slide-to="1"></li>
     <li data-target="#carousel" data-slide-to="2"></li>
   </ol>
+  </div>
 
   <!-- Слайды -->
   <div class="carousel-inner">
@@ -81,13 +83,5 @@
             </div>
         </div>
   </div>
-
-  <!-- Стрелки переключения слайдов -->
-  <!--<a href="#carousel" class="left carousel-control" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-  </a>
-  <a href="#carousel" class="right carousel-control" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-  </a>-->
 </div>
 
