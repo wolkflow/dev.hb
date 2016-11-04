@@ -3701,11 +3701,12 @@ body {
    
    .container1 {
        width: 1280px;
-       margin-right: auto;
-       margin-left: auto;
-       padding-left: 15px;
-       padding-right: 15px;
-       position:absolute;
+        /* height: 66px; */
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+        z-index: 120;
    }
    
     
