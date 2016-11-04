@@ -8077,7 +8077,7 @@ a.button, a.button-white {
 
 .bl_filter_item + .bl_filter_item {
   margin-left: 24px;
-  margin-right: 10px; }
+  /*margin-right: 10px;*/ }
 
 .bl_catalog_filter {
   margin-bottom: 50px; }
