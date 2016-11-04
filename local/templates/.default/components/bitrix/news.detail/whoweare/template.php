@@ -2,7 +2,7 @@
 
 <? $this->setFrameMode(true); ?>
 <div class="poz1">
-    <div class="container main-unit hei6">
+    <div class="container main-unit hei6 hei10">
         <div class="row">
             <div class="col-sm-7">
                 <div class="main-who__text">
