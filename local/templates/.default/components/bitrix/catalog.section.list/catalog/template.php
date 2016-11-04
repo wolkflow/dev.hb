@@ -5,7 +5,7 @@
 </div>
 <div class="container ">
     <div class="row">
-        <div class="col-sm-7 col-md-7 col-lg-7 bg1">
+        <div class="col-sm-8 col-md-8 col-lg-8 bg1">
             <? if (!empty($arResult['SECTIONS'])) { ?>
                 <div class="bl_catalog_filter_left">
                     <ul>

@@ -6,32 +6,36 @@
 
 <section class="inner-page">
     <div class="bl_catalog_filter clearfix">
-        <div class="container1 bg1">
-                <div class="bl_catalog_filter_right">
-                    <div class="bl_filter_item">
-                        <span>Сортировка:</span>
-                        <a class="sort <?= $arParams['ELEMENT_SORT_ORDER'] ?>" href="<?= $APPLICATION->GetCurPageParam('order=' . $order, array('order'), false) ?>">
-                            Цена
-                        </a>
-                    </div>
-                    <div class="bl_filter_item">
-                        <span>Фильтр:</span>
-                        <div class="select-cont">
-                            <span class="select">Тип питания</span>
-                            <input type="hidden" />
-                            <div class="select-menu">
-                                <a href="<?= $APPLICATION->GetCurPageParam('', array('type'), false) ?>" class="select-menu__item">
-                                    Любой
-                                </a>
-                                <? foreach ($arResult['TYPES'] as $type => $title) { ?>
-                                    <a href="<?= $APPLICATION->GetCurPageParam('type=' . $type, array('type'), false) ?>" class="select-menu__item">
-                                        <?= $title ?>
+        <div class="container2">
+            <div class="row">
+                <div class="col-sm-5 col-md-5 col-lg-5 col-sm-offset-7 col-md-offset-7 col-lg-offset-7 bg1">
+                    <div class="bl_catalog_filter_right">
+                        <div class="bl_filter_item">
+                            <span>Сортировка:</span>
+                            <a class="sort <?= $arParams['ELEMENT_SORT_ORDER'] ?>" href="<?= $APPLICATION->GetCurPageParam('order=' . $order, array('order'), false) ?>">
+                                Цена
+                            </a>
+                        </div>
+                        <div class="bl_filter_item">
+                            <span>Фильтр:</span>
+                            <div class="select-cont">
+                                <span class="select">Тип питания</span>
+                                <input type="hidden" />
+                                <div class="select-menu">
+                                    <a href="<?= $APPLICATION->GetCurPageParam('', array('type'), false) ?>" class="select-menu__item">
+                                        Любой
                                     </a>
-                                <? } ?>
+                                    <? foreach ($arResult['TYPES'] as $type => $title) { ?>
+                                        <a href="<?= $APPLICATION->GetCurPageParam('type=' . $type, array('type'), false) ?>" class="select-menu__item">
+                                            <?= $title ?>
+                                        </a>
+                                    <? } ?>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
         
         <?	// Разделы каталога.

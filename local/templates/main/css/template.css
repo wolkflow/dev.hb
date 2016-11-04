@@ -309,6 +309,7 @@
 }
 .bg1 {
     background: #f9f9f9;
+    height:100%;
 }
 .bg2 {
     background: #f9f9f9;
@@ -2121,6 +2122,17 @@ body {
         z-index: 120;
    }
    
+   .container2 {
+       width: 767px;
+        /* height: 66px; */
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+        z-index: 120;
+        position: absolute;
+   }
+   
    .container1 li {
        margin-right: 10px;
    }
@@ -2848,6 +2860,17 @@ min-width: 120px;}
         z-index: 120;
    }
    
+   .container2 {
+       width: 970px;
+        /* height: 66px; */
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+        z-index: 120;
+        position: absolute;
+   }
+   
    .container1 li {
        margin-right: 10px;
    }
@@ -3553,6 +3576,17 @@ min-width: 180px;}
         z-index: 120;
    }
    
+   .container2 {
+       width: 1170px;
+        /* height: 66px; */
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+        z-index: 120;
+        position: absolute;
+   }
+   
    .container1 li {
        margin-right: 10px;
    }
@@ -4124,5 +4158,16 @@ min-width: 180px; }
   
   .one_product_char {
   margin-bottom: 115px; }
+  
+  .container2 {
+       width: 1280px;
+        /* height: 66px; */
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+        z-index: 120;
+        position: absolute;
+   }
     
 }
