@@ -2126,6 +2126,28 @@ body {
   color: #252525;
   text-decoration: none;
   text-transform: uppercase; }
+  
+  .bl_filter_item span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 7px;
+  font-family: DINPro;
+  font-size: 10px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  color: #252525; 
+}
+.one_product_price {
+    margin-right: 48px;
+    font-family: DINPro;
+    font-size: 36px;
+    line-height: 1;
+    color: #64b357;
+    vertical-align: middle;
+    position: relative;
+    top: -3px;
+}
     
  
 }
@@ -2812,6 +2834,26 @@ body {
   color: #252525;
   text-decoration: none;
   text-transform: uppercase; }
+  .bl_filter_item span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 7px;
+  font-family: DINPro;
+  font-size: 12px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  color: #252525; 
+}.one_product_price {
+    margin-right: 62px;
+    font-family: DINPro;
+    font-size: 46.5px;
+    line-height: 1;
+    color: #64b357;
+    vertical-align: middle;
+    position: relative;
+    top: -3px;
+}
 }
 @media (min-width: 1200px) {
     .menu {
@@ -3475,6 +3517,27 @@ body {
   color: #252525;
   text-decoration: none;
   text-transform: uppercase; }
+  .bl_filter_item span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 7px;
+  font-family: DINPro;
+  font-size: 12px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  color: #252525; 
+}
+.one_product_price {
+    margin-right: 80px;
+    font-family: DINPro;
+    font-size: 60px;
+    line-height: 1;
+    color: #64b357;
+    vertical-align: middle;
+    position: relative;
+    top: -3px;
+}
 }
 @media (min-width: 1340px) {
     .container {
@@ -3948,5 +4011,28 @@ body {
   color: #252525;
   text-decoration: none;
   text-transform: uppercase; }
+  
+  .bl_filter_item span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 7px;
+  font-family: DINPro;
+  font-size: 12px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  color: #252525; 
+}
+
+.one_product_price {
+    margin-right: 80px;
+    font-family: DINPro;
+    font-size: 60px;
+    line-height: 1;
+    color: #64b357;
+    vertical-align: middle;
+    position: relative;
+    top: -3px;
+}
     
 }

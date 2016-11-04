@@ -42,26 +42,28 @@
     <div class="container main-unit hei6">
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <div class="one_product_price_buy">
-                    <span class="one_product_price">
-                        <?= $arResult['PRICES']['BASE']['VALUE'] ?> Р
-                    </span>
-                    <a href="javascript:void(0)" class="button button_white js-buy" data-product="<?= $arResult['ID'] ?>">Купить</a>
-                </div>
-                <div class="one_product_char">
-                    <div class="one_product_char_header">ПИЩЕВАЯ ЦЕННОСТЬ <span>(на 100 г)</span></div>
-                    <div class="one_product_chars clearfix">
-                        <div class="one_product_char_item">
-                            <b>Белки</b>
-                            <span><?= $arResult['PROPERTIES']['PROTEINS']['VALUE'] ?> г</span>
-                        </div>
-                        <div class="one_product_char_item">
-                            <b>Жиры</b>
-                            <span><?= $arResult['PROPERTIES']['FATS']['VALUE'] ?> г</span>
-                        </div>
-                        <div class="one_product_char_item">
-                            <b>Углеводы</b>
-                            <span><?= $arResult['PROPERTIES']['CARBOHYDRATES']['VALUE'] ?> г</span>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 one_product_price_buy">
+                        <span class="one_product_price">
+                            <?= $arResult['PRICES']['BASE']['VALUE'] ?> Р
+                        </span>
+                        <a href="javascript:void(0)" class="button button_white js-buy" data-product="<?= $arResult['ID'] ?>">Купить</a>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 one_product_char">
+                        <div class="one_product_char_header">ПИЩЕВАЯ ЦЕННОСТЬ <span>(на 100 г)</span></div>
+                        <div class="one_product_chars clearfix">
+                            <div class="one_product_char_item">
+                                <b>Белки</b>
+                                <span><?= $arResult['PROPERTIES']['PROTEINS']['VALUE'] ?> г</span>
+                            </div>
+                            <div class="one_product_char_item">
+                                <b>Жиры</b>
+                                <span><?= $arResult['PROPERTIES']['FATS']['VALUE'] ?> г</span>
+                            </div>
+                            <div class="one_product_char_item">
+                                <b>Углеводы</b>
+                                <span><?= $arResult['PROPERTIES']['CARBOHYDRATES']['VALUE'] ?> г</span>
+                            </div>
                         </div>
                     </div>
                 </div>
