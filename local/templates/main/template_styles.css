@@ -7411,11 +7411,7 @@ a.button, a.button-white {
   .main-programs h2 {
 
   }
-  .main-programs__blocks {
-    position: relative;
-    /*padding: 25px 0;*/
-    background-color: #f9f9f9;
-  }
+  
     .main-programs__blocks::after {
       content: '';
       display: block;
