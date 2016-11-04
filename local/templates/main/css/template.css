@@ -700,9 +700,9 @@ h2 {
 .main-programs h2 {
     text-align: right;
 }
-main {
+/*main {
     padding: 58px 0 74px;
-}
+}*/
 h2 {
     font-size: 24px;
 }
@@ -1972,9 +1972,7 @@ body {
         position: absolute;
         bottom: -7px;
     }
-    .hei6 {
-        margin-top: 5px;
-    }
+    
     .catalog_header_text {
         float: right;
         width: 334px;
@@ -2306,7 +2304,9 @@ min-width: 120px;}
 .main-who__text h2 {
     margin-bottom: 10px;
 }
-
+.hei7 {
+    margin-top: 36px;
+}
 }
 @media (min-width: 992px) {
     .visible-md {
@@ -3163,6 +3163,10 @@ min-width: 180px;}
 .main-who__text h2 {
     margin-bottom: 30px;
 }
+
+.hei7 {
+    margin-top: 46.5px;
+}
   
 }
 @media (min-width: 1200px) {
@@ -3998,7 +4002,9 @@ min-width: 180px;}
 .main-who__text h2 {
     margin-bottom: 50px;
 }
-
+.hei7 {
+    margin-top: 60px;
+}
 }
 @media (min-width: 1340px) {
     .container {
@@ -4606,6 +4612,10 @@ min-width: 180px; }
 
 .main-who__text h2 {
     margin-bottom: 50px;
+}
+
+.hei7 {
+    margin-top: 60px;
 }
     
 }
