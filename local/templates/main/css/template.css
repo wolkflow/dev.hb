@@ -3127,6 +3127,11 @@ min-width: 180px;}
     position: absolute;
     z-index: 1;
 }
+
+.main-who__bigimg {
+    width: 248px;
+  height: 371px;
+}
   
 }
 @media (min-width: 1200px) {
@@ -3946,6 +3951,11 @@ min-width: 180px;}
     z-index: 1;
 }
 
+.main-who__bigimg {
+    width: 320px;
+  height: 479px;
+}
+
 }
 @media (min-width: 1340px) {
     .container {
@@ -4534,6 +4544,11 @@ min-width: 180px; }
     height: 143px;
     position: absolute;
     z-index: 1;
+}
+
+.main-who__bigimg {
+    width: 320px;
+  height: 479px;
 }
     
 }
