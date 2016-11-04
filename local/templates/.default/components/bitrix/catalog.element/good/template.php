@@ -4,11 +4,7 @@
 
 <section class="inner-page center">
     <div class="bl_catalog_filter clearfix">
-        <div class="bl_catalog_filter_right">
-            <div class="link_back_catalog">
-                <a href="/catalog/">Назад в каталог</a>
-            </div>
-        </div>
+        
         <?	// Разделы каталога.
             $APPLICATION->IncludeComponent(
                 "bitrix:catalog.section.list",
