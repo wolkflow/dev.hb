@@ -1967,7 +1967,7 @@ body {
         bottom: -7px;
     }
     .hei6 {
-        margin-top: 120px;
+        margin-top: 5px;
     }
     .catalog_header_text {
         float: right;
@@ -1982,7 +1982,7 @@ body {
         color: #878787;
     }
     .imege1 {
-        height: 420px;
+        height: 331px;
     }
     .imege1 img {
         height: 350px;
@@ -1997,7 +1997,7 @@ body {
         position: relative;
     }
     .title_element1 h1 {
-        padding: 24px 0px 25px 0px;
+        padding: 14px 0px 25px 0px;
         background-color: rgba(255, 255, 255, 0.5);
     }
     .cabinet-head__buttons {
@@ -2152,6 +2152,22 @@ body {
 min-width: 120px;}
 .one_product_price_buy {
   margin-bottom: 30px; }
+  
+  .one_product_char_header {
+    font-family: DINPro;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    color: #252525;
+    margin-bottom: 37px;
+}
+.one_product_char_item {
+  float: left;
+  width: 90px; }
+  
+  .one_product_char {
+  margin-bottom: 69px; }
     
  
 }
@@ -2677,7 +2693,7 @@ min-width: 120px;}
         bottom: -10px;
     }
     .hei6 {
-        margin-top: 120px;
+        margin-top: 93px;
     }
     .catalog_header_text {
         float: right;
@@ -2862,6 +2878,23 @@ min-width: 120px;}
 min-width: 180px;}
 .one_product_price_buy {
   margin-bottom: 109px; }
+  .one_product_char_header {
+    font-family: DINPro;
+    font-size: 18.6px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    color: #252525;
+    margin-bottom: 48px;
+}
+
+.one_product_char_item {
+  float: left;
+  width: 116px; }
+  
+  .one_product_char {
+  margin-bottom: 89px; }
+  
 }
 @media (min-width: 1200px) {
     .menu {
@@ -3550,6 +3583,22 @@ min-width: 180px;}
 min-width: 180px;}
 .one_product_price_buy {
   margin-bottom: 109px; }
+  .one_product_char_header {
+    font-family: DINPro;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    color: #252525;
+    margin-bottom: 62px;
+}
+
+.one_product_char_item {
+  float: left;
+  width: 150px; }
+  
+  .one_product_char {
+  margin-bottom: 115px; }
 
 }
 @media (min-width: 1340px) {
@@ -4052,5 +4101,21 @@ min-width: 180px; }
 
 .one_product_price_buy {
   margin-bottom: 109px; }
+  .one_product_char_header {
+    font-family: DINPro;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    color: #252525;
+    margin-bottom: 62px;
+}
+
+.one_product_char_item {
+  float: left;
+  width: 150px; }
+  
+  .one_product_char {
+  margin-bottom: 115px; }
     
 }

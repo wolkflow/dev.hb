@@ -8315,9 +8315,7 @@ a.button, a.button-white {
   text-align: center;
   display: block; }
 
-.one_product_char_item {
-  float: left;
-  width: 150px; }
+
 
 .one_product_char_item + .one_product_char_item {
   border-left: 1px solid #dbdbdb; }
@@ -8325,8 +8323,7 @@ a.button, a.button-white {
 .one_product_tx {
   width: 540px; }
 
-.one_product_char {
-  margin-bottom: 115px; }
+
 
 .one_product_tx_header {
   text-transform: uppercase;
