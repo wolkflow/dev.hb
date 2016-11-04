@@ -1,7 +1,9 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 
 <? $this->setFrameMode(true); ?>
-
+<div class="bg4">
+</div>
+<div class="container">
 <? if (!empty($arResult['SECTIONS'])) { ?>
     <div class="bl_catalog_filter_left">
         <ul>
@@ -15,3 +17,4 @@
         </ul>
     </div>
 <? } ?>
+</div>

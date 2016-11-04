@@ -7979,12 +7979,13 @@ a.button, a.button-white {
   line-height: 60px; }
 
 .bl_catalog_filter {
-  background: #f9f9f9;
+  /*background: #f9f9f9;*/
   height: 90px; }
 
 .bl_catalog_filter_left {
-  margin: 0 420px 0 110px;
-  padding-top: 37px; }
+  margin: 0 0px 0 110px;
+    padding-top: 40px;
+    position: absolute; }
 
 .bl_catalog_filter_left li {
   display: inline-block;

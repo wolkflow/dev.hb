@@ -316,6 +316,13 @@
     position: absolute;
     height: 209px
 }
+.bg4 {
+    background: #f9f9f9;
+    width: 50%;
+    position: absolute;
+    height: 90px
+}
+
 .foo1 {
     padding-left: 0px;
     padding-right: 0px;
