@@ -3,7 +3,7 @@
 <? $this->setFrameMode(true); ?>
 
 <div class="container main-unit hei6">
-    <div class="row">
+    <div class="row pt1">
         <h2>Программы питания</h2>
     </div>
 </div>

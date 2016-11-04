@@ -6,6 +6,10 @@
  *
 */
 
+.pt1 {
+    text-align: right;
+}
+
 .container {
     margin-right: auto;
     margin-left: auto;
@@ -1425,7 +1429,7 @@ body {
         margin-top: 20px;
     }
     .main-unit {
-        max-width: 706px;
+        max-width: 647px;
     }
     .page-content__video iframe {
         width: 100%;
@@ -1725,7 +1729,7 @@ body {
         margin-top: 20px;
     }
     .main-unit {
-        max-width: 707px;
+        max-width: 647px;
     }
     .page-content__video iframe {
         width: 647px;
@@ -2052,8 +2056,8 @@ body {
         position: relative;
         height: 516px;
         z-index: 100;
-        width: 635px;
-        top: 105px;   
+        width: 425px;
+        top: 75px;  
     }
     .carousel_content1 h3 {
         font-family: DINPro;
@@ -2066,7 +2070,7 @@ body {
     }
     
     .carousel_content1 p {
-        width: 400px;
+        width: 245px;
         font-family: GothamPro;
         font-size: 12.6px;
         font-weight: 300;
@@ -2074,7 +2078,7 @@ body {
         font-stretch: normal;
         line-height: 1.62;
         color: #878787;
-        margin-top: 105px;
+        margin-top: 51px;
     }
     
     .carousel_background1 {
@@ -2402,7 +2406,7 @@ body {
         margin-top: 19px;
     }
     .main-unit {
-        max-width: 910px;
+        max-width: 872px;
     }
     .page-content__video iframe {
         width: 902px;
@@ -2728,8 +2732,8 @@ body {
         position: relative;
         height: 516px;
         z-index: 100;
-        width: 635px;
-        top: 105px;   
+        width: 540px;
+        top: 86px; 
     }
     .carousel_content1 h3 {
         font-family: DINPro;
@@ -2742,7 +2746,7 @@ body {
     }
     
     .carousel_content1 p {
-        width: 400px;
+        width: 315px;
         font-family: GothamPro;
         font-size: 16.3px;
         font-weight: 300;
@@ -2750,7 +2754,7 @@ body {
         font-stretch: normal;
         line-height: 1.62;
         color: #878787;
-        margin-top: 105px;
+        margin-top: 76px;
     }
     
     .carousel_background1 {
@@ -3867,7 +3871,7 @@ body {
         font-stretch: normal;
         line-height: 1.62;
         color: #878787;
-        margin-top: 105px;
+        margin-top: 102px;
     }
     
     .carousel_background1 {
