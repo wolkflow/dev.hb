@@ -2282,7 +2282,14 @@ min-width: 120px;}
         position: absolute;
         top: 0;
     }
- 
+    .main-who__smallimg {
+    top: 114px;
+    right: 131px;
+    width: 131px;
+    height: 86px;
+    position: absolute;
+    z-index: 1;
+}
 }
 @media (min-width: 992px) {
     .visible-md {
@@ -3114,7 +3121,7 @@ min-width: 180px;}
     
     .main-who__smallimg {
     top: 114px;
-    right: 220px;
+    right: 165px;
     width: 165px;
     height: 111px;
     position: absolute;
