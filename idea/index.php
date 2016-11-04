@@ -60,19 +60,19 @@
 						<h2>Преимущества</h2>
 					</div>
 					<div class="col-sm-4">
-						<a href="#">
+						<a class="idea-advantages__item" href="#">
 							<img src="<?= SITE_TEMPLATE_PATH ?>/images/advan1.jpg" />
 							<span>профессиональный подход</span>
 						</a>
 					</div>
 					<div class="col-sm-4">
-						<a href="#">
+						<a class="idea-advantages__item" href="#">
 							<img src="<?= SITE_TEMPLATE_PATH ?>/images/advan2.jpg" />
 							<span>доставка</span>
 						</a>
 					</div>
 					<div class="col-sm-4">
-						<a href="#">
+						<a class="idea-advantages__item" href="#">
 							<img src="<?= SITE_TEMPLATE_PATH ?>/images/advan3.jpg" />
 							<span>сбалансированное меню</span>
 						</a>

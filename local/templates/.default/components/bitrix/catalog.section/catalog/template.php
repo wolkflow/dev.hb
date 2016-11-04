@@ -72,49 +72,47 @@
         <? } ?>
     </div>
 
-    <div class="container">
-        <div class="container960">
-            <div class="bl_products">
-                <? if (!empty($arResult['ITEMS'])) { ?>
-                    <? foreach ($arResult['ITEMS'] as $item) { ?>
-                        <div class="bl_product_item col-xs-6 col-md-4">
-                            <div class="bl_product_item_top">
-                                <a href="<?= $item['DETAIL_PAGE_URL'] ?>">
-                                <span class="bl_product_item_image">
-                                    <img src="/i.php?src=<?= $item['PREVIEW_PICTURE']['SRC'] ?>&=143&h=219" />
-                                    <div class="bl_product_item_descr">
-                                        <div class="bl_product_item_descr_tb">
-                                            <div class="bl_product_item_descr_td">
-                                                <p>ПИЩЕВАЯ ЦЕННОСТЬ <br>(на 100 г)</p>
-                                                <ul>
-                                                    <li><b>Белки:</b>    <?= $item['PROPERTIES']['PROTEINS']['VALUE'] ?> г</li>
-                                                    <li><b>Жиры:</b>     <?= $item['PROPERTIES']['FATS']['VALUE'] ?> г</li>
-                                                    <li><b>Углеводы:</b> <?= $item['PROPERTIES']['CARBOHYDRATES']['VALUE'] ?> г</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="bl_product_item__buy js-buy" data-product="<?= $item['ID'] ?>">
-                                            Купить
+    <div class="container main-unit hei6">
+        <div class="row">
+            <? if (!empty($arResult['ITEMS'])) { ?>
+                <? foreach ($arResult['ITEMS'] as $item) { ?>
+                    <div class="bl_product_item col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                        <div class="bl_product_item_top">
+                            <a href="<?= $item['DETAIL_PAGE_URL'] ?>">
+                            <span class="bl_product_item_image">
+                                <img src="/i.php?src=<?= $item['PREVIEW_PICTURE']['SRC'] ?>&=143&h=219" />
+                                <div class="bl_product_item_descr">
+                                    <div class="bl_product_item_descr_tb">
+                                        <div class="bl_product_item_descr_td">
+                                            <p>ПИЩЕВАЯ ЦЕННОСТЬ <br>(на 100 г)</p>
+                                            <ul>
+                                                <li><b>Белки:</b>    <?= $item['PROPERTIES']['PROTEINS']['VALUE'] ?> г</li>
+                                                <li><b>Жиры:</b>     <?= $item['PROPERTIES']['FATS']['VALUE'] ?> г</li>
+                                                <li><b>Углеводы:</b> <?= $item['PROPERTIES']['CARBOHYDRATES']['VALUE'] ?> г</li>
+                                            </ul>
                                         </div>
                                     </div>
-                                </span>
-                                <span class="bl_product_item_price">
-                                    <?= $item['PRICES']['BASE']['VALUE'] ?>
-                                    <i class="rub"></i>
-                                </span>
-                                </a>
-                            </div>
-                            <div class="bl_product_item_name">
-                                <a href="javascript:void(0)">
-                                    <?= $item['NAME'] ?>
-                                </a>
-                            </div>
+                                    <div class="bl_product_item__buy js-buy" data-product="<?= $item['ID'] ?>">
+                                        Купить
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="bl_product_item_price">
+                                <?= $item['PRICES']['BASE']['VALUE'] ?>
+                                <i class="rub"></i>
+                            </span>
+                            </a>
                         </div>
-                    <? } ?>
-                <? } else { ?>
-                    <p>К сожалению, список товаров пуст</p>
+                        <div class="bl_product_item_name">
+                            <a href="javascript:void(0)">
+                                <?= $item['NAME'] ?>
+                            </a>
+                        </div>
+                    </div>
                 <? } ?>
-            </div>
+            <? } else { ?>
+                <p>К сожалению, список товаров пуст</p>
+            <? } ?>
         </div>
     </div>
 

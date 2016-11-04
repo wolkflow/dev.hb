@@ -2,8 +2,8 @@
 
 <? $this->setFrameMode(true); ?>
 
-<div class="main-who">
-    <div class="container">
+
+    <div class="container main-unit hei6">
         <div class="row">
             <div class="col-sm-7">
                 <div class="main-who__text">
@@ -25,4 +25,3 @@
             </div>
         </div>
     </div>
-</div>

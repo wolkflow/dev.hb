@@ -45,7 +45,7 @@
 								</div>
 								<nav class="menu hidden-xs">
 									<ul>
-										<li><a href="/about/">о нас</a>
+										<li><a href="javascript:void(0)">о нас</a>
 											<ul>
 												<li><a href="/cook/">Шеф-повар</a></li>
 												<li><a href="/idea/">Идеология</a></li>

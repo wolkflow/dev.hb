@@ -36,37 +36,47 @@
             );
         ?>
     </div>
-    
-    <h1><?= $arResult['NAME'] ?></h1>
-    <div class="one_product">
-        <div class="one_product_price_buy">
-            <span class="one_product_price">
-                <?= $arResult['PRICES']['BASE']['VALUE'] ?> Р
-            </span>
-            <a href="javascript:void(0)" class="button button_white js-buy" data-product="<?= $arResult['ID'] ?>">Купить</a>
-        </div>
-        <div class="one_product_char">
-            <div class="one_product_char_header">ПИЩЕВАЯ ЦЕННОСТЬ <span>(на 100 г)</span></div>
-            <div class="one_product_chars clearfix">
-                <div class="one_product_char_item">
-                    <b>Белки</b>
-                    <span><?= $arResult['PROPERTIES']['PROTEINS']['VALUE'] ?> г</span>
+    <div class="container title_element1">
+        <h1><?= $arResult['NAME'] ?></h1>
+    </div>
+    <div class="container main-unit hei6">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="one_product_price_buy">
+                    <span class="one_product_price">
+                        <?= $arResult['PRICES']['BASE']['VALUE'] ?> Р
+                    </span>
+                    <a href="javascript:void(0)" class="button button_white js-buy" data-product="<?= $arResult['ID'] ?>">Купить</a>
                 </div>
-                <div class="one_product_char_item">
-                    <b>Жиры</b>
-                    <span><?= $arResult['PROPERTIES']['FATS']['VALUE'] ?> г</span>
-                </div>
-                <div class="one_product_char_item">
-                    <b>Углеводы</b>
-                    <span><?= $arResult['PROPERTIES']['CARBOHYDRATES']['VALUE'] ?> г</span>
+                <div class="one_product_char">
+                    <div class="one_product_char_header">ПИЩЕВАЯ ЦЕННОСТЬ <span>(на 100 г)</span></div>
+                    <div class="one_product_chars clearfix">
+                        <div class="one_product_char_item">
+                            <b>Белки</b>
+                            <span><?= $arResult['PROPERTIES']['PROTEINS']['VALUE'] ?> г</span>
+                        </div>
+                        <div class="one_product_char_item">
+                            <b>Жиры</b>
+                            <span><?= $arResult['PROPERTIES']['FATS']['VALUE'] ?> г</span>
+                        </div>
+                        <div class="one_product_char_item">
+                            <b>Углеводы</b>
+                            <span><?= $arResult['PROPERTIES']['CARBOHYDRATES']['VALUE'] ?> г</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="one_product_tx">
-            <div class="one_product_tx_header">Описание</div>
-            <div class="one_product_tx_c">
-                <?= $arResult['PREVIEW_TEXT'] ?>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 imege1">
+                <img src="http://ua.badgood.info/photos/notes/1/72/71027/568269f831.jpg">
             </div>
+            
+                <div class="one_product_tx">
+                    <div class="one_product_tx_header">Описание</div>
+                    <div class="one_product_tx_c">
+                        <?= $arResult['PREVIEW_TEXT'] ?>
+                    </div>
+                </div>
         </div>
     </div>
+    
 </section>
