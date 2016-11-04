@@ -426,6 +426,7 @@ h2 {
 .main-who_images {
     text-align: right;
     position: relative;
+    top: 0;
 }
 .main-who__bigimg {
     position: relative;
@@ -434,14 +435,7 @@ h2 {
 .main-who_images img {
     max-width: 100%;
 }
-.main-who__smallimg {
-    top: 114px;
-    left: 0;
-    width: 220px;
-    height: 143px;
-    position: absolute;
-    z-index: 1;
-}
+
 .main-who__text {
     padding-top: 54px;
 }
@@ -2278,6 +2272,16 @@ min-width: 120px;}
         height: 209px;
     }
     
+    .poz1 {
+        width: 100%;
+        position: relative;
+    }
+    
+    .poz2 {
+        width: 100%;
+        position: absolute;
+        top: 0;
+    }
  
 }
 @media (min-width: 992px) {
@@ -3096,6 +3100,26 @@ min-width: 180px;}
   .hei9 {
         height: 209px;
     }
+    
+    .poz1 {
+        width: 100%;
+        position: relative;
+    }
+    
+    .poz2 {
+        width: 100%;
+        position: absolute;
+        top: 0;
+    }
+    
+    .main-who__smallimg {
+    top: 114px;
+    right: 220px;
+    width: 165px;
+    height: 111px;
+    position: absolute;
+    z-index: 1;
+}
   
 }
 @media (min-width: 1200px) {
@@ -3894,6 +3918,26 @@ min-width: 180px;}
   .hei9 {
         height: 209px;
     }
+    
+    .poz1 {
+        width: 100%;
+        position: relative;
+    }
+    
+    .poz2 {
+        width: 100%;
+        position: absolute;
+        top: 0;
+    }
+    
+    .main-who__smallimg {
+    top: 114px;
+    right: 220px;
+    width: 220px;
+    height: 143px;
+    position: absolute;
+    z-index: 1;
+}
 
 }
 @media (min-width: 1340px) {
@@ -4464,5 +4508,25 @@ min-width: 180px; }
   .hei9 {
         height: 209px;
     }
+    
+    .poz1 {
+        width: 100%;
+        position: relative;
+    }
+    
+    .poz2 {
+        width: 100%;
+        position: absolute;
+        top: 0;
+    }
+    
+    .main-who__smallimg {
+    top: 114px;
+    right: 220px;
+    width: 220px;
+    height: 143px;
+    position: absolute;
+    z-index: 1;
+}
     
 }
