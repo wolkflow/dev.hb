@@ -26,62 +26,35 @@
 </div>*/ ?>
 
 <div id="carousel" class="carousel slide">
-  <!-- Индикаторы слайдов -->
-  <div class="container1">
-  <ol class="carousel-indicators">
-    <li data-target="#carousel" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel" data-slide-to="1"></li>
-    <li data-target="#carousel" data-slide-to="2"></li>
-  </ol>
-  </div>
+    <div class="container1">
+        <ol class="carousel-indicators">
+            <? $first = true ?>
+            <? foreach ($arResult['ITEMS'] as $i => $item) { ?>
+                <li data-target="#carousel" data-slide-to="<?= $i ?>" <?= ($first) ? ('class="active"') : ('') ?>></li>
+                <? $first = false ?>
+            <? } ?>
+        </ol>
+    </div>
 
-  <!-- Слайды -->
-  <div class="carousel-inner">
-        <div class="item active">
-            <img src="http://educationcareerarticles.com/wp-content/uploads/2014/07/Chef6.jpg" alt="">
-            <div class="carousel-caption container hei8">
-                <div class="row">
-                    <div class="col-sm-7 col-md-7 col-lg-7">
-                        <div class="carousel_background1">
-                        </div>
-                        <div class="carousel_content1">
-                            <h3>Популяризация здоровой и полезной еды</h3>
-                            <p>В бешеном ритме современного человека зачастую не остается времени на приготовление хорошей и сбалансированной еды.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <img src="http://meownauts.com/wp-content/uploads/2015/11/mgid-uma-image-mtv.com-10719123.jpg" alt="">
-            <div class="carousel-caption container hei8">
-                <div class="row">
-                    <div class="col-sm-7 col-md-7 col-lg-7">
-                        <div class="carousel_background1">
-                        </div>
-                        <div class="carousel_content1">
-                            <h3>Популяризация здоровой и полезной еды</h3>
-                            <p>В бешеном ритме современного человека зачастую не остается времени на приготовление хорошей и сбалансированной еды.</p>
+    <div class="carousel-inner">
+        <? $first = true ?>
+        <? foreach ($arResult['ITEMS'] as $item) { ?>
+            <div class="item <?= ($first) ? ('active') : ('') ?>">
+                <img src="/i.php?src=<?= $item['PREVIEW_PICTURE']['SRC'] ?>&w=790&h=516" />
+                <div class="carousel-caption container hei8">
+                    <div class="row">
+                        <div class="col-sm-7 col-md-7 col-lg-7">
+                            <div class="carousel_background1"></div>
+                            <div class="carousel_content1">
+                                <h3><?= $item['NAME'] ?></h3>
+                                <p><?= $item['PREVIEW_TEXT'] ?></p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="item">
-            <img src="http://mypizzagrill.ru/wp-content/uploads/2014/12/Chef9.jpg" alt="">
-            <div class="carousel-caption container hei8">
-                <div class="row">
-                    <div class="col-sm-7 col-md-7 col-lg-7">
-                        <div class="carousel_background1">
-                        </div>
-                        <div class="carousel_content1">
-                            <h3>Популяризация здоровой и полезной еды</h3>
-                            <p>В бешеном ритме современного человека зачастую не остается времени на приготовление хорошей и сбалансированной еды.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-  </div>
+            <? $first = false ?>
+        <? } ?>
+    </div>
 </div>
 
