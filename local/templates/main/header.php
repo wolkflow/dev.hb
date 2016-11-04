@@ -7,7 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		
         <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-		
+		<script src="<?= SITE_TEMPLATE_PATH ?>/js/bootstrap.js"></script>
+        
         <? $APPLICATION->ShowHead() ?>
         <? /*
         <link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/css/bootstrap.css" type="text/css" />

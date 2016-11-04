@@ -26,14 +26,14 @@
 </div>*/ ?>
 
 <div id="carousel" class="carousel slide">
-  <!-- Indicators -->
+  <!-- Индикаторы слайдов -->
   <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
   </ol>
 
-  <!-- Wrapper for slides -->
+  <!-- Слайды -->
   <div class="carousel-inner">
         <div class="item active">
           <img src="http://educationcareerarticles.com/wp-content/uploads/2014/07/Chef6.jpg" alt=" ">
@@ -58,15 +58,12 @@
         </div>
   </div>
 
-  <!-- Controls -->
-  <a href="#carousel"></a>
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
+  <!-- Стрелки переключения слайдов -->
+  <a href="#carousel" class="left carousel-control" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
   </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
+  <a href="#carousel" class="right carousel-control" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
   </a>
 </div>
 
