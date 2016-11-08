@@ -10,16 +10,16 @@
 			<div class="center page-content clearfix ots1">
 				<div class="order_steps">
 					<div class="order_step">
-						<span>1</span>
-						<p>Выберите <a href="/#programs">Программу питания</a></p>
+						<span class="number animated slideInLeft">1</span>
+						<p class="animated slideInRight">Выберите <a href="/#programs">Программу питания</a></p>
 					</div>
 					<div class="order_step">
-						<span>2</span>
-						<p>Выберите количество дней</p>
+						<span class="number animated slideInLeft">2</span>
+						<p class="animated slideInRight">Выберите количество дней</p>
 					</div>
 					<div class="order_step">
-						<span>3</span>
-						<p>
+						<span class="number animated slideInLeft">3</span>
+						<p class="animated slideInRight">
 							Ознакомьтесь с 
 							<a href="/upload/contract.pdf" target="_blank">договором</a> 
 							и 
@@ -27,16 +27,16 @@
 						</p>
 					</div>
 					<div class="order_step">
-						<span>4</span>
-						<p>Оплатите заказ</p>
+						<span class="number animated slideInLeft">4</span>
+						<p class="animated slideInRight">Оплатите заказ</p>
 					</div>
 					<div class="order_step">
-						<span>5</span>
-						<p>Курьеры доставляют заказы ежедневно по утрам</p>
+						<span class="number animated slideInLeft">5</span>
+						<p class="animated slideInRight">Курьеры доставляют заказы ежедневно по утрам</p>
 					</div>
 					<div class="order_step">
-						<span>6</span>
-						<p>
+						<span class="number animated slideInLeft">6</span>
+						<p class="animated slideInRight">
                             Если у вас возникли вопросы &mdash; 
                             <a href="javascript:void(0)" class="popup-opener" data-popup="#callback-popup">свяжитесь с нами</a>!
                         </p>

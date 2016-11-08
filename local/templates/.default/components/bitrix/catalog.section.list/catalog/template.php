@@ -3,6 +3,7 @@
 <? $this->setFrameMode(true); ?>
 
 <? if (!empty($arResult['SECTIONS'])) { ?>
+    
     <div class="bl_catalog_filter_left">
         <ul>
             <? foreach ($arResult['SECTIONS'] as $section) { ?>

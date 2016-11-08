@@ -68,7 +68,7 @@
                     </div>
                     <div class="form-row">
                         <span class="label big">Пол</span>
-                        <div class="input">
+                        <div class="input radios">
                             <label class="radio">
                                 <input type="radio" name="PERSONAL_GENDER" value="M" <?= ($arResult['arUser']['PERSONAL_GENDER'] == 'M') ? ('checked') : ('') ?> />
                                 <span>мужской</span>

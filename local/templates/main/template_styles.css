@@ -7953,7 +7953,7 @@ a.button, a.button-white {
 .order_step + .order_step {
   margin-top: 30px; }
 
-.order_step span {
+.order_step span.number {
   position: absolute;
   left: 0;
   top: 10px;
@@ -7965,9 +7965,10 @@ a.button, a.button-white {
   font-style: normal;
   font-stretch: normal;
   line-height: 1;
-  color: #64b357; }
+  color: #64b357; 
+  z-index: 600;}
 
-.order_step span:after {
+.order_step span.number:after {
   content: '';
   display: block;
   width: 81px;
@@ -7975,7 +7976,13 @@ a.button, a.button-white {
   background: #191919;
   position: absolute;
   right: -72px;
-  top: 33px; }
+  top: 33px; 
+  z-index: 600;}
+  
+.order_step p {
+    position: relative;
+    z-index: 300;
+}
 
 
 .p_order_delivery p {
@@ -8819,3 +8826,6 @@ a.button, a.button-white {
     color: #878787;
 }
 
+.mtop50 {
+    margin-top: 80px;
+}
