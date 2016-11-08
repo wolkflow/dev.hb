@@ -8,6 +8,7 @@
 		
         <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 		<script src="<?= SITE_TEMPLATE_PATH ?>/js/bootstrap.js"></script>
+        <script src="<?= SITE_TEMPLATE_PATH ?>/js/jquery.tabslideout.js"></script>
         
         <? $APPLICATION->ShowHead() ?>
         <? /*
@@ -83,8 +84,8 @@
 								</span>
 								<div class="headerContacts-links">
 									<ul>
-										<li><a href="#"><i class="icon-12 icon-inst"></i></a></li>
-										<li><a href="#"><i class="icon-12 icon-fb"></i></a></li>
+										<li><a href="javascript:void(0)"><i class="icon-12 icon-inst"></i></a></li>
+										<li><a href="javascript:void(0)"><i class="icon-12 icon-fb"></i></a></li>
 									</ul>
 								</div>
 							</div>

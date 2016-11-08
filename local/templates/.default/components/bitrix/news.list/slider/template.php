@@ -25,6 +25,7 @@
                             <div class="carousel_background1"></div>
                             <div class="carousel_content1">
                                 <h3><?= $item['NAME'] ?></h3>
+                                
                                 <p><?= $item['PREVIEW_TEXT'] ?></p>
                             </div>
                         </div>

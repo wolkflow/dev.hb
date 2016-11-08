@@ -2668,6 +2668,12 @@ input[type="search"] {
   margin-top: 0;
   margin-left: 10px;
 }
+
+.radios .radio {
+    cursor: pointer;
+    display: inline-block;
+}
+
 input[type="radio"][disabled],
 input[type="checkbox"][disabled],
 input[type="radio"].disabled,
@@ -7074,7 +7080,7 @@ input[type="tel"] {
 .radio input[type="radio"] {
   display: none; }
   .radio input[type="radio"]:checked + span {
-    color: #252525; }
+    color: #64b357; }
 
 .radio span {
   display: inline-block;
@@ -7122,7 +7128,8 @@ textarea {
   font: inherit;
   line-height: 42px;
   height: 126px;
-  color: #878787; }
+  color: #878787;
+  font-size: 15px;  }
 
 button,
 input[type="button"],
@@ -7213,7 +7220,8 @@ a.button, a.button-white {
   .popup-container.popup-container-right {
     border: 1px solid #252525;
     border-right: none;
-    margin: 50px 0 0 170px;
+    margin-top: 50px;
+    margin-left: 12%;
     text-align: left;
     -webkit-transform: translateX(100%);
             transform: translateX(100%); }
@@ -7257,7 +7265,7 @@ a.button, a.button-white {
 .popup-content {
   display: inline-block;
   vertical-align: top;
-  width: 880px;
+  width: 70%;
   text-align: left;
   overflow-y: auto; }
   .popup-content h2 {
@@ -7458,7 +7466,13 @@ a.button, a.button-white {
 .idea-advantages {
   padding-top: 11px; }
   
-    
+.error-text {
+  margin-bottom: 29px;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #b36457;
+}
 
 .zakaz-text {
   margin-bottom: 49px;
@@ -8744,4 +8758,14 @@ a.button, a.button-white {
     width: 1px;
 }
 
+
+
+/*
+.popup-panel {
+	padding: 20px;
+	width: 250px;
+	background: #eeeeee;
+	border: #282828 2px solid;
+}
+*/
 

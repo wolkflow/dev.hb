@@ -20,30 +20,32 @@
 			</div>
 		</div>
 	</div>
+    
 	<div class="cross cross-right cross1">
-	<div class="cross-line"></div>
-	<div class="cross-image"></div>
-</div>
-<div class="container main-unit">
-	<div class="row">
-		<div class="col-sm-7">
-			<article class="page-content__article text-unit">
-				<?= $arResult['DETAIL_TEXT'] ?>
-			</article>
-		</div>
-		<div class="col-sm-5"></div>
-		<? if (!empty($arResult['PROPERTIES']['VIDEO']['VALUE'])) { ?>
-            <div class="col-sm-12 col-xs-12">
-                <article class="page-content__video">
-                    <iframe 
-                        src="<?= $arResult['PROPERTIES']['VIDEO']['VALUE'] ?>" 
-                        frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
-                    ></iframe>
+        <div class="cross-line"></div>
+        <div class="cross-image"></div>
+    </div>
+    
+    <div class="container main-unit">
+        <div class="row">
+            <div class="col-sm-7">
+                <article class="page-content__article text-unit">
+                    <?= $arResult['DETAIL_TEXT'] ?>
                 </article>
             </div>
-		<? } ?>
-	</div>
-</div>	
+            <div class="col-sm-5"></div>
+            <? if (!empty($arResult['PROPERTIES']['VIDEO']['VALUE'])) { ?>
+                <div class="col-sm-12 col-xs-12">
+                    <article class="page-content__video">
+                        <iframe 
+                            src="<?= $arResult['PROPERTIES']['VIDEO']['VALUE'] ?>" 
+                            frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
+                        ></iframe>
+                    </article>
+                </div>
+            <? } ?>
+        </div>
+    </div>	
 </div>
 
 <!--<div class="container">

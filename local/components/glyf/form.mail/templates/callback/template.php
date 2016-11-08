@@ -2,10 +2,10 @@
 
 <? $this->setFrameMode(true) ?>
 
-<? if (!empty($arResult['ERROR'])) { ?>
+<? if (!empty($arResult['ERRORS'])) { ?>
     <script>
         $(document).ready(function() {
-           $('#callback-popup').addClass('is-active');
+            $('#callback-popup').addClass('is-active');
         });
     </script>
 <? } ?>
@@ -15,6 +15,10 @@
     Если у вас есть вопросы, оставьте свой номер телефона, 
     и мы перезвоним вам в любое удобное время.
 </p>
+
+<? if (!empty($arResult['ERRORS'])) { ?>
+    <p class="error-text"><?= implode('<br/>', (array) $arResult['ERRORS']) ?></p>
+<? } ?>
 
 <form class="form" method="post" id="js-form-mail-callback-id">
     <input type="hidden" name="<?= $arParams['FORM'] ?>" value="<?= $arParams['FORM'] ?>" />
@@ -36,7 +40,7 @@
             <textarea name="MESSAGE"><?= $arResult['DATA']['MESSAGE'] ?></textarea>
         </div>
     </div>
-    <div class="form-row">
+    <div class="form-row radios">
         <span class="label big">Удобное время</span>
         <div class="input">
             <label class="radio">
