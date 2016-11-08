@@ -13,8 +13,7 @@ class Order extends \Glyf\Core\Helpers\SaleOrder
         
         $bxorder = \Bitrix\Sale\Order::load($this->getID());
         $collect = $bxorder->getPaymentCollection();
-        
-        $payment = $collect->getItemById(PAYSYSTEM_DEFAULT); //var_dump($collect, $payment); die();
+        $payment = $collect->getItemById($this->getID());
         $params  = \Bitrix\Sale\PaySystem\Manager::getById($payment->getPaymentSystemId());
         $service = new \Bitrix\Sale\PaySystem\Service($params);
 

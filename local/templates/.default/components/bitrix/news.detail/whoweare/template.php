@@ -2,7 +2,7 @@
 
 <? $this->setFrameMode(true); ?>
 <div class="poz1">
-    <div class="container main-unit hei6 hei10">
+    <div class="container main-unit hei6 hei11">
         <div class="row">
             <div class="col-sm-7">
                 <div class="main-who__text">
@@ -14,7 +14,10 @@
             </div>
         </div>
     </div>
-    
+    <div class="cross" data-side="left">
+        <div class="line_to"></div>
+        <div class="cross_to"></div>
+    </div>
     <div class="poz2">
         <div class="main-who_images">
             <? if (!empty($arResult['PREVIEW_PICTURE']['SRC'])) { ?>

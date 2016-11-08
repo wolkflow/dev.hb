@@ -1,5 +1,5 @@
 // AJAX-загрузка html.
-function getRemoteHTML(link, selector, data)
+function getRemoteHTML(link, selector, data, callback)
 {
     $.ajax({
         url: '/remote/include/' + link + '/',
@@ -7,6 +7,7 @@ function getRemoteHTML(link, selector, data)
         type: 'POST',
         success: function (response) {
             $(selector).html(response);
+            callback();
         },
         error: function() {
             
@@ -14,7 +15,7 @@ function getRemoteHTML(link, selector, data)
     });
 }
 
-
+// Обновление корзины.
 function RefreshBasket()
 {
     var empty = ($('#js-basket-button-wrapper-id').find('#js-basket-button-id').length == 0);
@@ -111,14 +112,14 @@ $(function(){
         }
         
         $('.cross:not(.animated)').each(function() {
-            var $this = $(this);
-            var $that = $this.find('.cross-line');
+            var $that = $(this);
             
             if (height >= $that.offset().top)  {
-                $that.animate({
-                    width: width
-                }, {duration: 1100, easing: 'easeOutQuart'});
-                $this.addClass('animated');
+                if ($that.data('side') == 'left') {
+                    $that.addClass('animated slideInLeft');
+                } else {
+                    $that.addClass('animated slideInRight');
+                }
             }
         });
     });
@@ -140,11 +141,11 @@ $(function(){
         
         $('#js-basket-button-id').hide();
         
-        getRemoteHTML(remote, '#js-popup-content');
-
-	    $('body').addClass('popup-opened');
-        $('#popup').addClass('is-active');
-        $('#popup .popup-container').removeClass('slideOutLeft').addClass('animated slideInLeft');
+        getRemoteHTML(remote, '#js-popup-content', {}, function() {
+            $('body').addClass('popup-opened');
+            $('#popup').addClass('is-active');
+            $('#popup .popup-container').removeClass('slideOutLeft').addClass('animated slideInLeft');
+        });
         
 	    return false;
         /*setPopupHeight();*/
@@ -273,17 +274,34 @@ $(window).on('load resize', function(){
     var $toggler = $('.bl_menu_scroll_t');
     var currentPeriod;
     var dotsSpace;
-
-    function initPeriod(period) {
+    var $slider = $('.bl_menu_scroll');
+    
+    var cursorY;
+    var startPos;
+    var maxDelta = $('.bl_menu_scroll_bar').height() - $toggler.height();
+    var maxDeltaSlider = $('.bl_chose_days_c_checkboxs').height() - $slider.height() - 12;
+    
+    function initPeriod(period)
+    {
         currentPeriod = period;
         dotsSpace = $checkboxes.length - period;
         setDots(0);
-
+        
+        $slider.data('translateY', 0);
+        $slider.css('transform', 'translateY(0px)');
+        
+        $slider.prop('class', 'bl_menu_scroll scroll_' + period + '_day');
+        
+        maxDeltaSlider = $('.bl_chose_days_c_checkboxs').height() - $slider.height() - 12;
+        
+        /*
         $toggler.data('translateY', 0);
         $toggler.css('transform', 'translateY(0px)');
+        */
     }
 
-    function setDots(start) {
+    function setDots(start)
+    {
         $checkboxes.prop('checked', false);
         $checkboxes.slice(start, start + currentPeriod).prop('checked', true);
 
@@ -302,25 +320,44 @@ $(window).on('load resize', function(){
         })
         .filter(':first').trigger('click');
 
-    var cursorY;
-    var startPos;
-    var maxDelta = $('.bl_menu_scroll_bar').height() - $toggler.height();
+    
+    
+    $slider.on('mousedown', function(event) {
+        cursorY = event.clientY;
+        startPos = parseInt($toggler.data('translateY') || 0);
+        
+        $(document).on('mousemove', function(event) {
+            var delta = startPos + (event.clientY - cursorY);
 
+            if (delta < 0) {
+                delta = 0; 
+            }
+            delta = Math.min(delta, maxDeltaSlider);
+
+            $slider.data('translateY', delta);
+            $slider.css('transform', 'translateY(' + delta + 'px)');
+            
+            setDots(Math.max(Math.round((delta / maxDeltaSlider).toFixed(2) * dotsSpace), 0));
+        });
+    });
+    /*
     $toggler
     .on('mousedown', function(event){
         cursorY = event.clientY;
         startPos = parseInt($toggler.data('translateY') || 0);
 
-        $(document).on('mousemove', function(event){
+        $(document).on('mousemove', function(event) {
             var delta = startPos + (event.clientY - cursorY);
 
-            if (delta < 0) { delta = 0; }
+            if (delta < 0) {
+                delta = 0; 
+            }
 
             delta = Math.min(delta, maxDelta);
 
             $toggler.data('translateY', delta);
             $toggler.css('transform', 'translateY(' + delta + 'px)');
-
+            
             setDots(Math.max(Math.round((delta / maxDelta).toFixed(2) * dotsSpace), 0));
         });
     });
@@ -328,7 +365,11 @@ $(window).on('load resize', function(){
     $(document).on('mouseup', function(event){
         $(this).off('mousemove');
     });
+    */
     
+    $(document).on('mouseup', function(event){
+        $(this).off('mousemove');
+    });
     
     /*
     $('.popup-panel').tabSlideOut({							//Класс панели
@@ -348,7 +389,8 @@ $(window).on('load resize', function(){
 
 
 // Wolk
-function sliderWidth(){
+function sliderWidth()
+{
 	if($('#homeSlider').length) {
 		var logoWidth = $('.logo').width(),
 			menuWidth = $('.menu > ul').width(),

@@ -59,9 +59,9 @@
                                 </label>
                             </div>
                         <? } ?>
-                        <div class="bl_menu_scroll">
+                        <div class="bl_menu_scroll scroll_1_day">
                             <div class="bl_menu_scroll_bar">
-                                <div class="bl_menu_scroll_t"></div>
+                                <? /* <div class="bl_menu_scroll_t"></div> */ ?>
                             </div>
                         </div>
                     </div>

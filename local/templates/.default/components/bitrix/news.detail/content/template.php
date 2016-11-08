@@ -1,7 +1,10 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 
 <? $this->setFrameMode(true); ?>
-
+<div class="cross cross_tree_all" data-side="right">
+        <div class="line_tree"></div>
+        <div class="cross_tree"></div>
+</div>
 <div class="container">
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6">
@@ -20,11 +23,6 @@
 			</div>
 		</div>
 	</div>
-    
-	<div class="cross cross-right cross1">
-        <div class="cross-line"></div>
-        <div class="cross-image"></div>
-    </div>
     
     <div class="container main-unit">
         <div class="row">

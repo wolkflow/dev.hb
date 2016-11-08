@@ -7188,7 +7188,7 @@ a.button, a.button-white {
   overflow: hidden;
 }
 .popup {
-    -vendor-animation-duration: 3s;
+  -vendor-animation-duration: 3s;
   -vendor-animation-delay: 2s;
 
   display: none;
@@ -8567,14 +8567,34 @@ a.button, a.button-white {
 
 .bl_menu_scroll {
   position: absolute;
-  top: 54px;
+  top: 28px;
   right: 48px;
-  width: 7px;
+  width: 40px;
   height: 108px;
-  background: url(./images/scrollbar.png) no-repeat 0 0; }
+  background: url(./images/scrollbar.png) no-repeat 0 0;
+  background-position: center;
+  cursor: ns-resize;
+}
+
+.scroll_1_day {
+    height: 16px;
+    background: url(./images/scrollbar1.png) no-repeat 0 0;
+}
+
+.scroll_5_day {
+    height: 108px;
+    background: url(./images/scrollbar5.png) no-repeat 0 0;
+}
+
+.scroll_7_day {
+    height: 154px;
+    background: url(./images/scrollbar7.png) no-repeat 0 0;
+}
+
 
 .bl_menu_scroll_bar {
-  margin-top: 12px;
+  margin-top: 44px;
+  margin-left: 16px;
   width: 7px;
   height: 84px; }
 
@@ -8582,7 +8602,7 @@ a.button, a.button-white {
   width: 7px;
   height: 18px;
   background: url(./images/scrollbar_toggler.png) no-repeat 0 0;
-  cursor: ns-resize;
+  
   will-change: transform; }
 
 
@@ -8708,6 +8728,12 @@ a.button, a.button-white {
     margin-bottom: 15px;
 }
 
+
+.cross {
+  -vendor-animation-duration: 1s;
+  -vendor-animation-delay: 1s;
+}
+
 .cross.cross-left {
     width: 100%;
     position: absolute;
@@ -8786,6 +8812,7 @@ a.button, a.button-white {
     color: #252525;
     text-transform: uppercase;
     cursor: pointer;
+    z-index: 1000;
 }
 
 .basket-popup-button span {
