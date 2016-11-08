@@ -9,7 +9,7 @@ $(document).ready(function() {
             type: 'post',
             success: function(response) {
                 if (response.status) {
-                    
+                    RefreshBasket();
                 }
             }
         });

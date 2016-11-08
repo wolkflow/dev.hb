@@ -8,7 +8,7 @@
     <div class="bl_catalog_filter clearfix">
         <div class="bg4">
         </div>
-        <div class="container2 bg1">
+        <div id="js-catalog-sections-id" class="container2 bg1 animated bounceInRight">
             <div class="row">
                 <div class="col-sm-7 col-md-7 col-lg-7 bg1">
                     <?	// Разделы каталога.

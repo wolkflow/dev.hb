@@ -19,6 +19,7 @@
                 success: function(response) {
                     if (response.status) {
                         $('#js-basket-total-price-id').html(response.data['total']);
+                        RefreshBasket();
                     }
                 }
             });
@@ -40,10 +41,11 @@
                         $that.closest('.basket-item').remove();
                         
                         if ($('#js-baskets-id .basket-item').length <= 0) {
-                            $('#js-basket-wrap-id').append('<p>Корзина пуста</p>');
+                            $('#js-basket-wrap-id').html('<p>Корзина пуста</p>');
                         } else {
                             $('#js-basket-total-price-id').html(response.data['total']);
                         }
+                        RefreshBasket();
                     }
                 }
             });

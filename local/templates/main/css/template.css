@@ -2082,7 +2082,7 @@ body {
         font-stretch: normal;
         line-height: 1.62;
         color: #878787;
-        margin-top: 51px;
+        margin-top: 30px;
     }
     
     .carousel_background1 {
@@ -2333,6 +2333,44 @@ margin-bottom: 200.6px;
     margin-bottom: 58px;
     font-size: 36px;
     color: #252525;
+}
+.basket-item__remove {
+    position: relative;
+    margin-top: 104px;
+    margin-right: -30px;
+    width: 100px;
+    height: 23px;
+    font-family: DINPro, Arial, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 300;
+    font-size: 0;
+    text-transform: uppercase;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    background: url(../images/close.png) no-repeat 100% 0;
+    cursor: pointer;
+}
+.line_one {
+  width: 318px;
+  height: 1px;
+  background-color: #000000;
+  /*border: solid 1px #252525;*/
+  margin-top: 32px;
+}
+.cross_one {
+    content: '';
+    margin-top: -8px;
+    /* float: right; */
+    margin-left: 306px;
+    /* margin-left: -1px; */
+    width: 12px;
+    height: 19px;
+    background: -webkit-linear-gradient(top, transparent 32%, #252525 32%, #252525 47%, transparent 47%), -webkit-linear-gradient(left, transparent 42%, #252525 42%, #252525 58%, transparent 58%);
+    background: linear-gradient(to bottom, transparent 32%, #252525 32%, #252525 47%, transparent 47%), linear-gradient(to right, transparent 42%, #252525 42%, #252525 58%, transparent 58%);
 }
 }
 @media (min-width: 992px) {
@@ -2969,7 +3007,7 @@ margin-bottom: 200.6px;
         font-stretch: normal;
         line-height: 1.62;
         color: #878787;
-        margin-top: 76px;
+        margin-top: 34px;
     }
     
     .carousel_background1 {
@@ -3221,6 +3259,44 @@ margin-bottom: 263.5px;
     margin-bottom: 76px;
     font-size: 46.5px;
     color: #252525;
+}
+.basket-item__remove {
+    position: relative;
+    margin-top: 104px;
+    margin-right: -30px;
+    width: 100px;
+    height: 23px;
+    font-family: DINPro, Arial, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 300;
+    font-size: 0;
+    text-transform: uppercase;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    background: url(../images/close.png) no-repeat 100% 0;
+    cursor: pointer;
+}
+.line_one {
+  width: 410px;
+  height: 1px;
+  background-color: #000000;
+  /*border: solid 1px #252525;*/
+  margin-top: 41px;
+}
+.cross_one {
+    content: '';
+    margin-top: -8px;
+    /* float: right; */
+    margin-left: 398px;
+    /* margin-left: -1px; */
+    width: 12px;
+    height: 19px;
+    background: -webkit-linear-gradient(top, transparent 32%, #252525 32%, #252525 47%, transparent 47%), -webkit-linear-gradient(left, transparent 42%, #252525 42%, #252525 58%, transparent 58%);
+    background: linear-gradient(to bottom, transparent 32%, #252525 32%, #252525 47%, transparent 47%), linear-gradient(to right, transparent 42%, #252525 42%, #252525 58%, transparent 58%);
 }
 }
 @media (min-width: 1200px) {
@@ -3838,7 +3914,7 @@ margin-bottom: 263.5px;
         font-stretch: normal;
         line-height: 1.62;
         color: #878787;
-        margin-top: 105px;
+        margin-top: 43px;
     }
     
     .carousel_background1 {
@@ -4085,6 +4161,44 @@ margin-bottom: 340px;
     margin-bottom: 98px;
     font-size: 60px;
     color: #252525;
+}
+.basket-item__remove {
+    position: relative;
+    /*margin-top: 104px;*/
+    margin-right: -104px;   
+    width: 100px;
+    height: 23px;
+    font-family: DINPro, Arial, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 300;
+    font-size: 0;
+    text-transform: uppercase;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    background: url(../images/close.png) no-repeat 100% 0;
+    cursor: pointer;
+}
+.line_one {
+  width: 528px;
+  height: 1px;
+  background-color: #000000;
+  /*border: solid 1px #252525;*/
+  margin-top: 53px;
+}
+.cross_one {
+    content: '';
+    margin-top: -8px;
+    /* float: right; */
+    margin-left: 516px;
+    /* margin-left: -1px; */
+    width: 12px;
+    height: 19px;
+    background: -webkit-linear-gradient(top, transparent 32%, #252525 32%, #252525 47%, transparent 47%), -webkit-linear-gradient(left, transparent 42%, #252525 42%, #252525 58%, transparent 58%);
+    background: linear-gradient(to bottom, transparent 32%, #252525 32%, #252525 47%, transparent 47%), linear-gradient(to right, transparent 42%, #252525 42%, #252525 58%, transparent 58%);
 }
 }
 @media (min-width: 1340px) {
@@ -4510,7 +4624,7 @@ margin-bottom: 340px;
         font-stretch: normal;
         line-height: 1.62;
         color: #878787;
-        margin-top: 102px;
+        margin-top: 43px;
     }
     
     .carousel_background1 {
@@ -4696,10 +4810,11 @@ min-width: 180px; }
 }
 
 .hei7 {
-    margin-top: 60px;x
+    margin-top: 60px;
 }
+
 .hei10 {
-margin-bottom: 340px;
+    margin-bottom: 340px;
     position: relative;
     z-index: 10;
 }
@@ -4715,4 +4830,45 @@ margin-bottom: 340px;
     font-size: 60px;
     color: #252525;
 }
+.basket-item__remove {
+    position: relative;
+    /*margin-top: 104px;*/
+    margin-right: -104px;   
+    width: 100px;
+    height: 23px;
+    font-family: DINPro, Arial, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 300;
+    font-size: 0;
+    text-transform: uppercase;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    background: url(../images/close.png) no-repeat 100% 0;
+    cursor: pointer;
 }
+.line_one {
+  width: 528px;
+  height: 1px;
+  background-color: #000000;
+  /*border: solid 1px #252525;*/
+  margin-top: 53px;
+}
+
+.cross_one {
+    content: '';
+    margin-top: -8px;
+    /* float: right; */
+    margin-left: 516px;
+    /* margin-left: -1px; */
+    width: 12px;
+    height: 19px;
+    background: -webkit-linear-gradient(top, transparent 32%, #252525 32%, #252525 47%, transparent 47%), -webkit-linear-gradient(left, transparent 42%, #252525 42%, #252525 58%, transparent 58%);
+    background: linear-gradient(to bottom, transparent 32%, #252525 32%, #252525 47%, transparent 47%), linear-gradient(to right, transparent 42%, #252525 42%, #252525 58%, transparent 58%);
+}
+
+}
+

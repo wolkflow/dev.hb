@@ -14,6 +14,7 @@
                 dataType: 'json',
                 success: function(response) {
                     if (response.status) {
+                        RefreshBasket();
                         location.href = response.data['link'];
                     }
                 }

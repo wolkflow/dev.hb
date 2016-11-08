@@ -340,7 +340,15 @@ switch ($action) {
         }
         jsonresponse(true);
         break;
-        
+    
+    
+    /*
+     * Обновление корзины.
+     
+    case ('refresh-basket'):
+        echo gethtmlremote('/basket-button/index.php');
+        break;
+    */
     
 	default:
 		jsonresponse(false, '', array(), 'Неверный запрос');

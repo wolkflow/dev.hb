@@ -14,6 +14,7 @@
         <? /*
         <link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/css/bootstrap.css" type="text/css" />
         */ ?>
+        <link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/css/animate.css" type="text/css" />
 	    <link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/css/template.css" type="text/css" />
     </head>
     <body>
