@@ -6,7 +6,7 @@
     <div class="bl_catalog_filter clearfix">
         <div class="bg4">
         </div>
-        <div class="container2 bg1 animated bounceInRight">
+        <div class="container2 bg1 animated slideInRight">
             <div class="row">
                 <div class="col-sm-7 col-md-7 col-lg-7 bg1">
                     <?	// Разделы каталога.
@@ -55,7 +55,7 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-12 one_product_price_buy">
                         <span class="one_product_price">
-                            <?= $arResult['PRICES']['BASE']['VALUE'] ?> Р
+                            <?= $arResult['PRICES']['BASE']['VALUE'] ?> <span class="rub">₽</span>
                         </span>
                         <a href="javascript:void(0)" class="button button_white js-buy" data-product="<?= $arResult['ID'] ?>">Купить</a>
                     </div>
@@ -88,56 +88,57 @@
                     <?= $arResult['PREVIEW_TEXT'] ?>
                 </div>
             </div>
-            
-            
             <? if (!empty($arResult['PROPERTIES']['PROGRAM']['VALUE'])) { ?>
                 <div class="one_product_tx_header mtop50">Подходит для программы</div>
-            
-                <?	// Подходит для рограмм питания.
-                    $APPLICATION->IncludeComponent(
-                        "bitrix:news.list",
-                        "programs-situable",
-                        array(
-                            "CURRENTS" => $arResult['PROPERTIES']['PROGRAM']['VALUE'],
-                            "IBLOCK_TYPE" => "products",
-                            "IBLOCK_ID" => "2",
-                            "NEWS_COUNT" => "10",
-                            "SORT_BY1" => "SORT",
-                            "SORT_ORDER1" => "ASC",
-                            "SORT_BY2" => "ID",
-                            "SORT_ORDER2" => "DESC",
-                            "FILTER_NAME" => "",
-                            "FIELD_CODE" => array(),
-                            "PROPERTY_CODE" => array("*"),
-                            "PARENT_SECTION_CODE" => "",
-                            "CACHE_TYPE" => "A",
-                            "CACHE_TIME" => "86400",
-                            "CACHE_FILTER" => "Y",
-                            "PREVIEW_TRUNCATE_LEN" => "0",
-                            "ACTIVE_DATE_FORMAT" => "d.m.Y",
-                            "DISPLAY_PANEL" => "N",
-                            "SET_TITLE" => "N",
-                            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-                            "ADD_SECTIONS_CHAIN" => "N",
-                            "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-                            "PARENT_SECTION" => "",
-                            "DISPLAY_TOP_PAGER"	=> "N",
-                            "DISPLAY_BOTTOM_PAGER" => "N",
-                            "PAGER_TITLE" => "",
-                            "PAGER_SHOW_ALWAYS" => "N",
-                            "PAGER_TEMPLATE" => "",
-                            "PAGER_DESC_NUMBERING" => "N",
-                            "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-                            "PAGER_SHOW_ALL" => "N",
-                            "DISPLAY_DATE" => "Y",
-                            "DISPLAY_NAME" => "Y",
-                            "DISPLAY_PICTURE" => "N",
-                            "DISPLAY_PREVIEW_TEXT" => "Y"
-                        ),
-                        $component
-                    );
-                ?>
             <? } ?>
         </div>
      </div>
+     
+     <? if (!empty($arResult['PROPERTIES']['PROGRAM']['VALUE'])) { ?>
+        <?	// Подходит для рограмм питания.
+            $APPLICATION->IncludeComponent(
+                "bitrix:news.list",
+                "programs-situable",
+                array(
+                    "CURRENTS" => $arResult['PROPERTIES']['PROGRAM']['VALUE'],
+                    "IBLOCK_TYPE" => "products",
+                    "IBLOCK_ID" => "2",
+                    "NEWS_COUNT" => "10",
+                    "SORT_BY1" => "SORT",
+                    "SORT_ORDER1" => "ASC",
+                    "SORT_BY2" => "ID",
+                    "SORT_ORDER2" => "DESC",
+                    "FILTER_NAME" => "",
+                    "FIELD_CODE" => array(),
+                    "PROPERTY_CODE" => array("*"),
+                    "PARENT_SECTION_CODE" => "",
+                    "CACHE_TYPE" => "A",
+                    "CACHE_TIME" => "86400",
+                    "CACHE_FILTER" => "Y",
+                    "PREVIEW_TRUNCATE_LEN" => "0",
+                    "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                    "DISPLAY_PANEL" => "N",
+                    "SET_TITLE" => "N",
+                    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                    "ADD_SECTIONS_CHAIN" => "N",
+                    "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                    "PARENT_SECTION" => "",
+                    "DISPLAY_TOP_PAGER"	=> "N",
+                    "DISPLAY_BOTTOM_PAGER" => "N",
+                    "PAGER_TITLE" => "",
+                    "PAGER_SHOW_ALWAYS" => "N",
+                    "PAGER_TEMPLATE" => "",
+                    "PAGER_DESC_NUMBERING" => "N",
+                    "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                    "PAGER_SHOW_ALL" => "N",
+                    "DISPLAY_DATE" => "Y",
+                    "DISPLAY_NAME" => "Y",
+                    "DISPLAY_PICTURE" => "N",
+                    "DISPLAY_PREVIEW_TEXT" => "Y"
+                ),
+                $component
+            );
+        ?>
+    <? } ?>
+     
 </section>

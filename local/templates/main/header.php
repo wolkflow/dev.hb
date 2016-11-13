@@ -7,18 +7,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		
         <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-		<script src="<?= SITE_TEMPLATE_PATH ?>/js/bootstrap.js"></script>
+		<script src="<?= SITE_TEMPLATE_PATH ?>/js/jquery-ui.min.js"></script>
+        <script src="<?= SITE_TEMPLATE_PATH ?>/js/bootstrap.js"></script>
         <script src="<?= SITE_TEMPLATE_PATH ?>/js/jquery.tabslideout.js"></script>
         
         <? $APPLICATION->ShowHead() ?>
+        
         <? /*
         <link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/css/bootstrap.css" type="text/css" />
         */ ?>
+        <link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/css/jquery-ui.min.css" type="text/css" />
         <link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/css/animate.css" type="text/css" />
 	    <link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/css/template.css" type="text/css" />
+        <? /* <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" /> */ ?>
     </head>
     <body>
-
 		<div id="panel">
 			<? $APPLICATION->ShowPanel() ?>
 		</div>
@@ -48,7 +51,9 @@
 								</div>
 								<nav class="menu hidden-xs">
 									<ul>
-										<li><a href="javascript:void(0)">о нас</a>
+										<li>
+                                            <a id="js-menu-link-about-id" href="javascript:void(0)">о нас</a>
+                                            <? /*
 											<ul>
 												<li><a href="/cook/">Шеф-повар</a></li>
 												<li><a href="/idea/">Идеология</a></li>
@@ -56,8 +61,13 @@
 												<li><a href="/partners/">Наши партнёры</a></li>
 												<li><a href="/contacts/">Контакты</a></li>
 											</ul>
+                                            */ ?>
 										</li>
-										<li><a href="/#programs">программы питания</a></li>
+                                        <? if (strpos($APPLICATION->GetCurPage(false), '/programs/') === false) { ?>
+                                            <li><a id="js-menu-link-programs-id" href="javascript:void(0)">программы питания</a></li>
+                                        <? } else { ?>
+                                            <li><a href="javascript:void(0)">программы питания</a></li>
+                                        <? } ?>
 										<li><a href="/catalog/">holymarket</a></li>
 									</ul>
 								</nav>
@@ -72,6 +82,7 @@
 								</div>
 							</div>
 						</div>
+                        
 						<div class="col-xs-3 col-sm-2 hidden-xs">
 							<div class="headerContacts pull-right">
 								<span class="headerContacts-phone">
@@ -85,8 +96,8 @@
 								</span>
 								<div class="headerContacts-links">
 									<ul>
+                                        <li><a href="javascript:void(0)"><i class="icon-12 icon-fb"></i></a></li>
 										<li><a href="javascript:void(0)"><i class="icon-12 icon-inst"></i></a></li>
-										<li><a href="javascript:void(0)"><i class="icon-12 icon-fb"></i></a></li>
 									</ul>
 								</div>
 							</div>
@@ -129,3 +140,70 @@
 					</div>
 				</div>
 			</header>
+            
+            <div id="js-submenu-about-wrap-id" class="hidden-xs" style="display: none;">
+                <div class="bl_catalog_filter clearfix" style="margin-bottom: 40px; margin-top: -30px;">
+                    <div class="bg4"></div>
+                    <div class="container2 bg1">
+                        <div class="row">
+                            <div class="col-sm-7 col-md-7 col-lg-7 bg1">
+                                <div class="bl_catalog_filter_left">
+                                    <ul>
+                                        <li><a href="/cook/">Шеф-повар</a></li>
+                                        <li><a href="/idea/">Идеология</a></li>
+                                        <li><a href="/order/">Как сделать заказ</a></li>
+                                        <li><a href="/partners/">Наши партнёры</a></li>
+                                        <li><a href="/contacts/">Контакты</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="js-submenu-programs-wrap-id" class="hidden-xs" style="display: none;">
+                <?	// Программы питания.
+                    $APPLICATION->IncludeComponent(
+                        "bitrix:news.list",
+                        "programs-inline",
+                        array(
+                            "IBLOCK_TYPE" => "products",
+                            "IBLOCK_ID" => "2",
+                            "NEWS_COUNT" => "10",
+                            "SORT_BY1" => "SORT",
+                            "SORT_ORDER1" => "ASC",
+                            "SORT_BY2" => "ID",
+                            "SORT_ORDER2" => "DESC",
+                            "FILTER_NAME" => "",
+                            "FIELD_CODE" => array(),
+                            "PROPERTY_CODE" => array("*"),
+                            "PARENT_SECTION_CODE" => "",
+                            "CACHE_TYPE" => "A",
+                            "CACHE_TIME" => "86400",
+                            "CACHE_FILTER" => "Y",
+                            "PREVIEW_TRUNCATE_LEN" => "0",
+                            "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                            "DISPLAY_PANEL" => "N",
+                            "SET_TITLE" => "N",
+                            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                            "ADD_SECTIONS_CHAIN" => "N",
+                            "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                            "PARENT_SECTION" => "",
+                            "DISPLAY_TOP_PAGER"	=> "N",
+                            "DISPLAY_BOTTOM_PAGER" => "N",
+                            "PAGER_TITLE" => "",
+                            "PAGER_SHOW_ALWAYS" => "N",
+                            "PAGER_TEMPLATE" => "",
+                            "PAGER_DESC_NUMBERING" => "N",
+                            "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                            "PAGER_SHOW_ALL" => "N",
+                            "DISPLAY_DATE" => "Y",
+                            "DISPLAY_NAME" => "Y",
+                            "DISPLAY_PICTURE" => "N",
+                            "DISPLAY_PREVIEW_TEXT" => "Y"
+                        ),
+                        $component
+                    );
+                ?>
+            </div>

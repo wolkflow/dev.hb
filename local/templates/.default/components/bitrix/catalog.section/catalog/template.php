@@ -8,7 +8,7 @@
     <div class="bl_catalog_filter clearfix">
         <div class="bg4">
         </div>
-        <div id="js-catalog-sections-id" class="container2 bg1 animated bounceInRight">
+        <div id="js-catalog-sections-id" class="container2 bg1 animated slideInRight">
             <div class="row">
                 <div class="col-sm-7 col-md-7 col-lg-7 bg1">
                     <?	// Разделы каталога.
@@ -41,13 +41,13 @@
                 <div class="col-sm-5 col-md-5 col-lg-5 bg1">
                     <div class="bl_catalog_filter_right">
                         <div class="bl_filter_item">
-                            <span>Сортировка:</span>
+                            <span class="title">Сортировка:</span>
                             <a class="sort <?= $arParams['ELEMENT_SORT_ORDER'] ?>" href="<?= $APPLICATION->GetCurPageParam('order=' . $order, array('order'), false) ?>">
                                 Цена
                             </a>
                         </div>
                         <div class="bl_filter_item">
-                            <span>Фильтр:</span>
+                            <span class="title">Фильтр:</span>
                             <div class="select-cont">
                                 <span class="select">Тип питания</span>
                                 <input type="hidden" />
@@ -109,8 +109,7 @@
                                 </div>
                             </span>
                             <span class="bl_product_item_price">
-                                <?= $item['PRICES']['BASE']['VALUE'] ?>
-                                <i class="rub"></i>
+                                <?= $item['PRICES']['BASE']['VALUE'] ?> <span class="rub">₽</span>
                             </span>
                             </a>
                         </div>

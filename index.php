@@ -45,8 +45,6 @@
         );
     ?>
     
-    <a name="programs"></a>
-    
     <?	// Программы питания.
         $APPLICATION->IncludeComponent(
             "bitrix:news.list",

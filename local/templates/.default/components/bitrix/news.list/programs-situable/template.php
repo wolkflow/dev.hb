@@ -3,7 +3,7 @@
 <? $this->setFrameMode(true); ?>
 
 <div class="bg12"></div>
-<div class="container3 bg1 bg_white animated bounceInRight">
+<div class="container3 bg1 bg_white animated slideInRight">
     <div class="categories__list center hei12">
         <? foreach ($arResult['ITEMS'] as $item) { ?>
             <a href="<?= $item['DETAIL_PAGE_URL'] ?>" class="categories__item <?= (in_array($item['ID'], $arParams['CURRENTS'])) ? ('is-active') : ('') ?>">

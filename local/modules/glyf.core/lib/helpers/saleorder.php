@@ -20,6 +20,9 @@ class SaleOrder
     }
     
     
+    /**
+     * Получение свойств заказа.
+     */
 	public function getProperties($key = 'CODE')
 	{
 		if (!\Bitrix\Main\Loader::includeModule('sale')) {
@@ -35,6 +38,9 @@ class SaleOrder
 	}
 	
 	
+    /**
+     * Получение свойства заказа.
+     */
 	public function getProperty($code, $key = 'CODE')
 	{
 		if (!\Bitrix\Main\Loader::includeModule('sale')) {
@@ -50,6 +56,9 @@ class SaleOrder
 	}
 	
 	
+    /**
+     * Сохранение свойства заказа.
+     */
 	public function saveProperty($code, $value)
 	{
 		if (!\Bitrix\Main\Loader::includeModule('sale')) {
@@ -79,6 +88,9 @@ class SaleOrder
 	}
 	
 	
+    /**
+     * Получение корзин заказа.
+     */
 	public function getBaskets($withprops = true)
 	{
 		if (!\Bitrix\Main\Loader::includeModule('sale')) {
@@ -99,6 +111,9 @@ class SaleOrder
 	}
 	
 	
+    /**
+     * Получение списка статусов.
+     */
 	public static function getStatuses()
 	{
 		if (!\Bitrix\Main\Loader::includeModule('sale')) {
@@ -112,4 +127,27 @@ class SaleOrder
 		}
 		return $items;
 	}
+    
+    
+    /**
+     * Получение ссылки на оплату.
+     */
+    public function getPaymentURL()
+    {
+        if (!\Bitrix\Main\Loader::includeModule('sale')) {
+			return;
+		}
+        
+        $bxorder = \Bitrix\Sale\Order::load($this->getID());
+        $collect = $bxorder->getPaymentCollection();
+        $payment = $collect->getItemById($this->getID());
+        $params  = \Bitrix\Sale\PaySystem\Manager::getById($payment->getPaymentSystemId());
+        $service = new \Bitrix\Sale\PaySystem\Service($params);
+
+        ob_start();
+        $service->initiatePay($payment);
+        $link = ob_get_clean();
+        
+        return $link;
+    }
 }

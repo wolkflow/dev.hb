@@ -55,47 +55,46 @@
         );
     ?>
 	<div class="container main-unit">
-		<div class="row page-content__article2">
-					<div class="col-sm-12 pad1">
-						<h2>Преимущества</h2>
-					</div>
-					<div class="col-sm-4">
-						<a class="idea-advantages__item" href="#">
-							<img src="<?= SITE_TEMPLATE_PATH ?>/images/advan1.jpg" />
-							<span>профессиональный подход</span>
-						</a>
-					</div>
-					<div class="col-sm-4">
-						<a class="idea-advantages__item" href="#">
-							<img src="<?= SITE_TEMPLATE_PATH ?>/images/advan2.jpg" />
-							<span>доставка</span>
-						</a>
-					</div>
-					<div class="col-sm-4">
-						<a class="idea-advantages__item" href="#">
-							<img src="<?= SITE_TEMPLATE_PATH ?>/images/advan3.jpg" />
-							<span>сбалансированное меню</span>
-						</a>
-					</div>
-					<div class="col-sm-4">
-						<a class="idea-advantages__item" href="#">
-							<img src="<?= SITE_TEMPLATE_PATH ?>/images/advan4.jpg" />
-							<span>разнообразие продуктов/блюд</span>
-						</a>
-					</div>
-					<div class="col-sm-4">
-						<a class="idea-advantages__item" href="#">
-							<img src="<?= SITE_TEMPLATE_PATH ?>/images/advan5.jpg" />
-							<span>экономия вашего времени</span>
-						</a>
-					</div>
-					<div class="col-sm-4">
-						<a class="idea-advantages__item" href="#">
-							<img src="<?= SITE_TEMPLATE_PATH ?>/images/advan6.jpg" />
-							<span>забота об организме</span>
-						</a>
-					</div>
-				
+		<div class="row page-content__article2 idea-images">
+                <div class="col-sm-12 pad1">
+                    <h2>Преимущества</h2>
+                </div>
+                <div class="col-sm-4">
+                    <a class="idea-advantages__item" href="#">
+                        <img src="<?= SITE_TEMPLATE_PATH ?>/images/advan1.jpg" />
+                        <span>профессиональный подход</span>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a class="idea-advantages__item" href="#">
+                        <img src="<?= SITE_TEMPLATE_PATH ?>/images/advan2.jpg" />
+                        <span>доставка</span>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a class="idea-advantages__item" href="#">
+                        <img src="<?= SITE_TEMPLATE_PATH ?>/images/advan3.jpg" />
+                        <span>сбалансированное меню</span>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a class="idea-advantages__item" href="#">
+                        <img src="<?= SITE_TEMPLATE_PATH ?>/images/advan4.jpg" />
+                        <span>разнообразие продуктов/блюд</span>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a class="idea-advantages__item" href="#">
+                        <img src="<?= SITE_TEMPLATE_PATH ?>/images/advan5.jpg" />
+                        <span>экономия вашего времени</span>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a class="idea-advantages__item" href="#">
+                        <img src="<?= SITE_TEMPLATE_PATH ?>/images/advan6.jpg" />
+                        <span>забота об организме</span>
+                    </a>
+                </div>
 			</div>
 		</div>
 	</div>

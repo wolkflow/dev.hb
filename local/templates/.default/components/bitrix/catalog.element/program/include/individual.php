@@ -4,6 +4,8 @@
 <script>
     $(document).ready(function() {
         $('#js-buy-button-id').on('click', function() {
+            var $that = $(this);
+            
             $.ajax({
                 url: '/remote/',
                 data: {'action': 'add-to-cart', 'product': <?= $arResult['ID'] ?>, 'type': 'program-individual'},
@@ -11,7 +13,12 @@
                 type: 'post',
                 success: function(response) {
                     if (response.status) {
-                        RefreshBasket();
+                         $that.transfer({
+                            to: '#js-basket-button-id',
+                            duration: 600
+                        }, function() {
+                            RefreshBasket();
+                        });
                     }
                 }
             });

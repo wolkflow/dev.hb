@@ -48,37 +48,36 @@
         );
     ?>
 
-        <div class="container">
-            <h1><?= $arResult['NAME'] ?></h1>
-        </div>
-        <div class="container main-unit">
-            <div class="row">
-                <div class="bl_ind_cont tex1">
-                    <div class="row">
-                        <div class="col-sm-7 hei5">
-                            <h2>Описание</h2>
-                            <p>
-                                <?= $arResult['PREVIEW_TEXT']; ?>
-                            </p>
-                        </div>
-                        <div class="col-sm-5">
-                            <? if (!empty($arResult['PREVIEW_PICTURE']['SRC'])) { ?>
-                                <img src="/i.php?src=<?= $arResult['PREVIEW_PICTURE']['SRC'] ?>&w=411&h=265" align="right" />
-                            <? } ?>
-                        </div>
+    <div class="container">
+        <h1><?= $arResult['NAME'] ?></h1>
+    </div>
+    <div class="container main-unit">
+        <div class="row">
+            <div class="bl_ind_cont tex1">
+                <div class="row">
+                    <div class="col-sm-7 hei5">
+                        <h2>Описание</h2>
+                        <p>
+                            <?= $arResult['PREVIEW_TEXT']; ?>
+                        </p>
+                    </div>
+                    <div class="col-sm-5">
+                        <? if (!empty($arResult['PREVIEW_PICTURE']['SRC'])) { ?>
+                            <img src="/i.php?src=<?= $arResult['PREVIEW_PICTURE']['SRC'] ?>&w=411&h=265" align="right" />
+                        <? } ?>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="cross cross_tree_all_to" data-side="left">
+    </div>
+    <div class="cross cross_tree_all_for" data-side="left">
         <div class="line_to"></div>
         <div class="cross_to"></div>
-        </div>
+    </div>
     
     <? if ($arResult['PROPERTIES']['INDIVIDUAL']['VALUE'] == 'Y') { ?>
         <? include ('include/individual.php'); ?>
     <? } else { ?>
         <? include ('include/common.php'); ?>
     <? } ?>
-    
 </section>

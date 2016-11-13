@@ -5,6 +5,8 @@
 <script>
     $(document).ready(function() {
         $('#js-buy-button-id').on('click', function() {
+            var $that = $(this);
+            
             var variant = $('.js-variant.active');
             var product = variant.data('product');
             var period  = variant.data('period');
@@ -23,7 +25,12 @@
                 type: 'post',
                 success: function(response) {
                     if (response.status) {
-                        RefreshBasket();
+                        $that.transfer({
+                            to: '#js-basket-button-id',
+                            duration: 600
+                        }, function() {
+                            RefreshBasket();
+                        });
                     }
                 }
             });
@@ -69,7 +76,8 @@
                         Выберите дни, перемещая ползунок курсором мыши
                     </div>
                     <div class="bl_chose_days_c_bottom_price">
-                        <span id="js-program-price-id"><?= $arResult['VARIANTS'][PROGRAM_DAYS_1]->getPrice() ?></span> Р
+                        <span id="js-program-price-id"><?= $arResult['VARIANTS'][PROGRAM_DAYS_1]->getPrice() ?></span>
+                         <span class="rub">₽</span>
                     </div>
                 </div>
                 <div class="bl_chose_days_btn">

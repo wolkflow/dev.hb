@@ -1,14 +1,13 @@
         <footer class="siteFooter">
             <div class="bg2"></div>
-            <div class="container2 hei9 bg1">
+            <div id="js-footer-id" class="container4 hei9 bg1">
                 <div class="row">                          
                     <div class="col-lg-9 col-md-9 col-sm-9 foo1">
-                        <div class="menu footerMenu">
+                        <div class="menu footerMenu fo1">
                             <ul>
-                                <li><a href="/about/">о нас</a></li>
-                                <li><a href="/#programs">программы питания</a></li>
+                                <li><a href="/cook/">о нас</a></li>
+                                <li><a href="/#section-programs" class="to-anchor">программы питания</a></li>
                                 <li><a href="/catalog/">holymarket</a></li>
-                                <li><a href="#" class="popup-opener" data-popup="#basket-popup">корзина</a></li>
                             </ul>
                         </div>
                     </div>
@@ -25,10 +24,10 @@
                             </div>
                             <div class="footer-contacts__soc hidden-xs">
                                 <a href="javascript:void(0)">
-                                    <i class="icon-12 icon-inst"></i>
+                                    <i class="icon-12 icon-fb"></i>
                                 </a>
                                 <a href="javascript:void(0)">
-                                    <i class="icon-12 icon-fb"></i>
+                                    <i class="icon-12 icon-inst"></i>
                                 </a>
                             </div>
                         </div>

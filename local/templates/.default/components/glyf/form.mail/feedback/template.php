@@ -11,19 +11,19 @@
             <div class="form-row">
                 <span class="label big">Имя</span>
                 <div class="input">
-                    <input type="text" name="NAME" value="<?= $arResult['DATA']['NAME'] ?>" placeholder="Екатерина Трачук" />
+                    <input type="text" name="NAME" value="<?= $arResult['DATA']['NAME'] ?>" placeholder="Екатерина Трачук" autocomplete="off" />
                 </div>
             </div>
             <div class="form-row">
                 <span class="label big">E-mail</span>
                 <div class="input">
-                    <input type="text" name="EMAIL" value="<?= $arResult['DATA']['EMAIL'] ?>" />
+                    <input type="text" name="EMAIL" value="<?= $arResult['DATA']['EMAIL'] ?>" autocomplete="off" />
                 </div>
             </div>
             <div class="form-row">
                 <span class="label big">Телефон</span>
                 <div class="input">
-                    <input type="text" name="PHONE" value="<?= $arResult['DATA']['PHONE'] ?>" />
+                    <input type="text" name="PHONE" value="<?= $arResult['DATA']['PHONE'] ?>"autocomplete="off" />
                 </div>
             </div>
             <div class="form-row">

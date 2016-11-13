@@ -1,3 +1,12 @@
+$.extend($.easing, {
+    def: 'easeOutQuad',
+    easeOutQuart: function (x, t, b, c, d) {
+        return -c * ((t = t/d - 1) * t * t * t - 1) + b;
+    },
+});
+
+
+
 // AJAX-загрузка html.
 function getRemoteHTML(link, selector, data, callback)
 {
@@ -100,7 +109,31 @@ $.extend($.easing, {
 
 $(function(){
     
+    $('#js-menu-link-about-id').on('click', function() {
+        if ($(this).data('open')) {
+            $('#js-submenu-about-wrap-id').removeClass('slideInRight').addClass('animated slideOutRight');
+            setTimeout(function() {
+                $('#js-submenu-about-wrap-id').hide();
+            }, 600);
+            $(this).data('open', false);
+        } else {
+            $('#js-submenu-about-wrap-id').removeClass('slideOutRight').show().addClass('animated slideInRight');
+            $(this).data('open', true);
+        }
+    });
     
+    $('#js-menu-link-programs-id').on('click', function() {
+        if ($(this).data('open')) {
+            $('#js-submenu-programs-wrap-id').removeClass('slideInRight').addClass('animated slideOutRight');
+            setTimeout(function() {
+                $('#js-submenu-programs-wrap-id').hide();
+            }, 600);
+            $(this).data('open', false);
+        } else {
+            $('#js-submenu-programs-wrap-id').removeClass('slideOutRight').show().addClass('animated slideInRight');
+            $(this).data('open', true);
+        }
+    });
     
     $(window).scroll(function() {
         var scroll = $(window).scrollTop() + $(window).height();
@@ -124,6 +157,51 @@ $(function(){
         });
     });
     
+    $(window).scroll(function() {
+        var scroll    = $(window).scrollTop() + $(window).height();
+        var height    = $('#js-footer-id').offset().top;
+        var $callback = $('#js-callback-popup-id');
+        
+        if (scroll >= height) {
+            $callback.offset({top: height - 120});
+        } else {
+           $callback.css({'top': ''});
+        }
+    });
+    
+    
+    
+    var oldhash = location.hash;
+    
+    $('a.to-anchor').on('click', function() {
+        var urls = $(this).prop('href').split('#');
+        var link = urls[0]; 
+        var hash = urls[1];
+        
+        if (location.href == link) {
+            hash = '#' + hash;
+            if ($(hash).length) {
+                $('html, body').animate({
+                    scrollTop: ($(hash).offset().top - 30) + 'px'
+                }, {duration: 2500, easing: 'easeOutQuart'});
+            }
+            return false;
+        }
+    });
+    
+    $(window).on('load', function(){
+		var $urlhash = $(location.hash);
+        
+        if ($urlhash.length) {
+            window.location.hash = '';
+            history.pushState('', document.title, window.location.pathname);
+            
+            $('html, body').animate({
+                scrollTop: ($urlhash.offset().top - 30) + 'px'
+            }, {duration: 2500, easing: 'easeOutQuart'});
+        }
+	});
+    
     
     $(document).on('click', '.js-submit', function(event) {
         event.preventDefault();
@@ -143,23 +221,34 @@ $(function(){
         
         getRemoteHTML(remote, '#js-popup-content', {}, function() {
             $('body').addClass('popup-opened');
-            $('#popup').addClass('is-active');
-            $('#popup .popup-container').removeClass('slideOutLeft').addClass('animated slideInLeft');
+            console.log('qq');
+            $('body').animate({
+                    'background-color': 'rgba(255, 255, 255, 0.8)',
+                },
+                400,
+                'swing',
+                function() {
+                    $('#popup').addClass('is-active');
+                    $('#popup .popup-container').removeClass('slideOutLeft').addClass('animated slideInLeft');
+                }
+            );
+            
         });
         
 	    return false;
-        /*setPopupHeight();*/
+        //setPopupHeight();
     });
     
-    
+    /*
     $('.popup-opener').on('click', function() {
         var popup = $(this).data('popup');
         $(popup).addClass('is-active');
         $(popup + ' .popup-container').removeClass('slideOutRight').addClass('animated slideInRight');
 	    $('body').addClass('popup-opened');
-        /*setPopupHeight();*/
+        //setPopupHeight();
 	    return false;
     });
+    */
 
     $('#popup .popup-close').on('click', function(){
         $('#popup .popup-container').removeClass('slideInLeft').addClass('slideOutLeft');
