@@ -13,18 +13,33 @@
                 <div class="input">
                     <input type="text" name="NAME" value="<?= $arResult['DATA']['NAME'] ?>" placeholder="Екатерина Трачук" autocomplete="off" />
                 </div>
+                <? if ($_REQUEST[$arParams['FORM']] == $arParams['FORM'] && empty($arResult['DATA']['NAME'])) { ?>
+                    <div class="input-error">
+                        Поле не заполнено
+                    </div>
+                <? } ?>
             </div>
             <div class="form-row">
                 <span class="label big">E-mail</span>
                 <div class="input">
                     <input type="text" name="EMAIL" value="<?= $arResult['DATA']['EMAIL'] ?>" autocomplete="off" />
                 </div>
+                <? if ($_REQUEST[$arParams['FORM']] == $arParams['FORM'] && empty($arResult['DATA']['EMAIL'])) { ?>
+                    <div class="input-error">
+                        Поле не заполнено
+                    </div>
+                <? } ?>
             </div>
             <div class="form-row">
                 <span class="label big">Телефон</span>
                 <div class="input">
                     <input type="text" name="PHONE" value="<?= $arResult['DATA']['PHONE'] ?>"autocomplete="off" />
                 </div>
+                <? if ($_REQUEST[$arParams['FORM']] == $arParams['FORM'] && empty($arResult['DATA']['PHONE'])) { ?>
+                    <div class="input-error">
+                        Поле не заполнено
+                    </div>
+                <? } ?>
             </div>
             <div class="form-row">
                 <span class="label big">Сообщение</span>

@@ -8949,4 +8949,14 @@ a.button, a.button-white {
     color: #000 !important; /* цвет текста */
 }
   
-  
+.form-row .input-error {
+    font-size: 14px;
+    color: #df4442;
+    margin-top: 10px;
+    position: absolute;
+    right: 0;
+}
+
+.hide {
+    display: none;
+}

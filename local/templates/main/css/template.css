@@ -383,8 +383,13 @@
     /*top: 86%;*/
     bottom: 60px;
     margin-top: -30px;
-    background: url(../images/call-back.png);
+    background: url(../images/call-back.svg);
 }
+
+.callback-trigger:hover {
+    background: url(../images/call-back-hover.svg);
+}
+
 .siteHeader .headerCenter {
     margin-left: 13px;
 }

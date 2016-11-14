@@ -11,23 +11,25 @@ require ($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.p
             
             var phone = $('#js-param-phone-id').val();
             
-            if (phone.length < 7) {
-                $('#js-restore-wrap-id .errors').html('Не указан номер телефона');
-            }
+            $('#js-param-phone-id').closest('.form-row').find('.input-error').remove();
             
-            $.ajax({
-                url: '/remote/',
-                data: {'action': 'restore-password', 'phone': phone},
-                success: function(response) {
-                    if (response.status) {
-                        $('#js-param-phone-id').prop('disabled', 'disabled');
-                        $('#js-submit-form-id').fadeOut();
-                        $('#js-restore-message-id').html(response.message);
-                    } else {
-                        $('#js-restore-wrap-id .errors').html(response.message);
+            if (phone.length < 7) {
+                $('#js-param-phone-id').closest('.form-row').append('<div class="input-error">Не указан номер телефона</div>');
+            } else {
+                $.ajax({
+                    url: '/remote/',
+                    data: {'action': 'restore-password', 'phone': phone},
+                    success: function(response) {
+                        if (response.status) {
+                            $('#js-param-phone-id').prop('disabled', 'disabled');
+                            $('#js-submit-form-id').fadeOut();
+                            $('#js-restore-message-id').html(response.message);
+                        } else {
+                            $('#js-param-phone-id').closest('.form-row').append('<div class="input-error">' + response.message + '</div>');
+                        }
                     }
-                }
-            });
+                });
+            }
         });
     });
 </script>

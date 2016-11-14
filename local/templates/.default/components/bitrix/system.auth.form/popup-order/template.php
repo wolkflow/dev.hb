@@ -11,12 +11,6 @@
             <a href="javascript:void(0)" class="popup-opener-remote" data-remote="register">Регистрация</a>
         </div>
         <form name="system_auth_form<?= $arResult['RND'] ?>" class="js-remote-form" data-link="authorize-order">
-            <? if (!empty($_REQUEST['AUTH_FORM'])) { ?>
-                <div class="errors">
-                    <?= $arResult['ERROR_MESSAGE']['MESSAGE'] ?>
-                </div>
-            <? } ?>
-            
             <input type="hidden" name="AUTH_FORM" value="Y" />
             <input type="hidden" name="TYPE" value="AUTH" />
             <? if (strlen($arResult['BACKURL']) > 0) { ?>
@@ -34,6 +28,11 @@
                     <div class="input">
                         <input type="text" name="USER_LOGIN" value="<?= strval($_REQUEST['USER_LOGIN']) ?>" />
                     </div>
+                    <? if (!empty($_REQUEST['AUTH_FORM'])) { ?>
+                        <div class="input-error">
+                            <?= $arResult['ERROR_MESSAGE']['MESSAGE'] ?>
+                        </div>
+                    <? } ?>
                 </div>
                 <div class="form-row">
                     <span class="label">Пароль</span>
