@@ -26,13 +26,13 @@ $MESS['MONTH_OCT'] = 'октябрь';
 $MESS['MONTH_NOV'] = 'ноябрь';
 $MESS['MONTH_DEC'] = 'декабрь';
 
-$MESS['DAY_MON'] = 'пн';
-$MESS['DAY_TUE'] = 'вт';
-$MESS['DAY_WEN'] = 'ср';
-$MESS['DAY_THU'] = 'чт';
-$MESS['DAY_FRI'] = 'пт';
-$MESS['DAY_SAT'] = 'сб';
-$MESS['DAY_SUN'] = 'вс';
+$MESS['DAY_MON'] = 'ПН';
+$MESS['DAY_TUE'] = 'ВТ';
+$MESS['DAY_WEN'] = 'СР';
+$MESS['DAY_THU'] = 'ЧТ';
+$MESS['DAY_FRI'] = 'ПТ';
+$MESS['DAY_SAT'] = 'СБ';
+$MESS['DAY_SUN'] = 'ВС';
 
 $MESS['DAY_MONDAY']    = 'понедельник';
 $MESS['DAY_TUESDAY']   = 'вторник';

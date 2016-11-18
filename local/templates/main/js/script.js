@@ -350,8 +350,9 @@ $(window).on('load resize', function(){
     $(window).on('load scroll', function(){
         var delta = Math.min(window.pageYOffset - tableOffsetTop + 20, maxTranslateY);
 
-        if (delta < 0) { delta = 0; }
-
+        if (delta < 0) {
+            delta = 0; 
+        }
         $days.css('transform', 'translateY(' + delta + 'px)');
     });
 })();
@@ -411,6 +412,8 @@ $(window).on('load resize', function(){
 
     
     
+    var slide2day = true;
+    
     $slider.on('mousedown', function(event) {
         cursorY = event.clientY;
         startPos = parseInt($toggler.data('translateY') || 0);
@@ -427,6 +430,25 @@ $(window).on('load resize', function(){
             $slider.css('transform', 'translateY(' + delta + 'px)');
             
             setDots(Math.max(Math.round((delta / maxDeltaSlider).toFixed(2) * dotsSpace), 0));
+            
+            setTimeout(function() {
+                if (!slide2day) {
+                    return;
+                }
+                slide2day = false;
+                
+                var $day = $('.js-selected-day.active');
+                
+                $('html, body').animate({
+                    scrollTop: ($day.offset().top - 5) + 'px'
+                }, {
+                    duration: 2500, 
+                    easing: 'easeOutQuart',
+                    always: function() {
+                        slide2day = true;
+                    }
+                });
+            }, 800);
         });
     });
     /*

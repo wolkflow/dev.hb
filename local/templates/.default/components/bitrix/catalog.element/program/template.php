@@ -53,18 +53,20 @@
     </div>
     <div class="container main-unit">
         <div class="row">
-            <div class="bl_ind_cont tex1">
-                <div class="row">
-                    <div class="col-sm-7 hei5">
-                        <h2>Описание</h2>
-                        <p>
-                            <?= $arResult['PREVIEW_TEXT']; ?>
-                        </p>
-                    </div>
-                    <div class="col-sm-5">
-                        <? if (!empty($arResult['PREVIEW_PICTURE']['SRC'])) { ?>
-                            <img src="/i.php?src=<?= $arResult['PREVIEW_PICTURE']['SRC'] ?>&w=411&h=265" align="right" />
-                        <? } ?>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">       
+                <div class="bl_ind_cont tex1">
+                    <div class="row">
+                        <div class="col-sm-7 hei5">
+                            <h2>Описание</h2>
+                            <p>
+                                <?= $arResult['PREVIEW_TEXT']; ?>
+                            </p>
+                        </div>
+                        <div class="col-sm-5">
+                            <? if (!empty($arResult['PREVIEW_PICTURE']['SRC'])) { ?>
+                                <img src="/i.php?src=<?= $arResult['PREVIEW_PICTURE']['SRC'] ?>&w=411&h=265" align="right" />
+                            <? } ?>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@
 
 <div class="bg12"></div>
 <div class="container3 bg1 bg_white animated slideInRight">
-    <div class="container main-unit">
+    <div class="container main-unit-2">
         <div class="row">
             <div class="categories__list center hei12">
                 <? foreach ($arResult['ITEMS'] as $item) { ?>

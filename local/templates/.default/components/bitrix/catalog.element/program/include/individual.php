@@ -25,17 +25,20 @@
         });
     });
 </script>
-
-<div class="bl_purchase_terms">
-    <h2>Условия покупки</h2>
-    <div class="bl_purchase_terms_cont">
-        <div class="bl_purchase_terms_btn">
-            <a id="js-buy-button-id" href="javascipt:void(0)" class="button">Купить</a>
-        </div>
-        <div class="bl_purchase_terms_cont_tx">
-            <p>
-                <?= $arResult['DETAIL_TEXT'] ?>
-            </p>
+<div class="container main-unit">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h2>Условия покупки</h2>
+            <div class="bl_purchase_terms_cont">
+                <div class="bl_purchase_terms_btn">
+                    <a id="js-buy-button-id" href="javascipt:void(0)" class="button">Купить</a>
+                </div>
+                <div class="bl_purchase_terms_cont_tx">
+                    <p>
+                        <?= $arResult['DETAIL_TEXT'] ?>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

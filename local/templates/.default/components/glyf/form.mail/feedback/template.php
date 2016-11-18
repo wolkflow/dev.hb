@@ -11,7 +11,7 @@
             <div class="form-row">
                 <span class="label big">Имя</span>
                 <div class="input">
-                    <input type="text" name="NAME" value="<?= $arResult['DATA']['NAME'] ?>" placeholder="Екатерина Трачук" autocomplete="off" />
+                    <input type="text" name="NAME" value="<?= $arResult['DATA']['NAME'] ?>" autocomplete="off" />
                 </div>
                 <? if ($_REQUEST[$arParams['FORM']] == $arParams['FORM'] && empty($arResult['DATA']['NAME'])) { ?>
                     <div class="input-error">
@@ -43,7 +43,7 @@
             </div>
             <div class="form-row">
                 <span class="label big">Сообщение</span>
-                <div class="input">
+                <div class="input text_contact">
                     <textarea name="MESSAGE"><?= $arResult['DATA']['MESSAGE'] ?></textarea>
                 </div>
             </div>
