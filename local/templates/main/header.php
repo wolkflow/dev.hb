@@ -36,7 +36,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="col-xs-5 col-sm-6">
+						<div class="col-xs-6 col-sm-6">
 							<div class="headerCenter">
 								<div class="headerCenter-phone visible-xs">
 									<span class="headerContacts-phone">
@@ -102,7 +102,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-xs-3 visible-xs">
+						<div class="col-xs-2 visible-xs">
 							<div class="menuTrigger js-menu-toggle"><span></span></div>
 						</div>
 						<div class="mobileNav">

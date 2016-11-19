@@ -14,7 +14,7 @@
             </div>
         </div>
     </div>
-    <div class="cross" data-side="left">
+    <div class="cross cross_none" data-side="left">
         <div class="line_to"></div>
         <div class="cross_to"></div>
     </div>

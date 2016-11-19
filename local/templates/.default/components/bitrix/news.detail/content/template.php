@@ -7,7 +7,7 @@
 </div>
 <div class="container">
 	<div class="row">
-		<div class="col-lg-6 col-md-6 col-sm-6">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 			<img class="page-header__img" src="/i.php?src=<?= $arResult['DETAIL_PICTURE']['SRC'] ?>" />
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
