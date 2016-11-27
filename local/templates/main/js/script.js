@@ -420,7 +420,7 @@ $(window).on('load resize', function(){
         
         $(document).on('mousemove', function(event) {
             var delta = startPos + (event.clientY - cursorY);
-
+            
             if (delta < 0) {
                 delta = 0; 
             }
@@ -548,7 +548,7 @@ if($('#homeSlider').length) {
 	});
 }
 $(window).on('load resize', function(){
-	sliderWidth()
+	sliderWidth();
 });
 if($('#homeSlider').length) {
 	$('#homeSlider').on('init', function(event, slick){

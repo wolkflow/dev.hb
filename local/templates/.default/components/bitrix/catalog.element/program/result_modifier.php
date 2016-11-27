@@ -18,11 +18,18 @@ if ($arResult['PROPERTIES']['INDIVIDUAL']['VALUE'] != 'Y') {
     
     foreach ($menudays as $i => $menuday) {
         $time = strtotime('+' . ($i + MENU_DAYS_OFFSET) . ' days');
+        $menu = $menuday->getMenu();
+        
+        foreach ($menu as &$menuitems) {
+            uasort($menuitems, function($x1, $x2) {
+                return ($x1['TIMES']['BEGIN'] - $x2['TIMES']['BEGIN']);
+            });
+        }
         
         $arResult['MENU'] []= array(
             'TIME'    => $time,
             'DATE'    => array('DAY' => date('d', $time), 'MONTH' => date('m', $time)),
-            'MENU'    => $menuday->getMenu(),
+            'MENU'    => $menu,
             'WEEKDAY' => TextHelper::i18nday(date('N', $time), true),
         );
     }

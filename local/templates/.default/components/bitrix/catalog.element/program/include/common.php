@@ -89,7 +89,7 @@
             <div class="bl_menu_cont">
                 <div class="bl_menu_cont_header">Меню</div>
                 <div class="bl_menu_table">
-                    
+
                     <? foreach ($arResult['MENU'] as $menu) { ?>
                         <div class="js-selected-day bl_menu_table_day">
                             <div class="bl_menu_table_day_data">
@@ -98,13 +98,13 @@
                             </div>
                             <? foreach ($menu['MENU'] as $daycode => $daymenu) { ?>
                                 <div class="bl_menu_table_day_row row">
-                                    <div class="bl_menu_table_day_row_day">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 menu_class_1">
                                         <div class="bl_menu_table_day_row_day_title">
                                             <span><?= Glyf\Core\HolyBean\Menu::getDayTimeTitle($daycode) ?></span>
                                         </div>
                                     </div>
                                     <? foreach ($daymenu as $daymenuitem) { ?>
-                                        <div class="bl_menu_table_day_row_inner_item">
+                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 menu_class_2">
                                             <div class="bl_menu_table_day_row_col_time">
                                                 <?= $daymenuitem['TIMES']['BEGIN'] ?>.00-<?= $daymenuitem['TIMES']['FINISH'] ?>.00
                                             </div>
