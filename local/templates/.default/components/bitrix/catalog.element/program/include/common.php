@@ -98,8 +98,8 @@
                             </div>
                             <? foreach ($menu['MENU'] as $daycode => $daymenu) { ?>
                                 <div class="bl_menu_table_day_row row">
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 menu_class_1">
-                                        <div class="bl_menu_table_day_row_day_title">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 menu_class_1">
+                                        <div class="bl_menu_table_day_row_day_title menu_class_3">
                                             <span><?= Glyf\Core\HolyBean\Menu::getDayTimeTitle($daycode) ?></span>
                                         </div>
                                     </div>
