@@ -2,8 +2,8 @@
 
 <? $this->setFrameMode(true); ?>
 
-<div class="bg11"></div>
-<div class="container3 bg1 animated slideInRight hei14">
+<div class="bg11 hidden-xs"></div>
+<div class="container3 bg1 animated slideInRight hei14 hidden-xs">
     <div class="container main-unit-2">
         <div class="row">
             <div class="categories__list center hei12">

@@ -1,8 +1,8 @@
         <footer class="siteFooter">
             <div class="bg2"></div>
             <div id="js-footer-id" class="container4 hei9 bg1">
-                <div class="row">                          
-                    <div class="col-lg-9 col-md-9 col-sm-9 foo1">
+                <div class="row footer1">                          
+                    <div class=" col-xs-4 col-lg-9 col-md-9 col-sm-9 foo1">
                         <div class="menu footerMenu fo1">
                             <ul>
                                 <li><a href="/cook/">о нас</a></li>
@@ -10,31 +10,48 @@
                                 <li><a href="/catalog/">holymarket</a></li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3">
-                        <div class="footer-contacts">
-                            <div class="footer-contacts__tel">
-                                <?  // Телефон.
-                                    $APPLICATION->IncludeComponent('bitrix:main.include', '', array(
-                                        'AREA_FILE_SHOW' => 'file',
-                                        'PATH' => SITE_TEMPLATE_PATH.'/include/data/phone.php',
-                                        'EDIT_TEMPLATE' => 'html',
-                                    ));
-                                ?>
-                            </div>
-                            <div class="footer-contacts__soc hidden-xs">
-                                <a href="javascript:void(0)">
-                                    <i class="icon-12 icon-fb"></i>
-                                </a>
-                                <a href="javascript:void(0)">
-                                    <i class="icon-12 icon-inst"></i>
-                                </a>
+                    </div>                   
+                    <div class="col-xs-8 col-lg-3 col-md-3 col-sm-3">
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
+                                <div class="footer-contacts">
+                                    <div class="footer-contacts__tel">
+                                        <?  // Телефон.
+                                            $APPLICATION->IncludeComponent('bitrix:main.include', '', array(
+                                                'AREA_FILE_SHOW' => 'file',
+                                                'PATH' => SITE_TEMPLATE_PATH.'/include/data/phone.php',
+                                                'EDIT_TEMPLATE' => 'html',
+                                            ));
+                                        ?>
+                                    </div>
+                                    <div class="footer-contacts__soc hidden-xs">
+                                        <a href="javascript:void(0)">
+                                            <i class="icon-12 icon-fb"></i>
+                                        </a>
+                                        <a href="javascript:void(0)">
+                                            <i class="icon-12 icon-inst"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>                        
+                            <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                                <div class="footer-info__copyright footer-info3">
+                                    <span>
+                                        <?  // E-mail.
+                                            $APPLICATION->IncludeComponent('bitrix:main.include', '', array(
+                                                'AREA_FILE_SHOW' => 'file',
+                                                'PATH' => SITE_TEMPLATE_PATH.'/include/data/email.php',
+                                                'EDIT_TEMPLATE' => 'html',
+                                            ));
+                                        ?>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row footer-top">
-                    <div class="col-lg-3 col-md-3 col-sm-3 foo1">
+                    <div class="col-lg-3 col-md-3 col-sm-3 foo1 hidden-xs">
                         <div class="footer-info__copyright">
                             <span>
                                 <?  // Copyright.
@@ -56,7 +73,7 @@
                             </span>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
                         <div class="footer-info__copyright footer-info2">
                             <span>
                                 <?  // Оферта.
@@ -69,7 +86,43 @@
                             </span>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="col-xs-12 hidden-sm hidden-md hidden-lg hei29">
+                        <div class="footer-info__copyright footer-info2">
+                            <span>
+                                <?  // Оферта.
+                                    $APPLICATION->IncludeComponent('bitrix:main.include', '', array(
+                                        'AREA_FILE_SHOW' => 'file',
+                                        'PATH' => SITE_TEMPLATE_PATH.'/include/data/offer.php',
+                                        'EDIT_TEMPLATE' => 'html',
+                                    ));
+                                ?>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 hidden-sm hidden-md hidden-lg hei29">
+                        <div class="footer-info__copyright">
+                            <span>
+                                <?  // Copyright.
+                                    $APPLICATION->IncludeComponent('bitrix:main.include', '', array(
+                                        'AREA_FILE_SHOW' => 'file',
+                                        'PATH' => SITE_TEMPLATE_PATH.'/include/data/copyright.php',
+                                        'EDIT_TEMPLATE' => 'html',
+                                    ));
+                                ?>
+                            </span>
+                            <span>
+                                <?  // Разработка.
+                                    $APPLICATION->IncludeComponent('bitrix:main.include', '', array(
+                                        'AREA_FILE_SHOW' => 'file',
+                                        'PATH' => SITE_TEMPLATE_PATH.'/include/data/development.php',
+                                        'EDIT_TEMPLATE' => 'html',
+                                    ));
+                                ?>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
                         <div class="footer-info__copyright footer-info3">
                             <span>
                                 <?  // E-mail.

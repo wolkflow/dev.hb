@@ -45,7 +45,7 @@
 <div class="container main-unit"> <!--bl_menu_container clearfix-->
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="bl_chose_days">
+            <div class="bl_chose_days hidden-xs">
                 <div class="bl_chose_days_header">
                     Выбрать дни
                 </div>
@@ -97,7 +97,7 @@
                                 <span><?= $menu['WEEKDAY'] ?></span>
                             </div>
                             <? foreach ($menu['MENU'] as $daycode => $daymenu) { ?>
-                                <div class="bl_menu_table_day_row">
+                                <div class="bl_menu_table_day_row row">
                                     <div class="bl_menu_table_day_row_day">
                                         <div class="bl_menu_table_day_row_day_title">
                                             <span><?= Glyf\Core\HolyBean\Menu::getDayTimeTitle($daycode) ?></span>
@@ -119,6 +119,27 @@
                                                 <? } ?>
                                             </div>
                                         </div>
+                                        <? /* <div class="bl_menu_table_day_row">
+                                        <div class="bl_menu_table_day_row_day">
+                                            <div class="bl_menu_table_day_row_day_title">
+                                                <span><?= Glyf\Core\HolyBean\Menu::getDayTimeTitle($daycode) ?></span>
+                                            </div>
+                                        </div>
+                                        <div class="bl_menu_table_day_row_inner_item">
+                                            <div class="bl_menu_table_day_row_col_time">
+                                                <?= $daymenuitem['TIMES']['BEGIN'] ?>.00-<?= $daymenuitem['TIMES']['FINISH'] ?>.00
+                                            </div>
+                                            <div class="bl_menu_table_day_row_col_name">
+                                                <? foreach ($daymenuitem['ITEMS'] as $item) { ?>
+                                                    <p><?= $item['PRODUCT'] ?></p>
+                                                <? } ?>
+                                            </div>
+                                            <div class="bl_menu_table_day_row_col_cal">
+                                                <? foreach ($daymenuitem['ITEMS'] as $item) { ?>
+                                                    <p><?= $item['GRAMMAGE'] ?> г., <?= $item['ENERGY'] ?> кКал</p>
+                                                <? } ?>
+                                            </div>
+                                        </div> */ ?>
                                     <? } ?>
                                 </div>
                            <? } ?>

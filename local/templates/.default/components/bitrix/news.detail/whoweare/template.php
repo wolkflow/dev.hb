@@ -4,7 +4,7 @@
 <div class="poz1">
     <div class="container main-unit hei6 hei11">
         <div class="row">
-            <div class="col-sm-7">
+            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
                 <div class="main-who__text">
                     <h2><?= $arResult['NAME'] ?></h2>
                     <p>

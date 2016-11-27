@@ -56,13 +56,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">       
                 <div class="bl_ind_cont tex1">
                     <div class="row">
-                        <div class="col-sm-7 hei5">
+                        <div class="col-sm-7 col-md-7 col-lg-7 hei5">
                             <h2>Описание</h2>
                             <p>
                                 <?= $arResult['PREVIEW_TEXT']; ?>
                             </p>
                         </div>
-                        <div class="col-sm-5">
+                        <div class="col-sm-5 col-md-5 col-lg-5">
                             <? if (!empty($arResult['PREVIEW_PICTURE']['SRC'])) { ?>
                                 <img src="/i.php?src=<?= $arResult['PREVIEW_PICTURE']['SRC'] ?>&w=411&h=265" align="right" />
                             <? } ?>
@@ -72,7 +72,7 @@
             </div>
         </div>
     </div>
-    <div class="cross cross_tree_all_for" data-side="left">
+    <div class="cross cross_tree_all_for hidden-xs" data-side="left">
         <div class="line_to"></div>
         <div class="cross_to"></div>
     </div>
