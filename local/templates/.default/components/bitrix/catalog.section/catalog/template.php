@@ -10,7 +10,7 @@
         </div>
         <div id="js-catalog-sections-id" class="container2 bg1 animated slideInRight">
             <div class="row">
-                <div class="col-sm-7 col-md-7 col-lg-7 bg1">
+                <div class="col-sm-7 col-md-7 col-lg-7 bg1 hidden-xs">
                     <?	// Разделы каталога.
                         $APPLICATION->IncludeComponent(
                             "bitrix:catalog.section.list",

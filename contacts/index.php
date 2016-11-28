@@ -8,7 +8,7 @@
         </div>
         <div class="container main-unit ots1">
             <div class="contacts-blocks hei3">
-                <div class="contacts-blocks__item txt1 txt21">
+                <div class="contacts-blocks__item txt1 txt21 contacts_xs_1">
                     <?  // Телефон.
                         $APPLICATION->IncludeComponent('bitrix:main.include', '', array(
                             'AREA_FILE_SHOW' => 'file',
@@ -17,7 +17,7 @@
                         ));
                     ?>
                 </div>
-                <div class="contacts-blocks__item txt1 txt22">
+                <div class="contacts-blocks__item txt1 txt22 contacts_xs_1">
                     <?  // E-mail.
                         $APPLICATION->IncludeComponent('bitrix:main.include', '', array(
                             'AREA_FILE_SHOW' => 'file',
@@ -26,9 +26,10 @@
                         ));
                     ?>
                 </div>
-                <div class="contacts-blocks__item txt1">
-                    <a href="#">facebook</a>
-                    <a href="#">instagram</a>
+                <div class="contacts-blocks__item txt1 contacts_xs_1 contacts_xs_3">
+                    <div class="contacts_xs_2"><a href="#">facebook</a></div>
+                    <div class="contacts_xs_2"><a href="#">instagram</a></div>
+
                 </div>
             </div>
             

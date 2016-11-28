@@ -89,31 +89,31 @@
             <div class="bl_menu_cont">
                 <div class="bl_menu_cont_header">Меню</div>
                 <div class="bl_menu_table">
-
                     <? foreach ($arResult['MENU'] as $menu) { ?>
                         <div class="js-selected-day bl_menu_table_day">
-                            <div class="bl_menu_table_day_data">
+                            <div class="bl_menu_table_day_data data_xs_1">
                                 <span><b><?= $menu['DATE']['DAY'] ?></b>/<?= $menu['DATE']['MONTH'] ?></span>
                                 <span><?= $menu['WEEKDAY'] ?></span>
                             </div>
+                            <div class="menu_class_0">
                             <? foreach ($menu['MENU'] as $daycode => $daymenu) { ?>
-                                <div class="bl_menu_table_day_row row">
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 menu_class_1">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 menu_class_1">
                                         <div class="bl_menu_table_day_row_day_title menu_class_3">
                                             <span><?= Glyf\Core\HolyBean\Menu::getDayTimeTitle($daycode) ?></span>
                                         </div>
                                     </div>
+                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-12 border_xs_1">
                                     <? foreach ($daymenu as $daymenuitem) { ?>
-                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 menu_class_2">
-                                            <div class="bl_menu_table_day_row_col_time">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 menu_class_2">
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 menu_class_4 menu_color2">
                                                 <?= $daymenuitem['TIMES']['BEGIN'] ?>.00-<?= $daymenuitem['TIMES']['FINISH'] ?>.00
                                             </div>
-                                            <div class="bl_menu_table_day_row_col_name">
+                                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 menu_class_4 menu_color1">
                                                 <? foreach ($daymenuitem['ITEMS'] as $item) { ?>
                                                     <p><?= $item['PRODUCT'] ?></p>
                                                 <? } ?>
                                             </div>
-                                            <div class="bl_menu_table_day_row_col_cal">
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 menu_class_5 menu_color2">
                                                 <? foreach ($daymenuitem['ITEMS'] as $item) { ?>
                                                     <p><?= $item['GRAMMAGE'] ?> г., <?= $item['ENERGY'] ?> кКал</p>
                                                 <? } ?>
@@ -141,8 +141,9 @@
                                             </div>
                                         </div> */ ?>
                                     <? } ?>
-                                </div>
+                                    </div>
                            <? } ?>
+                            </div>
                         </div>
                     <? } ?>
                 </div>
@@ -150,3 +151,4 @@
         </div>
     </div>
 </div>
+

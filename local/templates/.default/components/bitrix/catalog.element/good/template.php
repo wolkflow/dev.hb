@@ -79,8 +79,12 @@
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 imege1">
-                <img src="http://ua.badgood.info/photos/notes/1/72/71027/568269f831.jpg">
+                <div class="imege1_active"><img src="http://ua.badgood.info/photos/notes/1/72/71027/568269f831.jpg"></div>
+                <div class="imege1_noactive"><img src="http://ua.badgood.info/photos/notes/1/72/71027/568269f831.jpg"></div>
+                <div class="imege1_noactive"><img src="http://ua.badgood.info/photos/notes/1/72/71027/568269f831.jpg"></div>
+                <div class="imege1_noactive"><img src="http://ua.badgood.info/photos/notes/1/72/71027/568269f831.jpg"></div>
             </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="one_product_tx">
                 <div class="one_product_tx_header">Описание</div>

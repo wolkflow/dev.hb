@@ -19,6 +19,7 @@
                 success: function(response) {
                     if (response.status) {
                         $('#js-basket-total-price-id').html(response.data['total']);
+                        $wrap.closest('.js-basket-item').find('.js-basket-price').html(response.data['cost']);
                         RefreshBasket();
                     }
                 }
@@ -65,7 +66,7 @@
             <div id="js-baskets-id">
                 <? $items = $arResult['ITEMS']['AnDelCanBuy']; ?>
                 <? foreach ($items as $item) { ?>
-                    <div class="basket-item"> 
+                    <div class="basket-item js-basket-item"> 
                         <div class="box_close  js-basket-remove col-xs-1 col-sm-1 col-md-1 col-lg-1 " data-basket="<?= $item['ID'] ?>">
                         <div class="img_close"></div>
                         <div class="txt_close">удалить
@@ -90,7 +91,7 @@
                                     <div class="basket-item__count-plus js-quantity-change"></div>
                                 </div>
                                 <div class="basket-item__value col-md-2 col-lg-2 col-xs-6 col-sm-6">
-                                    <span class="js-basket=price"><?= $item['PRICE'] ?></span> Р
+                                    <span class="js-basket-price"><?= $item['PRICE'] * $item['QUANTITY'] ?></span> Р
                                 </div>
                             </div>
                         </div>

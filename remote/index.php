@@ -147,7 +147,7 @@ switch ($action) {
         }
         $basket = CSaleBasket::getByID($basket);
         
-        jsonresponse(true, 'Количество обновлено', array('price' => floatval($basket['PRICE']), 'total' => getBasketPrice()));
+        jsonresponse(true, 'Количество обновлено', array('price' => floatval($basket['PRICE']), 'cost' => floatval($basket['PRICE'] * $basket['QUANTITY']), 'total' => getBasketPrice()));
         break;
     
     

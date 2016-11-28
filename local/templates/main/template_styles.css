@@ -8330,7 +8330,7 @@ text-align: right;
 
 .bl_menu_table_day {
   position: relative;
-  min-height: 80px; }
+  min-height: 68px; }
 
 .bl_menu_table_day + .bl_menu_table_day {
   border-top: solid 1px #252525; }
@@ -8625,4 +8625,12 @@ text-align: right;
 
 .hide {
     display: none;
+}
+
+.panel-tab {
+    padding: 20px;
+    width: 250px;
+    background: #ffffff;
+    border: 1px solid #252525;
+    z-index: 1000;
 }
