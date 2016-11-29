@@ -27,17 +27,18 @@ function getRemoteHTML(link, selector, data, callback)
 // Обновление корзины.
 function RefreshBasket()
 {
-    var empty = ($('#js-basket-button-wrapper-id').find('#js-basket-button-id').length == 0);
+    var $wrap = $('#js-basket-button-wrapper-id');
+    var empty = ($wrap.find('#js-basket-button-id').length == 0);
     
     $.ajax({
         url: '/remote/include/refresh-basket/',
         type: 'POST',
         success: function (response) {
-            $('#js-basket-button-wrapper-id').html(response);
+            $wrap.html(response);
             
-            if ($('#js-basket-button-wrapper-id').find('#js-basket-button-id').length > 0) {
+            if ($wrap.find('#js-basket-button-id').length > 0) {
                 if (empty) {
-                    $('#js-basket-button-id').trigger('click');
+                    $wrap.find('#js-basket-button-id').trigger('click');
                 }
             }
         }
@@ -108,6 +109,8 @@ $.extend($.easing, {
 
 
 $(function(){
+    
+    $('.js-phone-mask').mask("\+7 (999) 999-99-99"); 
     
     $('#js-menu-link-about-id').on('click', function() {
         if ($(this).data('open')) {
@@ -221,13 +224,14 @@ $(function(){
         
         getRemoteHTML(remote, '#js-popup-content', {}, function() {
             $('body').addClass('popup-opened');
-            console.log('qq');
+            
             $('body').animate({
                     'background-color': 'rgba(255, 255, 255, 0.8)',
                 },
                 400,
                 'swing',
                 function() {
+                    $('.js-phone-mask').mask("\+7 (999) 999-99-99");
                     $('#popup').addClass('is-active');
                     $('#popup .popup-container').removeClass('slideOutLeft').addClass('animated slideInLeft');
                 }
@@ -239,7 +243,7 @@ $(function(){
         //setPopupHeight();
     });
     
-    /*
+   
     $('.popup-opener').on('click', function() {
         var popup = $(this).data('popup');
         $(popup).addClass('is-active');
@@ -248,7 +252,7 @@ $(function(){
         //setPopupHeight();
 	    return false;
     });
-    */
+     /* */
 
     $('#popup .popup-close').on('click', function(){
         $('#popup .popup-container').removeClass('slideInLeft').addClass('slideOutLeft');
@@ -334,7 +338,8 @@ function setPopupHeight() {
 
 
 $(document).on('mouseup', function (e) {
-    if ($('body').hasClass('popup-opened')) {
+    var $target = $(e.target);
+    if ($('body').hasClass('popup-opened') && !$target.closest('.popup-container').length) {
         $('#popup .popup-close').trigger('click');
         $('#callback-popup .popup-close').trigger('click');
     }
@@ -534,11 +539,15 @@ if ($(window).width() >= 768) {
         var slide2day = true;
         
         $slider.on('touchstart', function(event) {
-            cursorY = event.clientY;
+            var touch = event.originalEvent.touches[0];
+            cursorY = touch.clientY;
+
+            //cursorY = event.pageY;
             startPos = parseInt($toggler.data('translateY') || 0);
             
-            $(document).on('touchmove', function(event) {
-                var delta = startPos + (event.clientY - cursorY);
+            $('.panelMenu').on('touchmove', function(event) {
+                var touch = event.originalEvent.touches[0];
+                var delta = startPos + (touch.clientY - cursorY);
                 
                 if (delta < 0) {
                     delta = 0; 
@@ -571,8 +580,8 @@ if ($(window).width() >= 768) {
             });
         });
         
-        $(document).on('mouseup', function(event){
-            $(this).off('mousemove');
+        $(document).on('touchend', function(event){
+            $(this).off('touchmove');
         });
         
     })();
@@ -629,9 +638,17 @@ $(document).ready(function() {
         });
     });
     
-    $('.js-variant').on('click', function() {
-        $('#js-program-price-id').text($(this).data('price'));
-    });
+    
+    if ($(window).width() >= 768) {
+        $('#js-menu-wrapper-id .js-variant').on('click', function() {
+            $('#js-menu-wrapper-id .js-program-price-id').text($(this).data('price'));
+        });
+    } else {
+        $('#js-menu-mobile-wrapper-id .js-variant').on('click', function() {
+            $('#js-menu-mobile-wrapper-id .js-program-price-id').text($(this).data('price'));
+        });
+    }
+    
 });
 
 

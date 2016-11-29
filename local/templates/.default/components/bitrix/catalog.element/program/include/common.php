@@ -37,8 +37,8 @@
                             Выберите дни, перемещая ползунок курсором мыши
                         </div>
                         <div class="bl_chose_days_c_bottom_price">
-                            <span id="js-program-price-id"><?= $arResult['VARIANTS'][PROGRAM_DAYS_1]->getPrice() ?></span>
-                             <span class="rub">₽</span>
+                            <span class="js-program-price-id"><?= $arResult['VARIANTS'][PROGRAM_DAYS_1]->getPrice() ?></span>
+                            <span class="rub">₽</span>
                         </div>
                     </div>
                     <div class="bl_chose_days_btn">

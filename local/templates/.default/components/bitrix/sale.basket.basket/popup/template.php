@@ -61,7 +61,7 @@
     </div>
 </div>
 <div class="container main-unit popup_style_2">
-    <div class="row">      
+    <div id="js-basket-wrap-id" class="row">      
         <? if (!empty($arResult['ITEMS']['AnDelCanBuy'])) { ?>
             <div id="js-baskets-id">
                 <? $items = $arResult['ITEMS']['AnDelCanBuy']; ?>

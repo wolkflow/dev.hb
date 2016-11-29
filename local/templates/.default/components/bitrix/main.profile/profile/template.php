@@ -63,7 +63,7 @@
                     <div class="form-row">
                         <span class="label big">Телефон</span>
                         <div class="input">
-                            <input type="text" name="PERSONAL_MOBILE" value="<?= $arResult['arUser']['PERSONAL_MOBILE'] ?>" autocomplete="off" />
+                            <input type="text" class="js-phone-mask" name="PERSONAL_MOBILE" value="<?= $arResult['arUser']['PERSONAL_MOBILE'] ?>" autocomplete="off" />
                         </div>
                     </div>
                     <div class="form-row">

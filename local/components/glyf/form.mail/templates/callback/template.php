@@ -31,7 +31,7 @@
     <div class="form-row">
         <span class="label big">Телефон</span>
         <div class="input">
-            <input type="text" name="PHONE" value="<?= $arResult['DATA']['PHONE'] ?>" />
+            <input type="text" name="PHONE" class="js-phone-mask" value="<?= $arResult['DATA']['PHONE'] ?>" />
         </div>
     </div>
     <div class="form-row">

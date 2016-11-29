@@ -11,12 +11,12 @@ $(document).ready(function() {
             type: 'post',
             success: function(response) {
                 if (response.status) {
+                    RefreshBasket();
+                   
                     if ($('#js-basket-button-id').length) {
                         $that.transfer({
                             to: '#js-basket-button-id',
                             duration: 600
-                        }, function() {
-                            RefreshBasket();
                         });
                     }
                 }

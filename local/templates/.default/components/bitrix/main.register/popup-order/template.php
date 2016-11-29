@@ -122,7 +122,7 @@
             <div class="form-row">
                 <span class="label big">Телефон</span>
                 <div class="input">
-                    <input type="text" name="REGISTER[PERSONAL_MOBILE]" value="<?= $arResult['VALUES']['PERSONAL_MOBILE'] ?>" id="js-param-phone-id" />
+                    <input type="text" name="REGISTER[PERSONAL_MOBILE]" class="js-phone-mask" value="<?= $arResult['VALUES']['PERSONAL_MOBILE'] ?>" id="js-param-phone-id" />
                 </div>
                 <? if (!empty($arResult['ERRORS']['PERSONAL_MOBILE'])) { ?>
                     <div class="input-error">

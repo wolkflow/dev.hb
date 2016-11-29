@@ -165,10 +165,6 @@
             ?>
                 
             <a id="js-callback-popup-id" class="popup-opener callback-trigger" href="javascript:void(0)" data-popup="#callback-popup"></a>
-            
-    
-            <script src="<?= SITE_TEMPLATE_PATH ?>/js/slick.min.js"></script>
-            <script src="<?= SITE_TEMPLATE_PATH ?>/js/script.js"></script>
         </footer>
     </body>
 </html>

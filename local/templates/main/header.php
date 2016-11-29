@@ -9,7 +9,10 @@
         <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 		<script src="<?= SITE_TEMPLATE_PATH ?>/js/jquery-ui.min.js"></script>
         <script src="<?= SITE_TEMPLATE_PATH ?>/js/bootstrap.js"></script>
-        <script src="<?= SITE_TEMPLATE_PATH ?>/js/jquery.tabslideout.js"></script>
+        <script src="<?= SITE_TEMPLATE_PATH ?>/js/jquery.tabslideout.js"></script>    
+        <script src="<?= SITE_TEMPLATE_PATH ?>/js/jquery.maskedinput.js"></script>
+        <script src="<?= SITE_TEMPLATE_PATH ?>/js/slick.min.js"></script>
+        <script src="<?= SITE_TEMPLATE_PATH ?>/js/script.js"></script>
         
         <? $APPLICATION->ShowHead() ?>
         
@@ -146,7 +149,7 @@
                     <div class="bg4"></div>
                     <div class="container2 bg1">
                         <div class="row">
-                            <div class="col-sm-7 col-md-7 col-lg-7 bg1">
+                            <div class="col-sm-12 col-md-12 col-lg-12 bg1">
                                 <div class="bl_catalog_filter_left">
                                     <ul>
                                         <li><a href="/cook/">Шеф-повар</a></li>

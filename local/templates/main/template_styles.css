@@ -6748,7 +6748,9 @@ input[type="tel"] {
   padding-left: 30px;
   font-size: 15px;
   line-height: 2;
-  color: #878787; }
+  color: #878787;
+  margin-top: 20px;
+}
   .checkbox span::before {
     content: '';
     position: absolute;
@@ -6756,7 +6758,9 @@ input[type="tel"] {
     left: 0;
     width: 12px;
     height: 12px;
-    background: url(./images/checkboxes.png) no-repeat 0 0; }
+    background: url(./images/checkboxes.png) no-repeat 0 0;
+
+  }
 
 textarea {
   border: none;
@@ -6802,7 +6806,7 @@ input[type="button"],
   font-style: normal;
   font-stretch: normal;
   padding: 0 20px;
-  width: 100%;
+  width: auto;
   min-width: 220px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -7592,7 +7596,9 @@ text-align: right;
 
 .basket-button {
   margin-top: 30px;
-  float: right; }
+  float: right;
+  width: 220px;
+  height: 60px;}
 
 
 .bl_partner_item {
