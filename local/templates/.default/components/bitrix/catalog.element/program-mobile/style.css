@@ -1,3 +1,4 @@
+/*
 .panel-tab .panel-handle {
     background: #ffffff !important;
     height: 220px !important;
@@ -7,4 +8,122 @@
     text-indent: 0px !important;
     width: 64px;
     z-index: 2000;
+}
+*/
+
+
+.panel-popup-button {
+    background: #fff;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    margin-top: -110px;
+    /*margin-left: -80px;*/
+    padding: 20px 28px;
+    box-sizing: border-box;
+    text-align: center;
+    width: 60px;
+    height: 220px; 
+    border-left: 1px solid #252525;
+    border-top: 1px solid #252525;
+    border-bottom: 1px solid #252525;
+    font-family: DINPro, Arial, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 300;
+    color: #252525;
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.panel-popup-button .panel-popup-button-content {
+    position: fixed;
+    margin-left: -130px;
+    margin-top: -30px;
+    top: 50%;
+    width: 220px;
+    height: 60px;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    text-align: center;
+    font-size: 14px;
+}
+
+
+
+.panelMenu {
+    border: 1px solid #000;
+    border-right: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    background: #fff;
+    overflow: hidden;
+    z-index: 2000;
+    -webkit-transition: all 300ms ease 0ms;
+    -moz-transition: all 300ms ease 0ms;
+    -ms-transition: all 300ms ease 0ms;
+    -o-transition: all 300ms ease 0ms;
+    transition: all 300ms ease 0ms;
+}
+.panelMenuInner {
+    padding: 83px 0 80px 29px;
+    border-left: 1px solid #252525;
+    border-bottom: 1px solid #252525;
+    width: 260px;
+}
+.panelMenu.in {
+    position: fixed;
+    width: 260px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.panelMenu.in .bl_chose_days_header {
+    font-size: 16px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.panelMenu.in .bl_chose_days_c_descr {
+    display: none;
+}
+
+.panelMenu.in .bl_chose_days_btn {
+    margin-bottom: 5px;
+}
+
+.panelMenu.in .bl_chose_days_c_bl {
+    margin-bottom: 10px;
+}
+
+.panelMenu-close {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    cursor: pointer;
+    top: 6px;
+    right: 7px;
+}
+.panelMenu-close:before,
+.panelMenu-close:after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #252525;
+    transform-origin: 50% 50%;
+    top: 10px;
+    left: -3px;
+}
+.panelMenu-close:before {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.panelMenu-close:after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }

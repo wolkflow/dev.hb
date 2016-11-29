@@ -2,7 +2,7 @@
 <? $APPLICATION->SetTitle("Программы - HolyBean"); ?>
 
 <main>
-    <div class="hidden-lg hidden-md hidden-sm">
+    <div id="js-menu-mobile-wrapper-id" class="hidden-lg hidden-md hidden-sm">
         <?	// Программа.
             $APPLICATION->IncludeComponent(
                 "bitrix:catalog.element",
@@ -56,7 +56,7 @@
             );
         ?>
     </div>
-    <div class="hidden-xs">
+    <div id="js-menu-wrapper-id" class="hidden-xs">
         <?	// Программа.
             $APPLICATION->IncludeComponent(
                 "bitrix:catalog.element",

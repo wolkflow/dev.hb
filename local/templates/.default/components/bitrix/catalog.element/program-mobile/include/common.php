@@ -3,64 +3,32 @@
 <? use Glyf\Core\Helpers\Text as TextHelper; ?>
 
 <script>
-    $(document).ready(function() {
-        $('#js-buy-button-id').on('click', function() {
-            var $that = $(this);
-            
-            var variant = $('.js-variant.active');
-            var product = variant.data('product');
-            var period  = variant.data('period');
-            var date    = $('.js-checked-day:checked:first').data('date');
-            
-            // Выбранные дни.
-            var days = [];
-            $('.js-checked-day:checked').each(function() {
-                days.push($(this).val());
-            });
-            
-            $.ajax({
-                url: '/remote/',
-                data: {'action': 'add-to-cart', 'product': product, 'days': days, 'period': period, 'date': date, 'type': 'program-common'},
-                dataType: 'json',
-                type: 'post',
-                success: function(response) {
-                    if (response.status) {
-                        $that.transfer({
-                            to: '#js-basket-button-id',
-                            duration: 600
-                        }, function() {
-                            RefreshBasket();
-                        });
-                    }
-                }
-            });
-        });
-        
-        $('.js-variant').on('click', function() {
-            $('#js-program-price-id').text($(this).data('price'));
-        });
-    });
-    
-    $(function() {
-        $('.panel-tab').tabSlideOut({							//Класс панели
-            tabHandle: '.panel-handle',						//Класс кнопки
-            pathToTabImage: null, // 'http://jemand.ru/examples/images/vydvigayushhayasya-s-lyuboj-storony-panel/button.gif',				//Путь к изображению кнопки
-            imageHeight: null,//'122px',						//Высота кнопки
-            imageWidth: null,// '40px',						//Ширина кнопки
-            tabLocation: 'right',						//Расположение панели top - выдвигается сверху, right - выдвигается справа, bottom - выдвигается снизу, left - выдвигается слева
-            speed: 400,								//Скорость анимации
-            action: 'click',								//Метод показа click - выдвигается по клику на кнопку, hover - выдвигается при наведении курсора
-            topPos: '200px',							//Отступ сверху
-            fixedPosition: true		//Позиционирование блока false - position: absolute, true - position: fixed
-        });
-    });
+	$(function() {
+		var panel = $('.panelMenu');
+
+		$('#js-panel-menu-button-id, .js-panel-menu-toggle').on('click', function (e) {
+			e.preventDefault();
+			panel.toggleClass('in');
+		});
+
+		$(window).resize(function () {
+			var w = $(window).width();
+			if (w > 767) {
+				panel.removeClass('in').removeAttr('style');
+			}
+		});
+	});
 </script>
 
 
+<div id="js-panel-menu-button-id" class="panel-popup-button">
+   <div class="panel-popup-button-content">
+        Выбор дней
+   </div>
+</div>
 
-
-<div class="panel-tab">
-	<a class="panel-handle">Выборать дни</a>
+<div class="panelMenu">
+    <div class="panelMenu-close js-panel-menu-toggle"></div>
     
     <div class="bl_chose_days">
         <div class="bl_chose_days_header">
@@ -97,7 +65,7 @@
                 </div>
             </div>
             <div class="bl_chose_days_btn">
-                <a id="js-buy-button-id" href="javascript:void(0)" class="button">Купить</a>
+                <a href="javascript:void(0)" class="button js-buy-button-id">Купить</a>
             </div>
         </div>
     </div>

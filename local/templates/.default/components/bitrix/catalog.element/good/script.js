@@ -19,4 +19,13 @@ $(document).ready(function() {
             }
         });
     });
+    
+    
+    $('.js-min-image').on('click', function() {
+        var $that = $(this);
+        var $wrap = $that.closest('.js-images');
+        var $main = $wrap.find('.js-big-image');
+        
+        $main.prop('src', $that.data('src'));
+    });
 });

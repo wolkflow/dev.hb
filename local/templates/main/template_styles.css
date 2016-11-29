@@ -6720,8 +6720,8 @@ input[type="tel"] {
 .form-row-buttons {
   padding-top: 32px; }
 
-.radio + .radio {
-  margin-left: 22px; }
+/*.radio + .radio {
+  margin-left: 22px; }*/
 
 .radio input[type="radio"] {
   display: none; }
@@ -6802,6 +6802,7 @@ input[type="button"],
   font-style: normal;
   font-stretch: normal;
   padding: 0 20px;
+  width: 100%;
   min-width: 220px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -6955,7 +6956,7 @@ a.button, a.button-white {
 .popup-content {
   display: inline-block;
   vertical-align: top;
-  /*width: 90%;*/
+  width: 90%;
   text-align: left;
   /*overflow-y: auto;*/ }
   .popup-content h2 {
@@ -7198,7 +7199,9 @@ a.button, a.button-white {
 
 .zakaz-forgot {
   float: right;
-  font-size: 10px; }
+  font-size: 10px;
+  margin-top: 10px;
+}
 
 .zakaz-text-recover {
   margin-top: 47px;
@@ -8625,12 +8628,4 @@ text-align: right;
 
 .hide {
     display: none;
-}
-
-.panel-tab {
-    padding: 20px;
-    width: 250px;
-    background: #ffffff;
-    border: 1px solid #252525;
-    z-index: 1000;
 }

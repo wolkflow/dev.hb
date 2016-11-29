@@ -333,29 +333,309 @@ function setPopupHeight() {
 */
 
 
+$(document).on('mouseup', function (e) {
+    if ($('body').hasClass('popup-opened')) {
+        $('#popup .popup-close').trigger('click');
+        $('#callback-popup .popup-close').trigger('click');
+    }
+});
+
+
 
 $(window).on('load resize', function(){
    /* setPopupHeight();*/
 });
 
-(function(){
-    var $table = $('.bl_menu_table');
 
-    if (!$table.length) { return; }
 
-    var $days = $('.bl_chose_days_c');
-    var tableOffsetTop = $table.offset().top;
-    var maxTranslateY = $table.height() - $days.height();
-
-    $(window).on('load scroll', function(){
-        var delta = Math.min(window.pageYOffset - tableOffsetTop + 20, maxTranslateY);
-
-        if (delta < 0) {
-            delta = 0; 
+if ($(window).width() >= 768) {
+    
+    
+    (function(){
+        var $table = $('#js-menu-wrapper-id .bl_menu_table');
+        
+        if (!$table.length) { 
+            return; 
         }
-        $days.css('transform', 'translateY(' + delta + 'px)');
+        
+        var $days = $('#js-menu-wrapper-id .bl_chose_days_c');
+        var tableOffsetTop = $table.offset().top;
+        var maxTranslateY  = $table.height() - $days.height();
+        
+        $(window).on('load scroll', function(){
+            var delta = Math.min(window.pageYOffset - tableOffsetTop + 20, maxTranslateY);
+
+            if (delta < 0) {
+                delta = 0;
+            }
+            $days.css('transform', 'translateY(' + delta + 'px)');
+        });
+    })();
+
+    (function(){
+        var $periodCont = $('#js-menu-wrapper-id .bl_chose_days_c_top_days');
+        var $checkboxes = $('#js-menu-wrapper-id .bl_chose_days_c_checkboxs').find('input[type="checkbox"]');
+        var $days       = $('#js-menu-wrapper-id .bl_menu_table_day');
+        var $toggler    = $('#js-menu-wrapper-id .bl_menu_scroll_t');
+        var currentPeriod;
+        var dotsSpace;
+        var $slider = $('#js-menu-wrapper-id .bl_menu_scroll');
+        
+        var cursorY;
+        var startPos;
+        var maxDelta = $('#js-menu-wrapper-id .bl_menu_scroll_bar').height() - $toggler.height();
+        var maxDeltaSlider = $('#js-menu-wrapper-id .bl_chose_days_c_checkboxs').height() - $slider.height() - 12;
+        
+        function initPeriod(period)
+        {
+            currentPeriod = period;
+            dotsSpace = $checkboxes.length - period;
+            setDots(0);
+            
+            $slider.data('translateY', 0);
+            $slider.css('transform', 'translateY(0px)');
+            $slider.prop('class', 'bl_menu_scroll scroll_' + period + '_day');
+            
+            maxDeltaSlider = $('#js-menu-wrapper-id .bl_chose_days_c_checkboxs').height() - $slider.height() - 12;
+        }
+
+        function setDots(start)
+        {
+            $checkboxes.prop('checked', false);
+            $checkboxes.slice(start, start + currentPeriod).prop('checked', true);
+
+            $days.filter('.active').removeClass('active');
+            $days.slice(start, start + currentPeriod).addClass('active');
+        }
+
+        $periodCont.children('span')
+            .on('click', function(){
+                var $self = $(this);
+
+                if ($self.hasClass('active')) { 
+                    return;
+                }
+                $self.addClass('active').siblings('.active').removeClass('active');
+                initPeriod($self.data('period'));
+            })
+            .filter(':first').trigger('click');
+
+        
+        
+        var slide2day = true;
+        
+        $slider.on('mousedown', function(event) {
+            cursorY = event.clientY;
+            startPos = parseInt($toggler.data('translateY') || 0);
+            
+            $(document).on('mousemove', function(event) {
+                var delta = startPos + (event.clientY - cursorY);
+                
+                if (delta < 0) {
+                    delta = 0; 
+                }
+                delta = Math.min(delta, maxDeltaSlider);
+
+                $slider.data('translateY', delta);
+                $slider.css('transform', 'translateY(' + delta + 'px)');
+                
+                setDots(Math.max(Math.round((delta / maxDeltaSlider).toFixed(2) * dotsSpace), 0));
+                
+                setTimeout(function() {
+                    if (!slide2day) {
+                        return;
+                    }
+                    slide2day = false;
+                    
+                    var $day = $('#js-menu-wrapper-id .js-selected-day.active');
+                    
+                    $('html, body').animate({
+                        scrollTop: ($day.offset().top - 5) + 'px'
+                    }, {
+                        duration: 2500, 
+                        easing: 'easeOutQuart',
+                        always: function() {
+                            slide2day = true;
+                        }
+                    });
+                }, 800);
+            });
+        });
+        
+        $(document).on('mouseup', function(event){
+            $(this).off('mousemove');
+        });
+        
+    })();
+
+
+} else {
+    
+    
+    (function(){
+        var $table = $('#js-menu-mobile-wrapper-id .bl_menu_table');
+
+        if (!$table.length) { return; }
+
+        var $days = $('#js-menu-mobile-wrapper-id .bl_chose_days_c');
+        var tableOffsetTop = $table.offset().top;
+        var maxTranslateY = $table.height() - $days.height();
+    })();
+
+    (function(){
+        var $periodCont = $('#js-menu-mobile-wrapper-id .bl_chose_days_c_top_days');
+        var $checkboxes = $('#js-menu-mobile-wrapper-id .bl_chose_days_c_checkboxs').find('input[type="checkbox"]');
+        var $days = $('#js-menu-mobile-wrapper-id .bl_menu_table_day');
+        var $toggler = $('#js-menu-mobile-wrapper-id .bl_menu_scroll_t');
+        var currentPeriod;
+        var dotsSpace;
+        var $slider = $('#js-menu-mobile-wrapper-id .bl_menu_scroll');
+        
+        var cursorY;
+        var startPos;
+        var maxDelta = $('#js-menu-mobile-wrapper-id .bl_menu_scroll_bar').height() - $toggler.height();
+        var maxDeltaSlider = $('#js-menu-mobile-wrapper-id .bl_chose_days_c_checkboxs').height() - $slider.height() - 12;
+        
+        function initPeriod(period)
+        {
+            currentPeriod = period;
+            dotsSpace = $checkboxes.length - period;
+            setDots(0);
+            
+            $slider.data('translateY', 0);
+            $slider.css('transform', 'translateY(0px)');
+            $slider.prop('class', 'bl_menu_scroll scroll_' + period + '_day');
+            
+            maxDeltaSlider = $('#js-menu-mobile-wrapper-id .bl_chose_days_c_checkboxs').height() - $slider.height() - 12;
+        }
+
+        function setDots(start)
+        {
+            $checkboxes.prop('checked', false);
+            $checkboxes.slice(start, start + currentPeriod).prop('checked', true);
+
+            $days.filter('.active').removeClass('active');
+            $days.slice(start, start + currentPeriod).addClass('active');
+        }
+
+        $periodCont.children('span')
+            .on('click', function(){
+                var $self = $(this);
+
+                if ($self.hasClass('active')) { return; }
+
+                $self.addClass('active').siblings('.active').removeClass('active');
+                initPeriod($self.data('period'));
+            })
+            .filter(':first').trigger('click');
+
+        
+        
+        var slide2day = true;
+        
+        $slider.on('touchstart', function(event) {
+            cursorY = event.clientY;
+            startPos = parseInt($toggler.data('translateY') || 0);
+            
+            $(document).on('touchmove', function(event) {
+                var delta = startPos + (event.clientY - cursorY);
+                
+                if (delta < 0) {
+                    delta = 0; 
+                }
+                delta = Math.min(delta, maxDeltaSlider);
+
+                $slider.data('translateY', delta);
+                $slider.css('transform', 'translateY(' + delta + 'px)');
+                
+                setDots(Math.max(Math.round((delta / maxDeltaSlider).toFixed(2) * dotsSpace), 0));
+                
+                setTimeout(function() {
+                    if (!slide2day) {
+                        return;
+                    }
+                    slide2day = false;
+                    
+                    var $day = $('#js-menu-mobile-wrapper-id .js-selected-day.active');
+                    
+                    $('html, body').animate({
+                        scrollTop: ($day.offset().top - 5) + 'px'
+                    }, {
+                        duration: 2500, 
+                        easing: 'easeOutQuart',
+                        always: function() {
+                            slide2day = true;
+                        }
+                    });
+                }, 800);
+            });
+        });
+        
+        $(document).on('mouseup', function(event){
+            $(this).off('mousemove');
+        });
+        
+    })();
+
+
+}
+
+
+
+$(document).ready(function() {
+    $('.js-buy-button-id').on('click', function() {
+        var $that = $(this);
+        
+        if ($(window).width() >= 768) {
+            var variant = $('#js-menu-wrapper-id .js-variant.active');
+            var date    = $('#js-menu-wrapper-id .js-checked-day:checked:first').data('date');
+        } else {
+            var variant = $('#js-menu-mobile-wrapper-id .js-variant.active');
+            var date    = $('#js-menu-mobile-wrapper-id .js-checked-day:checked:first').data('date');
+        }
+        
+        var product = variant.data('product');
+        var period  = variant.data('period');
+        
+        // Выбранные дни.
+        var days = [];
+        
+        if ($(window).width() >= 768) {
+            $('#js-menu-wrapper-id .js-checked-day:checked').each(function() {
+                days.push($(this).val());
+            });
+        } else {
+            $('#js-menu-mobile-wrapper-id .js-checked-day:checked').each(function() {
+                days.push($(this).val());
+            });
+        }
+        
+        
+        $.ajax({
+            url: '/remote/',
+            data: {'action': 'add-to-cart', 'product': product, 'days': days, 'period': period, 'date': date, 'type': 'program-common'},
+            dataType: 'json',
+            type: 'post',
+            success: function(response) {
+                if (response.status) {
+                    $that.transfer({
+                        to: '#js-basket-button-id',
+                        duration: 600
+                    }, function() {
+                        RefreshBasket();
+                    });
+                }
+            }
+        });
     });
-})();
+    
+    $('.js-variant').on('click', function() {
+        $('#js-program-price-id').text($(this).data('price'));
+    });
+});
+
+
+
 
 
 
@@ -363,15 +643,14 @@ $(window).on('load resize', function(){
 function sliderWidth()
 {
 	if ($('#homeSlider').length) {
-		var logoWidth  = $('.logo').width(),
-			menuWidth  = $('.menu > ul').width(),
+		var logoWidth = $('.logo').width(),
+			menuWidth = $('.menu > ul').width(),
 			menuOffset = $('.menu').offset().left;
 		$('.sliderText').width(logoWidth + menuWidth - 90);
 		$('.sliderText p').width(logoWidth);
 		$('.sliderImage').css({'padding-left': menuOffset})
 	}
 }
-
 $(document).ready(function() {
 	$(function () {
 		var pull = $('.js-menu-toggle'),
@@ -410,7 +689,7 @@ if ($('#homeSlider').length) {
 	});
 }
 
-$(window).on('load resize', function(){
+$(window).on('load resize', function() {
 	sliderWidth();
 });
 

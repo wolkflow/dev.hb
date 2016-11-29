@@ -2,47 +2,7 @@
 
 <? use Glyf\Core\Helpers\Text as TextHelper; ?>
 
-<script>
-    $(document).ready(function() {
-        $('#js-buy-button-id').on('click', function() {
-            var $that = $(this);
-            
-            var variant = $('.js-variant.active');
-            var product = variant.data('product');
-            var period  = variant.data('period');
-            var date    = $('.js-checked-day:checked:first').data('date');
-            
-            // Выбранные дни.
-            var days = [];
-            $('.js-checked-day:checked').each(function() {
-                days.push($(this).val());
-            });
-            
-            $.ajax({
-                url: '/remote/',
-                data: {'action': 'add-to-cart', 'product': product, 'days': days, 'period': period, 'date': date, 'type': 'program-common'},
-                dataType: 'json',
-                type: 'post',
-                success: function(response) {
-                    if (response.status) {
-                        $that.transfer({
-                            to: '#js-basket-button-id',
-                            duration: 600
-                        }, function() {
-                            RefreshBasket();
-                        });
-                    }
-                }
-            });
-        });
-        
-        $('.js-variant').on('click', function() {
-            $('#js-program-price-id').text($(this).data('price'));
-        });
-    });
-</script>
-
-<div class="container main-unit"> <!--bl_menu_container clearfix-->
+<div class="container main-unit">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="bl_chose_days hidden-xs">
@@ -82,10 +42,11 @@
                         </div>
                     </div>
                     <div class="bl_chose_days_btn">
-                        <a id="js-buy-button-id" href="javascript:void(0)" class="button">Купить</a>
+                        <a href="javascript:void(0)" class="button js-buy-button-id">Купить</a>
                     </div>
                 </div>
-            </div>      
+            </div>
+            
             <div class="bl_menu_cont">
                 <div class="bl_menu_cont_header">Меню</div>
                 <div class="bl_menu_table">
