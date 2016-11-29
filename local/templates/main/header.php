@@ -12,7 +12,7 @@
         <script src="<?= SITE_TEMPLATE_PATH ?>/js/jquery.tabslideout.js"></script>    
         <script src="<?= SITE_TEMPLATE_PATH ?>/js/jquery.maskedinput.js"></script>
         <script src="<?= SITE_TEMPLATE_PATH ?>/js/slick.min.js"></script>
-        <script src="<?= SITE_TEMPLATE_PATH ?>/js/script.js"></script>
+        
         
         <? $APPLICATION->ShowHead() ?>
         
