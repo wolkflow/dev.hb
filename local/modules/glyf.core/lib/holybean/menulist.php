@@ -15,9 +15,15 @@ class MenuList
     protected $program;
     
     
-    public function __construct(Program $programm)
+    public function __construct(Program $program)
     {
         $this->program = $program;
+    }
+    
+    
+    public function getProgram()
+    {
+        return $this->program;
     }
     
     
@@ -46,14 +52,25 @@ class MenuList
     {
         $list = array();
         
+        $section = \CIBlockSection::GetList(
+            array(), 
+            array('IBLOCK_ID' => IBLOCK_MENU_ID, 'UF_PROGRAM' => $this->getProgram()->getID()), 
+            false,
+            array('ID'), 
+            array('nTopCount' => 1)
+        )->fetch();
+        
         $items = Menu::getList(array(
             'sort'   => array('SORT' => 'ASC'),
-            'filter' => array('ACTIVE' => 'Y'),
+            'filter' => array('ACTIVE' => 'Y', 'SECTION_ID' => $section['ID']),
             'limit'  => MENU_DAYS,
         ), true, null);
         
         $list = $items;
         
+        if (empty($list)) {
+            return array();
+        }
         
         // Если количество дней меню меньше чем заданное.
         while (count($list) < MENU_DAYS) {

@@ -66,6 +66,7 @@
             <div id="js-baskets-id">
                 <? $items = $arResult['ITEMS']['AnDelCanBuy']; ?>
                 <? foreach ($items as $item) { ?>
+                    <? $product = CCatalogProduct::GetByIDEx($item['PRODUCT_ID']) ?>
                     <div class="basket-item js-basket-item"> 
                         <div class="box_close  js-basket-remove col-xs-1 col-sm-1 col-md-1 col-lg-1 " data-basket="<?= $item['ID'] ?>">
                         <div class="img_close"></div>
@@ -79,19 +80,24 @@
                         </div>
                         <div class="basket-item__content col-xs-9 col-sm-9 col-md-9 col-lg-9">
                             <div class="row">
-                                <div class="basket-item__value col-md-5 col-lg-5 col-xs-9 col-sm-9">
+                                <div class="basket-item__value col-md-4 col-lg-4 col-xs-9 col-sm-9">
                                     <?= $item['NAME'] ?>
                                 </div>
                                 <div class="basket-item__value col-md-2 col-lg-2 col-xs-3 col-sm-3">
-                                    <?= $item['QUANTITY'] ?>
+                                    <? if ($product['IBLOCK_ID'] == IBLOCK_GOODS_ID) { ?>
+                                        <?= $product['PROPERTIES']['ENERGY']['VALUE'] ?> кКал
+                                    <? } ?>
                                 </div>
-                                <div class="basket-item__value js-quantity-wrap col-md-3 col-lg-3 col-xs-6 col-sm-6" data-basket="<?= $item['ID'] ?>">
+                                <div class="basket-item__value js-quantity-wrap col-md-2 col-lg-2 col-xs-6 col-sm-6" data-basket="<?= $item['ID'] ?>">
                                     <div class="basket-item__count-minus js-quantity-change"></div>
                                     <input class="basket-item__count" type="text" value="<?= $item['QUANTITY'] ?> шт" data-quantity="<?= $item['QUANTITY'] ?>" />
                                     <div class="basket-item__count-plus js-quantity-change"></div>
                                 </div>
-                                <div class="basket-item__value col-md-2 col-lg-2 col-xs-6 col-sm-6">
-                                    <span class="js-basket-price"><?= $item['PRICE'] * $item['QUANTITY'] ?></span> Р
+                                <div class="basket-item__value col-md-2 col-lg-2 col-xs-3 col-sm-3">
+                                    <span><?= $item['PRICE'] ?></span> ₽
+                                </div>
+                                <div class="basket-item__value col-md-2 col-lg-2 col-xs-3 col-sm-3">
+                                    <span class="js-basket-price"><?= $item['PRICE'] * $item['QUANTITY'] ?></span> ₽
                                 </div>
                             </div>
                         </div>
@@ -102,7 +108,7 @@
                 <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-10 col-sm-10 col-md-10 col-lg-10">
                     <div class="basket-total">
                         <span>общая сумма</span>
-                        <span id="js-basket-total-price-id"><?= $arResult['allSum'] ?></span>
+                        <span id="js-basket-total-price-id"><?= $arResult['allSum'] ?> ₽</span>
                     </div>
                 </div>
                 <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-10 col-sm-10 col-md-10 col-lg-10">

@@ -218,6 +218,15 @@ switch ($action) {
             $order = new \Glyf\Core\HolyBean\Order($orderID);
             $link  = $order->getPaymentURL();
             
+            // Отправка смс с кодом подтверждения.
+            $smsclient  = new Glyf\Core\Drivers\SMSC();
+            $adminphone = COption::getOptionString('glyf.core', 'DEFAULT_PHONE', '79851453585');
+            try {
+                $smsclient->sendSMS($adminphone, 'На сайте сделан заказ № '.$orderID);
+            } catch (Exception $e) {
+                // ...
+            }
+            
             jsonresponse(true, 'Заказ создан', array('link' => $link));
         }
         jsonresponse(false, 'При создании заказа возникла ошибка');

@@ -49,12 +49,12 @@
 <textarea id="js-order-comment-id" name="COMMENT"></textarea>
 <div class="zakaz-total">
     <h3>Общая сумма</h3>
-    <span class="zakaz-total__sum"><?= ($arResult['allSum'] + $arResult['DELIVERY']['PRICE']) ?> Р</span>
+    <span class="zakaz-total__sum"><?= ($arResult['allSum'] + $arResult['DELIVERY']['PRICE']) ?> ₽</span>
 </div>
 <div class="zakaz-pay">
     <span>
         В сумму заказа включена стоимость доставки 
-        по Москве в размере <?= $arResult['DELIVERY']['PRICE'] ?> Р
+        по Москве в размере <?= $arResult['DELIVERY']['PRICE'] ?> ₽
     </span>
     <a class="button" href="javascript:void(0)" id="js-make-order-id">оплатить</a>
 </div>

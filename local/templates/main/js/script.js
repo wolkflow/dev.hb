@@ -112,31 +112,118 @@ $(function(){
     
     $('.js-phone-mask').mask("\+7 (999) 999-99-99"); 
     
+    
+    function slmenu($item)
+    {
+        var $wrap = $('#js-submenu-holder-id');
+        
+        if ($item.prop('id') == $wrap.data('eid')) {
+            $wrap.removeClass('slideInRight').addClass('animated slideOutRight');
+            setTimeout(function() {
+                $wrap.hide();
+                $wrap.data('eid', false);
+            }, 600);
+            return;
+        }
+        
+        $wrap.data('eid', $item.prop('id'));
+        
+        if ($wrap.is(':visible')) {
+            var $submenu = $wrap.find('.submenu');
+            $submenu.fadeOut({
+                complete: function() {
+                    $wrap.hide();
+                    $wrap.html($item.html());
+                    $wrap.fadeIn();
+                }
+            });
+        } else {
+            $wrap.html($item.html());
+            $wrap.removeClass('slideOutRight').show().addClass('animated slideInRight');
+        }
+    }
+    
+    
     $('#js-menu-link-about-id').on('click', function() {
-        if ($(this).data('open')) {
+        var $that = $(this);
+        var $wrap = $('#js-submenu-holder-id');
+        var $item = $('#js-submenu-about-wrap-id');
+         
+        slmenu($item);
+        
+        if ($that.data('open')) {
+            $that.data('open', false);
+        } else {
+            $that.data('open', true);
+        }
+        
+        /*
+        if ($('#js-menu-link-programs-id').data('open')) {
+            $('#js-submenu-programs-wrap-id').removeClass('slideInRight').addClass('animated slideOutRight');
+            setTimeout(function() {
+                $('#js-submenu-programs-wrap-id').hide();
+            }, 300);
+            $('#js-menu-link-programs-id').data('open', false);
+        }
+        
+        
+        if ($that.data('open')) {
             $('#js-submenu-about-wrap-id').removeClass('slideInRight').addClass('animated slideOutRight');
             setTimeout(function() {
                 $('#js-submenu-about-wrap-id').hide();
             }, 600);
-            $(this).data('open', false);
+            $that.data('open', false);
         } else {
-            $('#js-submenu-about-wrap-id').removeClass('slideOutRight').show().addClass('animated slideInRight');
-            $(this).data('open', true);
+            $wrap.html($item.html());
+            if ($wrap.is(':visible')) {
+                 //$wrap.removeClass('slideOutRight').show().addClass('animated slideInRight');
+            } else {
+                $wrap.removeClass('slideOutRight').show().addClass('animated slideInRight');
+            }
+            //$('#js-submenu-about-wrap-id').removeClass('slideOutRight').show().addClass('animated slideInRight');
+            $that.data('open', true);
         }
+        */
     });
     
     $('#js-menu-link-programs-id').on('click', function() {
-        if ($(this).data('open')) {
+        var $that = $(this);
+        var $wrap = $('#js-submenu-holder-id');
+        var $item = $('#js-submenu-programs-wrap-id');
+         
+        slmenu($item);
+        
+        if ($that.data('open')) {
+            $that.data('open', false);
+        } else {
+            $that.data('open', true);
+        }
+        /*
+        
+        var $that = $(this);
+        var $wrap = $('#js-submenu-holder-id');
+        
+        if ($('#js-menu-link-about-id').data('open')) {
+            $('#js-submenu-about-wrap-id').removeClass('slideInRight').addClass('animated slideOutRight');
+            setTimeout(function() {
+                $('#js-submenu-about-wrap-id').hide();
+            }, 300);
+            $('#js-menu-link-about-id').data('open', false);
+        }
+        
+        if ($that.data('open')) {
             $('#js-submenu-programs-wrap-id').removeClass('slideInRight').addClass('animated slideOutRight');
             setTimeout(function() {
                 $('#js-submenu-programs-wrap-id').hide();
             }, 600);
-            $(this).data('open', false);
+            $that.data('open', false);
         } else {
             $('#js-submenu-programs-wrap-id').removeClass('slideOutRight').show().addClass('animated slideInRight');
-            $(this).data('open', true);
+            $that.data('open', true);
         }
+        */
     });
+    
     
     $(window).scroll(function() {
         var scroll = $(window).scrollTop() + $(window).height();

@@ -78,25 +78,26 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-6 col-lg-6 imege1">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 imege_height">
-                        <img src="http://ua.badgood.info/photos/notes/1/72/71027/568269f831.jpg">
-                </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 imege1_noactive">
-
+            
+            <div class="col-sm-6 col-md-6 col-lg-6 imege1 js-images">
+                <? if (!empty($arResult['PREVIEW_PICTURE']['SRC'])) { ?>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 imege_height">
+                        <div class="img_card_1 js-big-image">
+                            <img src="<?= $arResult['PREVIEW_PICTURE']['SRC'] ?>" />
+                        </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 imege1_noactive">
-                        <img src="http://ua.badgood.info/photos/notes/1/72/71027/568269f831.jpg">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 imege1_noactive js-min-image" data-src="<?= $arResult['PREVIEW_PICTURE']['SRC'] ?>">
+                            <img src="<?= $arResult['PREVIEW_PICTURE']['SRC'] ?>" />
+                        </div>
+                        <? foreach ($arResult['PROPERTIES']['IMAGES']['VALUE'] as $fid) { ?>
+                            <? $src = CFile::getPath($fid) ?>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 imege1_noactive js-min-image" data-src="<?= $src ?>">
+                                <img src="<?= $src ?>" />
+                            </div>
+                        <? } ?>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 imege1_noactive">
-                        <img src="http://ua.badgood.info/photos/notes/1/72/71027/568269f831.jpg">
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 imege1_noactive">
-                        <img src="http://ua.badgood.info/photos/notes/1/72/71027/568269f831.jpg">
-                    </div>
-                </div>
-
+                <? } ?>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -114,24 +115,25 @@
      </div>
     <div class="container main-unit hei6 hidden-lg hidden-md hidden-sm">
         <div class="row">
-            <div class="col-xs-12 imege1 image1_bottom">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 imege_height">
-                    <img src="http://ua.badgood.info/photos/notes/1/72/71027/568269f831.jpg">
-                </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 imege1_noactive">
-
+            <div class="col-xs-12 imege1 image1_bottom js-images">
+                <? if (!empty($arResult['PREVIEW_PICTURE']['SRC'])) { ?>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 imege_height">
+                        <div class="img_card_1 js-big-image">
+                            <img src="<?= $arResult['PREVIEW_PICTURE']['SRC'] ?>" />
+                        </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 imege1_noactive">
-                        <img src="http://ua.badgood.info/photos/notes/1/72/71027/568269f831.jpg">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 imege1_noactive js-min-image" data-src="<?= $arResult['PREVIEW_PICTURE']['SRC'] ?>">
+                            <img src="<?= $arResult['PREVIEW_PICTURE']['SRC'] ?>" />
+                        </div>
+                        <? foreach ($arResult['PROPERTIES']['IMAGES']['VALUE'] as $fid) { ?>
+                            <? $src = CFile::getPath($fid) ?>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 imege1_noactive js-min-image" data-src="<?= $src ?>">
+                                <img src="<?= $src ?>" />
+                            </div>
+                        <? } ?>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 imege1_noactive">
-                        <img src="http://ua.badgood.info/photos/notes/1/72/71027/568269f831.jpg">
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 imege1_noactive">
-                        <img src="http://ua.badgood.info/photos/notes/1/72/71027/568269f831.jpg">
-                    </div>
-                </div>
+                <? } ?>
             </div>
             <div class="col-xs-12">
                 <div class="row">

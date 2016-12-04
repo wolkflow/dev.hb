@@ -13,11 +13,15 @@
         <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
             <div class="row">
                 <? foreach ($arResult['ITEMS'] as $item) { ?>
-                    <a href="<?= $item['DETAIL_PAGE_URL'] ?>" class="main-programs__block col-sm-4 col-md-4 col-lg-4 col-xs-12">
+                    <? $link = ($item['PROPERTIES']['SOON']['VALUE'] == 'Y') ? ('javascript:void(0)') : ($item['DETAIL_PAGE_URL']) ?>
+                    <a href="<?= $link ?>" class="main-programs__block col-sm-4 col-md-4 col-lg-4 col-xs-12 <?= ($item['PROPERTIES']['SOON']['VALUE'] == 'Y') ? ('disable') : ('') ?>">
                         <svg aria-hidden="true">
                             <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/images/icons.svg#<?= $item['PROPERTIES']['CSS']['VALUE'] ?>"></use>
                         </svg>
                         <?= $item['NAME'] ?>
+                        <? if ($item['PROPERTIES']['SOON']['VALUE'] == 'Y') { ?>
+                            <span class="soon">(скоро в продаже)</span>
+                        <? } ?>
                     </a>
                 <? } ?>
             </div>

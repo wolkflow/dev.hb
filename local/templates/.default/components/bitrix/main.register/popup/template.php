@@ -70,6 +70,17 @@
                 <? } ?>
             </div>
             <div class="form-row">
+                <span class="label big">Фамилия</span>
+                <div class="input">
+                    <input type="text" name="REGISTER[LAST_NAME]" value="<?= $arResult['VALUES']['LAST_NAME'] ?>" />
+                </div>
+                <? if (!empty($arResult['ERRORS']['LAST_NAME'])) { ?>
+                    <div class="input-error">
+                        <?= $arResult['ERRORS']['LAST_NAME'] ?>
+                    </div>
+                <? } ?>
+            </div>
+            <div class="form-row">
                 <span class="label big">E-mail</span>
                 <div class="input">
                     <input type="text" name="REGISTER[EMAIL]" value="<?= $arResult['VALUES']['EMAIL'] ?>" />

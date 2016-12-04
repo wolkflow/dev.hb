@@ -11,6 +11,7 @@ $APPLICATION->IncludeComponent(
         "SEF_MODE" => "N",
         "SHOW_FIELDS" => array(
             "NAME",
+            "LAST_NAME",
             "LOGIN",
             "EMAIL",
             "PERSONAL_MOBILE",

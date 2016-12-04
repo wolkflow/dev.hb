@@ -29,6 +29,8 @@
 			<? $APPLICATION->ShowPanel() ?>
 		</div>
 		<div class="wrapper">
+            
+        
 			<header class="siteHeader">
 				<div class="container">
 					<div class="row">
@@ -39,7 +41,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<div class="col-xs-6 col-sm-5 col-md-6 col-lg-6">
 							<div class="headerCenter">
 								<div class="headerCenter-phone visible-xs">
 									<span class="headerContacts-phone">
@@ -86,7 +88,7 @@
 							</div>
 						</div>
                         
-						<div class="col-xs-3 col-sm-2 col-md-2 col-lg-2 hidden-xs">
+						<div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 hidden-xs">
 							<div class="headerContacts pull-right">
 								<span class="headerContacts-phone">
 									<?  // Телефон.
@@ -144,8 +146,12 @@
 				</div>
 			</header>
             
+            <div id="js-submenu-holder-id" style="display: none;">
+                
+            </div>
+            
             <div id="js-submenu-about-wrap-id" class="hidden-xs" style="display: none;">
-                <div class="bl_catalog_filter clearfix" style="margin-bottom: 40px; margin-top: -30px;">
+                <div class="submenu bl_catalog_filter clearfix" style="margin-bottom: 40px; margin-top: -30px;">
                     <div class="bg4"></div>
                     <div class="container2 bg1">
                         <div class="row">
@@ -166,6 +172,7 @@
             </div>
             
             <div id="js-submenu-programs-wrap-id" class="hidden-xs" style="display: none;">
+                <div class="submenu" style="margin-top: -30px;">
                 <?	// Программы питания.
                     $APPLICATION->IncludeComponent(
                         "bitrix:news.list",
@@ -205,8 +212,8 @@
                             "DISPLAY_NAME" => "Y",
                             "DISPLAY_PICTURE" => "N",
                             "DISPLAY_PREVIEW_TEXT" => "Y"
-                        ),
-                        $component
+                        )
                     );
                 ?>
+                </div>
             </div>
