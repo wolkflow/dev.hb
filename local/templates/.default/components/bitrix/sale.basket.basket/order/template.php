@@ -34,7 +34,7 @@
             <? $items = $arResult['ITEMS']['AnDelCanBuy']; ?>
             <? foreach ($items as $item) { ?>
                 <tr>
-                    <td><?= $item['NAME'] ?></td>
+                    <td><?= $item['~NAME'] ?></td>
                     <td><?= $item['QUANTITY'] ?></td>
                     <td><?= $item['PRICE'] ?> Р</td>
                 </tr>

@@ -49,7 +49,10 @@
                         <div class="bl_filter_item">
                             <span class="title">Фильтр:</span>
                             <div class="select-cont">
-                                <span class="select">Тип питания</span>
+                                <span class="select">
+                                    <? $type = intval($_REQUEST['type']) ?>
+                                    <?= (!empty($type)) ? ($arResult['TYPES'][$type]) : ('Тип питания') ?>
+                                </span>
                                 <input type="hidden" />
                                 <div class="select-menu">
                                     <a href="<?= $APPLICATION->GetCurPageParam('', array('type'), false) ?>" class="select-menu__item">

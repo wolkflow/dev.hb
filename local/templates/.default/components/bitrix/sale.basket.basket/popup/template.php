@@ -81,7 +81,7 @@
                         <div class="basket-item__content col-xs-9 col-sm-9 col-md-9 col-lg-9">
                             <div class="row">
                                 <div class="basket-item__value col-md-4 col-lg-4 col-xs-9 col-sm-9">
-                                    <?= $item['NAME'] ?>
+                                    <?= $item['~NAME'] ?>
                                 </div>
                                 <div class="basket-item__value col-md-2 col-lg-2 col-xs-3 col-sm-3">
                                     <? if ($product['IBLOCK_ID'] == IBLOCK_GOODS_ID) { ?>

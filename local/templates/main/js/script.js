@@ -544,7 +544,7 @@ if ($(window).width() >= 768) {
                     $('html, body').animate({
                         scrollTop: ($day.offset().top - 5) + 'px'
                     }, {
-                        duration: 2500, 
+                        duration: 1200, 
                         easing: 'easeOutQuart',
                         always: function() {
                             slide2day = true;
@@ -657,7 +657,7 @@ if ($(window).width() >= 768) {
                     $('html, body').animate({
                         scrollTop: ($day.offset().top - 5) + 'px'
                     }, {
-                        duration: 2500, 
+                        duration: 1200, 
                         easing: 'easeOutQuart',
                         always: function() {
                             slide2day = true;
