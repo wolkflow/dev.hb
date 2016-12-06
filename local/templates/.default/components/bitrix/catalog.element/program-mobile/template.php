@@ -62,10 +62,14 @@
                                 <?= $arResult['PREVIEW_TEXT']; ?>
                             </p>
                         </div>
-                        <div class="col-sm-5 col-md-5 col-lg-5">
+                        <div class="col-sm-5 col-md-5 col-lg-5 hidden-xs">
                             <? if (!empty($arResult['PREVIEW_PICTURE']['SRC'])) { ?>
                                 <img src="/i.php?src=<?= $arResult['PREVIEW_PICTURE']['SRC'] ?>&w=411&h=265" align="right" />
                             <? } ?>
+                        </div>
+                        <div class="cross cross_none animated slideInLeft" data-side="left">
+                            <div class="line_to"></div>
+                            <div class="cross_to"></div>
                         </div>
                     </div>
                 </div>

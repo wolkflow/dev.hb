@@ -26,9 +26,9 @@
                                 <h3><?= $item['NAME'] ?></h3>
                                 <div class="animated slideInLeft">
                                 <div class="line_one">
-                                    </div>
-                                    <div class="cross_one">
-                                    </div>
+                                </div>
+                                <div class="cross_one">
+                                </div>
                                 </div>
                                 <p><?= $item['PREVIEW_TEXT'] ?></p>
                             </div>

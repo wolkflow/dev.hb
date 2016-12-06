@@ -6832,7 +6832,7 @@ display:none;
 display:none;
 }
 .bl_ind_cont {
-  margin-bottom: 105px; }
+  margin-bottom: 54px; }
   
 .but1 {
     margin-top: 30px;
@@ -6842,7 +6842,7 @@ display:none;
     margin-right: 0px;
 }
 .bl_menu_table {
-    width: calc(100% - 90px);
+    width: calc(100% - 80px);
     margin-left: 45px;
 }
 .bl_menu_table_day_data { 
@@ -6901,15 +6901,24 @@ display:none;
         padding-left: 30px;
     }
 
-    .menu_class_4 {
-        font-family: GothamPro;
-        font-size: 15px;
-        font-weight: 300;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 2;
-        color: #878787;
-    }
+        .menu_class_4 {
+            color: #878787;
+            font-family: GothamPro;
+            font-size: 12px;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 2.5;}
+
+        .menu_class_4 p {
+            font-family: GothamPro;
+            font-size: 12px;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 2.5;
+            color: #252525;
+        }
 
     .menu_class_5 {
         font-family: GothamPro;
@@ -6921,6 +6930,16 @@ display:none;
         color: #878787;
         text-align: left;
     }
+
+        .menu_class_5 p{
+            font-family: GothamPro;
+            font-size: 10px;
+            font-weight: 300;
+            font-style: italic;
+            font-stretch: normal;
+            line-height: 3;
+            color: #878787;
+        }
 
     .row_nomargin {
         margin-left: 0px;
@@ -7290,8 +7309,8 @@ display:none;
     .panelMenu.in {
         position: fixed;
         width: auto;
-        overflow-y: auto;
-        overflow-x: hidden;
+        overflow-y: visible;
+        overflow-x: visible;
     }
     .panelMenu.in .bl_chose_days_c_descr {
         display: inherit;
@@ -7299,14 +7318,14 @@ display:none;
     .bl_chose_days_c_descr {
         border-top: solid 1px #252525;
         font-family: GothamPro;
-        font-size: 12px;
+        font-size: 10px;
         font-weight: 300;
         font-style: normal;
         font-stretch: normal;
         line-height: 1.2;
         color: #252525;
         position: relative;
-        padding: 9px 15px 9px 30px;
+        padding: 11px 14px 11px 20px;
         margin-top: -64px;
         /* position: relative; */
         /* z-index: 1000; */
@@ -7314,7 +7333,7 @@ display:none;
     }
     .bl_chose_days_c_checkboxs {
         position: relative;
-        padding: 8px 30px;
+        padding: 25px 30px;
     }
     .panel-popup-button {
         /* background: #fff; */
@@ -7356,8 +7375,65 @@ display:none;
         text-align: center;
         font-size: 12px;
     }
+    #pop-checkbox {
+        display: none;
+    }
+    #pop-checkbox:checked + .pop-block {
+        visibility: hidden; /*чтобы освободить занимаемое место - display: none;*/
+    }
+    .close-block {
+        display: block;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 12px;
+        height: 12px;
+        background-image: url(../images/close_min.png);
+        cursor: pointer;
+    }
+    .panelMenu-close {
+        width: 138px;
+        height: 30px;
+        position: absolute;
+        cursor: pointer;
+        top: 90px;
+        right: 166px;
+        z-index: 1000;
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        border-right: 1px solid #252525;
+        border-top: 1px solid #252525;
+        border-left: 1px solid #252525;
+    }
+    .panelMenu-close:before, .panelMenu-close:after {
+        display: none; }
 
+    .panelMenu-close {
+        font-family: DINPro;
+        font-size: 12px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        text-align: center;
+        color: #252525;
+        padding-top: 9px;
+        background: #ffffff;
+    }
+    .panelMenu.in .bl_chose_days_header {
+        font-size: 16px;
+        margin-top: 8px;
+        margin-bottom: 12px;
+        text-align: center;
+    }
 
+    .bl_menu_table_day_row_day_title span{
+        font-family: GothamPro;
+        font-size: 12px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        color: rgba(37, 37, 37, 0.5);
+    }
 }
 
 
