@@ -224,7 +224,6 @@ $(function(){
         */
     });
     
-    
     $(window).scroll(function() {
         var scroll = $(window).scrollTop() + $(window).height();
         var width  = '53.5%';
@@ -562,8 +561,7 @@ if ($(window).width() >= 768) {
 
 
 } else {
-
-
+    
     (function(){
         var $table = $('#js-menu-mobile-wrapper-id .bl_menu_table');
 

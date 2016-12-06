@@ -9,7 +9,12 @@
 		$('#js-panel-menu-button-id, .js-panel-menu-toggle').on('click', function (e) {
 			e.preventDefault();
 			panel.toggleClass('in');
+            $('#popup-blur').addClass('is-active');
 		});
+        
+        $('.js-panel-menu-toggle').on('click', function() {
+            $('#popup-blur').removeClass('is-active');
+        });
 
 		$(window).resize(function () {
 			var w = $(window).width();
@@ -28,7 +33,9 @@
 </div>
 
 <div class="panelMenu">
-    <div class="panelMenu-close js-panel-menu-toggle"></div>
+    <div class="panelMenu-close js-panel-menu-toggle">
+
+    </div>
     
     <div class="bl_chose_days">
         <div class="bl_chose_days_header">
@@ -59,12 +66,12 @@
                 <div class="bl_chose_days_c_descr">
                     Выберите дни, перемещая ползунок курсором мыши
                 </div>
-                <div class="bl_chose_days_c_bottom_price">
+                <div class="bl_chose_days_c_bottom_price col-xs-6">
                     <span class="js-program-price-id"><?= $arResult['VARIANTS'][PROGRAM_DAYS_1]->getPrice() ?></span>
                     <span class="rub">₽</span>
                 </div>
             </div>
-            <div class="bl_chose_days_btn">
+            <div class="bl_chose_days_btn btn_mobile_1 col-xs-6">
                 <a href="javascript:void(0)" class="button js-buy-button-id">Купить</a>
             </div>
         </div>

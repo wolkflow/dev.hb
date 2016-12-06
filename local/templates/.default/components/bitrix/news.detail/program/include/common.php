@@ -33,8 +33,8 @@
                 <div class="bl_chose_days_c_descr">
                     Выберите дни, перемещая ползунок курсором мыши
                 </div>
-                <div class="bl_chose_days_c_bottom_price">
-                    <span id="js-program-price-id">4520</span> Р
+                <div class="bl_chose_days_c_bottom_price col-xs-6">
+                    <span id="js-program-price-id"></span> Р
                 </div>
             </div>
             <div class="bl_chose_days_btn">

@@ -148,6 +148,8 @@
                 ?>
             </div>
             
+            <div id="popup-blur" class="popup"></div>
+            
             <?  // Popup.
                 $APPLICATION->IncludeComponent('bitrix:main.include', '', array(
                     'AREA_FILE_SHOW' => 'file',

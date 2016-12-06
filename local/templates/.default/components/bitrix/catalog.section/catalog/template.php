@@ -42,12 +42,14 @@
                     <div class="bl_catalog_filter_right">
                         <div class="bl_filter_item">
                             <span class="title">Сортировка:</span>
+                            <div class="hidden-md hidden-lg hidden-sm"><br></div>
                             <a class="sort <?= $arParams['ELEMENT_SORT_ORDER'] ?>" href="<?= $APPLICATION->GetCurPageParam('order=' . $order, array('order'), false) ?>">
                                 Цена
                             </a>
                         </div>
                         <div class="bl_filter_item">
                             <span class="title">Фильтр:</span>
+                            <div class="hidden-md hidden-lg hidden-sm"><br></div>
                             <div class="select-cont">
                                 <span class="select">
                                     <? $type = intval($_REQUEST['type']) ?>

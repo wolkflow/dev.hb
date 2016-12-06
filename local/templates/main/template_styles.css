@@ -6884,6 +6884,9 @@ a.button, a.button-white {
   .popup.is-active {
     display: block; 
   }
+  #popup-blur {
+    z-index: 900;
+  }
     .popup.is-active .popup-container {
              min-height: 300px;
       -webkit-transform: translateX(0%);

@@ -10,7 +10,7 @@
             <a href="javascript:void(0)" class="button-white is-active">Профиль</a>
             <a href="/cabinet/orders/" class="button-white">Мои заказы</a>
         </div>
-    <div class="container main-unit hei4">
+    <div class="container main-unit hei4 cabinet_padding_20">
         <div class="row">
             <h2>О себе</h2>
             
@@ -63,7 +63,7 @@
                     <div class="form-row">
                         <span class="label big">Телефон</span>
                         <div class="input">
-                            <input type="text" class="js-phone-mask" name="PERSONAL_MOBILE" value="<?= $arResult['arUser']['PERSONAL_MOBILE'] ?>" autocomplete="off" />
+                            <input type="text" name="PERSONAL_MOBILE" value="<?= $arResult['arUser']['PERSONAL_MOBILE'] ?>" autocomplete="off" />
                         </div>
                     </div>
                     <div class="form-row">

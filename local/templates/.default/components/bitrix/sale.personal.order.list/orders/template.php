@@ -13,7 +13,7 @@
             <a href="/cabinet/" class="button-white">Профиль</a>
             <a href="/cabinet/orders/" class="button-white is-active">Мои заказы</a>
     </div>
-    <div class="container main-unit hei4">
+    <div class="container main-unit hei4 cabinet_padding_20">
         <div class="row">
             <h2>Мои заказы</h2>
             <? if (!empty($arResult['ORDERS'])) { ?>
