@@ -8216,7 +8216,7 @@ a.button, a.button-white {
 }
 
 .bl_chose_days_c_bl {
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   border: solid 1px #252525; }
 
 .bl_chose_days_c_top_days span {
@@ -8678,3 +8678,4 @@ a.button, a.button-white {
 .mobileNavMenu .menu-active {
     color: #64b357;
 }
+
