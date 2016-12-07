@@ -3,7 +3,7 @@
 <? $this->setFrameMode(true); ?>
 <? // animated slideInRight ?>
 <div class="bg11 hidden-xs"></div>
-<div class="container3 bg1  hei14 hidden-xs">
+<div class="container3 bg1 hei14 hidden-xs">
     <div class="container main-unit-2">
         <div class="row">
             <div class="categories__list center hei12">

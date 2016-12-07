@@ -784,7 +784,14 @@ $(document).ready(function() {
 	});
 
 	$('.mobileNavMenu > li > a').on('click', function(){
-		$(this).next('ul').slideToggle(200);
+        var $that = $(this);
+        var $menu = $that.next('.submenu');
+        var speed = $that.data('speed');
+        if (speed <= 0) {
+            speed = 200;
+        }
+		$menu.slideToggle(speed)
+        $that.toggleClass('menu-active');
 	});
 });
 

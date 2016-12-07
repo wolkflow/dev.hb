@@ -120,8 +120,11 @@ switch ($action) {
             jsonresponse(false, 'Не удалось добавить товар');
         }
         
-        $result = CSaleBasket::GetList(array(), array('FUSER_ID' => CSaleBasket::GetBasketUserID(), 'ORDER_ID' => 'NULL'));
-        $count  = (int) $result->SelectedRowsCount();
+        $result = CSaleBasket::GetList(array(), array('FUSER_ID' => CSaleBasket::GetBasketUserID(), 'ORDER_ID' => 'NULL'), false, false, array('ID', 'QUANTITY'));
+        $count  = 0;
+        while ($basket = $result->fetch()) {
+            $count += (int) $basket['QUANTITY'];
+        }
         
         jsonresponse(true, 'Товар успешно добавлен', array('count' => $count));
 		break;

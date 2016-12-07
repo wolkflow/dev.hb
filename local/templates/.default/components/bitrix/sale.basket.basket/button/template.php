@@ -5,11 +5,17 @@
 <? $this->setFrameMode(true); ?>
 
 <? if (!empty($arResult['ITEMS']['AnDelCanBuy'])) { ?>
+    <?  // Количество товаров.
+        $count = 0;
+        foreach ($arResult['ITEMS']['AnDelCanBuy'] as $basket) {
+            $count += (int) $basket['QUANTITY'];
+        }
+    ?>
     <div id="js-basket-button-id" class="basket-popup-button popup-opener-remote" data-remote="basket">
         <div class="basket-popup-button-content">
             корзина: 
             <span>
-                <?= TextHelper::decofnum(count($arResult['ITEMS']['AnDelCanBuy']), array('покупка', 'покупки', 'покупок'), true) ?>
+                <?= TextHelper::decofnum($count, array('покупка', 'покупки', 'покупок'), true) ?>
             </span>
         </div>
     </div>

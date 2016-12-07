@@ -8663,3 +8663,7 @@ a.button, a.button-white {
     -moz-transition: 1s;
     -o-transition: 1s;
 }
+
+.mobileNavMenu .menu-active {
+    color: #64b357;
+}
