@@ -107,10 +107,10 @@
                             <div class="row xs_padding_0">
                                 <div class="basket-item__content col-xs-12 xs_padding_0">
                                     <div class="row xs_margin_0">
-                                        <div class="basket-item__value col-xs-6">
+                                        <div class="basket-item__value col-xs-9 xs_padding_right_0">
                                             <?= $item['~NAME'] ?>
                                         </div>
-                                        <div class="basket-item__value col-xs-6 kkal_1">
+                                        <div class="basket-item__value col-xs-3 kkal_1 xs_padding_0">
                                             <? if ($product['IBLOCK_ID'] == IBLOCK_GOODS_ID) { ?>
                                                 <?= $product['PROPERTIES']['ENERGY']['VALUE'] ?> кКал
                                             <? } ?>
@@ -122,17 +122,17 @@
                                         <img src="/i.php?src=<?= $item['PREVIEW_PICTURE_SRC'] ?>&w=117&h=117" />
                                     <? } ?>
                                 </div>
-                                <div class="basket-item__content col-xs-7 xs_padding_0">
+                                <div class="basket-item__content col-xs-9 xs_padding_0">
                                     <div class="row xs_margin_0">
-                                        <div class="basket-item__value js-quantity-wrap col-md-2 col-lg-2 col-xs-8 col-sm-6 " data-basket="<?= $item['ID'] ?>">
+                                        <div class="basket-item__value js-quantity-wrap col-xs-8 padding_top_15" data-basket="<?= $item['ID'] ?>">
                                             <div class="basket-item__count-minus js-quantity-change"></div>
                                             <input class="basket-item__count" type="text" value="<?= $item['QUANTITY'] ?> шт" data-quantity="<?= $item['QUANTITY'] ?>" />
                                             <div class="basket-item__count-plus js-quantity-change"></div>
                                         </div>
-                                        <div class="basket-item__value col-md-2 col-lg-2 col-xs-4 col-sm-3 xs_padding_0">
+                                        <div class="basket-item__value col-xs-4 xs_padding_0 padding_top_15">
                                             <span><?= $item['PRICE'] ?></span> ₽
                                         </div>
-                                        <div class="basket-item__value col-md-2 col-lg-2 col-xs-12 col-sm-3 ">
+                                        <div class="basket-item__value col-xs-12 margin_top_8">
                                             <span class="js-basket-price"><?= $item['PRICE'] * $item['QUANTITY'] ?></span> ₽
                                         </div>
                                     </div>

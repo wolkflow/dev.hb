@@ -417,7 +417,7 @@ if ($(window).width() >= 768) {
         
         $(window).on('load scroll', function(){
             
-            var delta = Math.min(window.pageYOffset - tableOffsetTop + 20, maxTranslateY);
+            var delta = Math.min(window.pageYOffset - $table.offset().top + 20, maxTranslateY);
             
             if (delta < 0) {
                 delta = 0;

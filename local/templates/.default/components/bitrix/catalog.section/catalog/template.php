@@ -98,27 +98,30 @@
                     <div class="bl_product_item col-xs-6 col-sm-4 col-md-4 col-lg-4">
                         <div class="bl_product_item_top">
                             <a href="<?= $item['DETAIL_PAGE_URL'] ?>">
-                            <span class="bl_product_item_image">
-                                <img src="/i.php?src=<?= $item['PREVIEW_PICTURE']['SRC'] ?>&=143&h=219" />
-                                <div class="bl_product_item_descr">
-                                    <div class="bl_product_item_descr_tb">
-                                        <div class="bl_product_item_descr_td">
-                                            <p>ПИЩЕВАЯ ЦЕННОСТЬ <br>(на 100 г)</p>
-                                            <ul>
-                                                <li><b>Белки:</b>    <?= $item['PROPERTIES']['PROTEINS']['VALUE'] ?> г</li>
-                                                <li><b>Жиры:</b>     <?= $item['PROPERTIES']['FATS']['VALUE'] ?> г</li>
-                                                <li><b>Углеводы:</b> <?= $item['PROPERTIES']['CARBOHYDRATES']['VALUE'] ?> г</li>
-                                            </ul>
+                                <span class="bl_product_item_image">
+                                    <img src="/i.php?src=<?= $item['PREVIEW_PICTURE']['SRC'] ?>&=143&h=219" />
+                                    <div class="bl_product_item_descr hidden-xs">
+                                        <div class="bl_product_item_descr_tb">
+                                            <div class="bl_product_item_descr_td">
+                                                <p>ПИЩЕВАЯ ЦЕННОСТЬ <br>(на 100 г)</p>
+                                                <ul>
+                                                    <li><b>Белки:</b>    <?= $item['PROPERTIES']['PROTEINS']['VALUE'] ?> г</li>
+                                                    <li><b>Жиры:</b>     <?= $item['PROPERTIES']['FATS']['VALUE'] ?> г</li>
+                                                    <li><b>Углеводы:</b> <?= $item['PROPERTIES']['CARBOHYDRATES']['VALUE'] ?> г</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="bl_product_item__buy js-buy" data-product="<?= $item['ID'] ?>">
+                                            Купить
                                         </div>
                                     </div>
-                                    <div class="bl_product_item__buy js-buy" data-product="<?= $item['ID'] ?>">
-                                        Купить
-                                    </div>
+                                </span>
+                                <span class="bl_product_item_price">
+                                    <?= $item['PRICES']['BASE']['VALUE'] ?> <span class="rub">₽</span>
+                                </span>
+                                <div class="bl_product_item__buy js-buy visible-xs" data-product="<?= $item['ID'] ?>">
+                                    Купить
                                 </div>
-                            </span>
-                            <span class="bl_product_item_price">
-                                <?= $item['PRICES']['BASE']['VALUE'] ?> <span class="rub">₽</span>
-                            </span>
                             </a>
                         </div>
                         <div class="bl_product_item_name">

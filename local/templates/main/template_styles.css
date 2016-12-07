@@ -7889,6 +7889,17 @@ a.button, a.button-white {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out; }
 
+/*
+@media (max-width: 766px) {
+    .bl_product_item_descr {
+        position: initital;
+    }
+    .bl_product_item_descr .bl_product_item_descr_tb {
+        display: none;
+    }
+}  
+*/
+  
 .bl_product_item:hover .bl_product_item_descr {
   top: 0; }
 
