@@ -68,38 +68,36 @@
                 <? foreach ($items as $item) { ?>
                     <? $product = CCatalogProduct::GetByIDEx($item['PRODUCT_ID']) ?>
                     <div class="basket-item js-basket-item"> 
-                        <div class="box_close  js-basket-remove col-xs-1 col-sm-1 col-md-1 col-lg-1 " data-basket="<?= $item['ID'] ?>">
-                        <div class="img_close"></div>
-                        <div class="txt_close hidden-xs">удалить
+                        <div class="box_close js-basket-remove col-xs-1 col-sm-1 col-md-1 col-lg-1 " data-basket="<?= $item['ID'] ?>">
+                            <div class="img_close"></div>
+                            <div class="txt_close hidden-xs">удалить</div>
                         </div>
+                        
+                        <div class="basket-item__image col-sm-2 col-md-2 col-lg-2 xs_padding_0 hidden-xs">
+                            <? if (!empty($item['PREVIEW_PICTURE_SRC'])) { ?>
+                                <img src="/i.php?src=<?= $item['PREVIEW_PICTURE_SRC'] ?>&w=117&h=117" />
+                            <? } ?>
                         </div>
-                        <div class="hidden-xs">
-                            <div class="basket-item__image col-sm-2 col-md-2 col-lg-2 xs_padding_0">
-                                <? if (!empty($item['PREVIEW_PICTURE_SRC'])) { ?>
-                                    <img src="/i.php?src=<?= $item['PREVIEW_PICTURE_SRC'] ?>&w=117&h=117" />
-                                <? } ?>
-                            </div>
-                            <div class="basket-item__content col-sm-9 col-md-9 col-lg-9 xs_padding_0">
-                                <div class="row xs_margin_0">
-                                    <div class="basket-item__value col-md-4 col-lg-4 col-sm-9">
-                                        <?= $item['~NAME'] ?>
-                                    </div>
-                                    <div class="basket-item__value col-md-2 col-lg-2 col-sm-3">
-                                        <? if ($product['IBLOCK_ID'] == IBLOCK_GOODS_ID) { ?>
-                                            <?= $product['PROPERTIES']['ENERGY']['VALUE'] ?> кКал
-                                        <? } ?>
-                                    </div>
-                                    <div class="basket-item__value js-quantity-wrap col-md-2 col-lg-2 col-sm-6 " data-basket="<?= $item['ID'] ?>">
-                                        <div class="basket-item__count-minus js-quantity-change"></div>
-                                        <input class="basket-item__count" type="text" value="<?= $item['QUANTITY'] ?> шт" data-quantity="<?= $item['QUANTITY'] ?>" />
-                                        <div class="basket-item__count-plus js-quantity-change"></div>
-                                    </div>
-                                    <div class="basket-item__value col-md-2 col-lg-2 col-sm-3 xs_padding_0">
-                                        <span><?= $item['PRICE'] ?></span> ₽
-                                    </div>
-                                    <div class="basket-item__value col-md-2 col-lg-2 col-sm-3 ">
-                                        <span class="js-basket-price"><?= $item['PRICE'] * $item['QUANTITY'] ?></span> ₽
-                                    </div>
+                        <div class="basket-item__content col-sm-9 col-md-9 col-lg-9 xs_padding_0 hidden-xs
+                            <div class="row xs_margin_0">
+                                <div class="basket-item__value col-md-4 col-lg-4 col-sm-9">
+                                    <?= $item['~NAME'] ?>
+                                </div>
+                                <div class="basket-item__value col-md-2 col-lg-2 col-sm-3">
+                                    <? if ($product['IBLOCK_ID'] == IBLOCK_GOODS_ID) { ?>
+                                        <?= $product['PROPERTIES']['ENERGY']['VALUE'] ?> кКал
+                                    <? } ?>
+                                </div>
+                                <div class="basket-item__value js-quantity-wrap col-md-2 col-lg-2 col-sm-6 " data-basket="<?= $item['ID'] ?>">
+                                    <div class="basket-item__count-minus js-quantity-change"></div>
+                                    <input class="basket-item__count" type="text" value="<?= $item['QUANTITY'] ?> шт" data-quantity="<?= $item['QUANTITY'] ?>" />
+                                    <div class="basket-item__count-plus js-quantity-change"></div>
+                                </div>
+                                <div class="basket-item__value col-md-2 col-lg-2 col-sm-3 xs_padding_0">
+                                    <span><?= $item['PRICE'] ?></span> ₽
+                                </div>
+                                <div class="basket-item__value col-md-2 col-lg-2 col-sm-3 ">
+                                    <span class="js-basket-price"><?= $item['PRICE'] * $item['QUANTITY'] ?></span> ₽
                                 </div>
                             </div>
                         </div>

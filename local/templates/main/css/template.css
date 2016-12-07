@@ -1762,7 +1762,7 @@ input[type="tel"] {
     min-width: 120px;
     margin-left: 10px;
     width: 120px;
-    height: 60px;
+    height: 30px;
 }
 .one_product_price_buy {
     margin-bottom: 30px;
@@ -2034,7 +2034,7 @@ display: none;
 .cross_tree_all {
     float: right;
     position: absolute;
-    top: 540px;
+    top: 590px;
     right: 0;
 }
 .cross_tree_all_to {
@@ -2073,10 +2073,10 @@ display: none;
 }
 .popup.is-active .popup-container {
     left: 0px;
-    width: calc(50% + 151px);
-    width: -moz-calc(50% + 151px);
-    width: -webkit-calc(50% + 151px);
-    width: -webkit-calc(50% + 151px);
+    width: calc(50% + 115px);
+    width: -moz-calc(50% + 115px);
+    width: -webkit-calc(50% + 115px);
+    width: -webkit-calc(50% + 115px);
 }
 .popup_style_1 {
     margin-left: -8px;

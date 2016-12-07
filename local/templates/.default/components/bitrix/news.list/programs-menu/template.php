@@ -16,7 +16,7 @@
                             </svg>
                             <?= $item['NAME'] ?>
                             <? if ($item['PROPERTIES']['SOON']['VALUE'] == 'Y') { ?>
-                                <span class="soon">(скоро в продаже)</span>
+                                <br/><span class="soon">(скоро в продаже)</span>
                             <? } ?>
                         </a>
                     <? } ?>
