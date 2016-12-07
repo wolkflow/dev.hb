@@ -5,66 +5,70 @@
 <? $order = ($arParams['ELEMENT_SORT_ORDER'] == 'desc') ? ('asc') : ('desc') ?>
 
 <section class="inner-page">
-    <div class="bl_catalog_filter clearfix">
-        <div class="bg4">
-        </div>
-        <div id="js-catalog-sections-id" class="container2 bg1 animated slideInRight">
-            <div class="row">
-                <div class="col-sm-7 col-md-7 col-lg-7 bg1 hidden-xs">
-                    <?	// Разделы каталога.
-                        $APPLICATION->IncludeComponent(
-                            "bitrix:catalog.section.list",
-                            "catalog",
-                            array(
-                                "SECTION" => $arResult['ID'],
-                                "VIEW_MODE" => "TEXT",
-                                "SHOW_PARENT_NAME" => "N",
-                                "IBLOCK_TYPE" => "products",
-                                "IBLOCK_ID" => "1",
-                                "SECTION_ID" => "",
-                                "SECTION_CODE" => "",
-                                "SECTION_URL" => "",
-                                "COUNT_ELEMENTS" => "Y",
-                                "TOP_DEPTH" => "1",
-                                "SECTION_FIELDS" => "",
-                                "SECTION_USER_FIELDS" => "",
-                                "ADD_SECTIONS_CHAIN" => "Y",
-                                "CACHE_TYPE" => "A",
-                                "CACHE_TIME" => "36000000",
-                                "CACHE_NOTES" => "",
-                                "CACHE_GROUPS" => "Y"
-                            ),
-                            $component
-                        );
-                    ?>
+    <div id="js-submenu-pre-catalog-wrap-id" style="display: none;">
+        <div class="submenu">
+            <div class="bl_catalog_filter clearfix">
+                <div class="bg4">
                 </div>
-                <div class="col-sm-5 col-md-5 col-lg-5 bg1">
-                    <div class="bl_catalog_filter_right">
-                        <div class="bl_filter_item">
-                            <span class="title">Сортировка:</span>
-                            <div class="hidden-md hidden-lg hidden-sm"><br></div>
-                            <a class="sort <?= $arParams['ELEMENT_SORT_ORDER'] ?>" href="<?= $APPLICATION->GetCurPageParam('order=' . $order, array('order'), false) ?>">
-                                Цена
-                            </a>
+                <div id="js-catalog-sections-id" class="container2 bg1 animated slideInRight">
+                    <div class="row">
+                        <div class="col-sm-7 col-md-7 col-lg-7 bg1 hidden-xs">
+                            <?	// Разделы каталога.
+                                $APPLICATION->IncludeComponent(
+                                    "bitrix:catalog.section.list",
+                                    "catalog",
+                                    array(
+                                        "SECTION" => $arResult['ID'],
+                                        "VIEW_MODE" => "TEXT",
+                                        "SHOW_PARENT_NAME" => "N",
+                                        "IBLOCK_TYPE" => "products",
+                                        "IBLOCK_ID" => "1",
+                                        "SECTION_ID" => "",
+                                        "SECTION_CODE" => "",
+                                        "SECTION_URL" => "",
+                                        "COUNT_ELEMENTS" => "Y",
+                                        "TOP_DEPTH" => "1",
+                                        "SECTION_FIELDS" => "",
+                                        "SECTION_USER_FIELDS" => "",
+                                        "ADD_SECTIONS_CHAIN" => "Y",
+                                        "CACHE_TYPE" => "A",
+                                        "CACHE_TIME" => "36000000",
+                                        "CACHE_NOTES" => "",
+                                        "CACHE_GROUPS" => "Y"
+                                    ),
+                                    $component
+                                );
+                            ?>
                         </div>
-                        <div class="bl_filter_item">
-                            <span class="title">Фильтр:</span>
-                            <div class="hidden-md hidden-lg hidden-sm"><br></div>
-                            <div class="select-cont">
-                                <span class="select">
-                                    <? $type = intval($_REQUEST['type']) ?>
-                                    <?= (!empty($type)) ? ($arResult['TYPES'][$type]) : ('Тип питания') ?>
-                                </span>
-                                <input type="hidden" />
-                                <div class="select-menu">
-                                    <a href="<?= $APPLICATION->GetCurPageParam('', array('type'), false) ?>" class="select-menu__item">
-                                        Любой
+                        <div class="col-sm-5 col-md-5 col-lg-5 bg1">
+                            <div class="bl_catalog_filter_right">
+                                <div class="bl_filter_item">
+                                    <span class="title">Сортировка:</span>
+                                    <div class="hidden-md hidden-lg hidden-sm"><br></div>
+                                    <a class="sort <?= $arParams['ELEMENT_SORT_ORDER'] ?>" href="<?= $APPLICATION->GetCurPageParam('order=' . $order, array('order'), false) ?>">
+                                        Цена
                                     </a>
-                                    <? foreach ($arResult['TYPES'] as $type => $title) { ?>
-                                        <a href="<?= $APPLICATION->GetCurPageParam('type=' . $type, array('type'), false) ?>" class="select-menu__item">
-                                            <?= $title ?>
-                                        </a>
-                                    <? } ?>
+                                </div>
+                                <div class="bl_filter_item">
+                                    <span class="title">Фильтр:</span>
+                                    <div class="hidden-md hidden-lg hidden-sm"><br></div>
+                                    <div class="select-cont">
+                                        <span class="select">
+                                            <? $type = intval($_REQUEST['type']) ?>
+                                            <?= (!empty($type)) ? ($arResult['TYPES'][$type]) : ('Тип питания') ?>
+                                        </span>
+                                        <input type="hidden" />
+                                        <div class="select-menu">
+                                            <a href="<?= $APPLICATION->GetCurPageParam('', array('type'), false) ?>" class="select-menu__item">
+                                                Любой
+                                            </a>
+                                            <? foreach ($arResult['TYPES'] as $type => $title) { ?>
+                                                <a href="<?= $APPLICATION->GetCurPageParam('type=' . $type, array('type'), false) ?>" class="select-menu__item">
+                                                    <?= $title ?>
+                                                </a>
+                                            <? } ?>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -72,9 +76,8 @@
                 </div>
             </div>
         </div>
-        
-        
     </div>
+        
     <div class="container">
         <? if ($arResult['ID'] > 0) { ?>
             <div class="catalog_header_text">

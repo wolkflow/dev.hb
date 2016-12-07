@@ -191,9 +191,17 @@
 				</div>
 			</header>
             
-            <div id="js-submenu-holder-id" style="display: none;">
-                
-            </div>
+            <?  // Предустановленное меню.
+                $premenu = '';
+                if (strpos($APPLICATION->GetCurPage(false), 'programs') !== false) {
+                    $premenu = 'js-submenu-pre-programs-wrap-id';
+                }
+                if (strpos($APPLICATION->GetCurPage(false), 'catalog') !== false) {
+                    $premenu = 'js-submenu-pre-catalog-wrap-id';
+                }
+            ?>
+            
+            <div id="js-submenu-holder-id" style="display: none;" data-preid="<?= $premenu ?>"></div>
             
             <div id="js-submenu-about-wrap-id" class="hidden-xs" style="display: none;">
                 <div class="submenu bl_catalog_filter clearfix" style="margin-bottom: 40px; margin-top: -30px;">

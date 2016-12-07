@@ -1744,7 +1744,7 @@ input[type="tel"] {
     font-style: normal;
     font-stretch: normal;
     color: #252525;
-    margin-left: 5px;
+
 }
 .one_product_price {
     margin-right: 15px;
@@ -1789,9 +1789,9 @@ input[type="tel"] {
     padding-top: 30px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    text-align: center;
+    /*text-align: center;
     margin-right: 2px;
-    padding-left: 25px;
+    padding-left: 25px;*/
 }
 .bl_filter_item {
     width: 40%;
@@ -1830,7 +1830,7 @@ input[type="tel"] {
     font-stretch: normal;
     color: #252525;
     text-decoration: none;
-    margin-left: 5px;
+
 }
 .bl_filter_item .sort {
     cursor: pointer;
@@ -2070,11 +2070,11 @@ display: none;
     font-size: 15px;
 }
 .popup.is-active .popup-container {
-    left: -30px;
-    width: calc(50% + 180px);
-    width: -moz-calc(50% + 180px);
-    width: -webkit-calc(50% + 180px);
-    width: -webkit-calc(50% + 180px);
+    left: 0px;
+    width: calc(50% + 151px);
+    width: -moz-calc(50% + 151px);
+    width: -webkit-calc(50% + 151px);
+    width: -webkit-calc(50% + 151px);
 }
 .popup_style_1 {
     margin-left: -8px;
@@ -7545,6 +7545,37 @@ display:none;
 
     .bl_chose_days {
         background: #ffffff;
+    }
+
+    .popup-container {
+        border-top: 1px solid #252525;
+        border-bottom: 0;
+        border-right: 0;
+        border-left: 0;
+
+    }
+
+    .popup-container {
+        position: relative;
+        border-bottom: 1px solid #252525;
+        border-top: 0;
+        border-right: 0;
+        border-left: 0;
+        margin: 0;
+        background-color: white;
+        padding: 30px 30px 30px 15px;
+        text-align: right;
+        will-change: transform;
+    }
+
+    .kkal_1 {
+        font-family: DINPro;
+        font-size: 12px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        text-align: right;
+        color: #252525;
     }
 
 
