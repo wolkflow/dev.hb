@@ -307,6 +307,7 @@ $(function(){
         var remote = $(this).data('remote');
         
         $('#js-basket-button-id').hide();
+        $('#js-popup-content').data('remote', remote);
         
         getRemoteHTML(remote, '#js-popup-content', {}, function() {
             $('body').addClass('popup-opened');
@@ -319,7 +320,12 @@ $(function(){
                 function() {
                     $('.js-phone-mask').mask("\+7 (999) 999-99-99");
                     $('#popup').addClass('is-active');
-                    $('#popup .popup-container').removeClass('slideOutLeft').addClass('animated slideInLeft');
+                    
+                    if (remote == 'basket' && $(window).width() < 768) {
+                        $('#popup .popup-container').removeClass('slideOutLeft').removeClass('slideOutDown').addClass('animated slideInUp');
+                    } else {
+                        $('#popup .popup-container').removeClass('slideOutLeft').removeClass('slideOutDown').addClass('animated slideInLeft');
+                    }
                 }
             );
             
@@ -341,7 +347,13 @@ $(function(){
      /* */
 
     $('#popup .popup-close').on('click', function(){
-        $('#popup .popup-container').removeClass('slideInLeft').addClass('slideOutLeft');
+        
+        if ($('#js-popup-content').data('remote') == 'basket' && $(window).width() < 768) {
+            $('#js-popup-content').data('remote', false);
+            $('#popup .popup-container').removeClass('slideInLeft').removeClass('slideInUp').addClass('slideOutDown');
+        } else {
+            $('#popup .popup-container').removeClass('slideInLeft').removeClass('slideInUp').addClass('slideOutLeft');
+        }
         setTimeout(function() {
             $('#popup').removeClass('is-active');
         }, 800);
