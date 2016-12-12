@@ -387,15 +387,17 @@ $(function(){
     });
 });
 
-/*
-$(document).on('mouseup', function (e) {
-    var $target = $(e.target);
-    if ($('body').hasClass('popup-opened') && !$target.closest('.popup-container').length) {
-        $('#popup .popup-close').trigger('click');
-        $('#callback-popup .popup-close').trigger('click');
-    }
-});
-*/
+// Скритыие popup при клике вне окна.
+if ($(window).width() < 768) {
+    $(document).on('mouseup', function (e) {
+        var $target = $(e.target);
+        if ($('body').hasClass('popup-opened') && !$target.closest('.popup-container').length) {
+            $('#popup .popup-close').trigger('click');
+            $('#callback-popup .popup-close').trigger('click');
+        }
+    });
+}
+
 /*
 $(window).on('load resize', function(){
     setPopupHeight();
