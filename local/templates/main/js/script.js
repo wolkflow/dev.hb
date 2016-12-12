@@ -387,7 +387,7 @@ $(function(){
     });
 });
 
-
+/*
 $(document).on('mouseup', function (e) {
     var $target = $(e.target);
     if ($('body').hasClass('popup-opened') && !$target.closest('.popup-container').length) {
@@ -395,7 +395,7 @@ $(document).on('mouseup', function (e) {
         $('#callback-popup .popup-close').trigger('click');
     }
 });
-
+*/
 /*
 $(window).on('load resize', function(){
     setPopupHeight();

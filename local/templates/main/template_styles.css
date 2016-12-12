@@ -8486,11 +8486,6 @@ a.button, a.button-white {
 	height: 532px;
 }*/
 
-.errors {
-    color: #b36457;
-    line-height: 20px;
-    margin-bottom: 15px;
-}
 
 
 .cross {
@@ -8671,4 +8666,11 @@ a.button, a.button-white {
 .soon {
     font-family: GothamPro, Arial, sans-serif;
     font-size: 9px;
+}
+
+.errors {
+    color: #b36457;
+    line-height: 20px;
+    margin-bottom: 15px;
+    font-size: 16px;
 }

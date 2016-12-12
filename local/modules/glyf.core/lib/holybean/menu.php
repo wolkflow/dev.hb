@@ -64,15 +64,17 @@ class Menu extends \Glyf\Core\System\IBlockModel
             
             $good = $goods[$struct['ELEMENT']];
             
-            $result []= array(
-                'DAYTIME'     => $daytime,
-                'DAYNAME'     => self::getDayTimeTitle($daytime),
-                'TIME_BEGIN'  => $struct['TIME_BEGIN'],
-                'TIME_FINISH' => $struct['TIME_FINISH'],
-                'PRODUCT'     => $good->getTitle(),
-                'GRAMMAGE'    => $good->getGrammage(),
-                'ENERGY'      => $good->getEnergy(),
-            );
+            if (is_object($good)) {
+                $result []= array(
+                    'DAYTIME'     => $daytime,
+                    'DAYNAME'     => self::getDayTimeTitle($daytime),
+                    'TIME_BEGIN'  => $struct['TIME_BEGIN'],
+                    'TIME_FINISH' => $struct['TIME_FINISH'],
+                    'PRODUCT'     => $good->getTitle(),
+                    'GRAMMAGE'    => $good->getGrammage(),
+                    'ENERGY'      => $good->getEnergy(),
+                );
+            }
         }
         $result = $this->group($result);
         
@@ -87,7 +89,7 @@ class Menu extends \Glyf\Core\System\IBlockModel
         foreach ($items as $item) {
             $result[$item['DAYTIME']][$item['TIME_BEGIN'].'-'.$item['TIME_FINISH']]['DAYNAME'] = $item['DAYNAME'];
             $result[$item['DAYTIME']][$item['TIME_BEGIN'].'-'.$item['TIME_FINISH']]['TIMES'] = array(
-                'BEGIN' => $item['TIME_BEGIN'], 
+                'BEGIN'  => $item['TIME_BEGIN'], 
                 'FINISH' => $item['TIME_FINISH']
             );
             $result[$item['DAYTIME']][$item['TIME_BEGIN'].'-'.$item['TIME_FINISH']]['ITEMS'] []= $item;

@@ -78,7 +78,7 @@
                                 <img src="/i.php?src=<?= $item['PREVIEW_PICTURE_SRC'] ?>&w=117&h=117" />
                             <? } ?>
                         </div>
-                        <div class="basket-item__content col-sm-9 col-md-9 col-lg-9 xs_padding_0 hidden-xs
+                        <div class="basket-item__content col-sm-9 col-md-9 col-lg-9 xs_padding_0 hidden-xs">
                             <div class="row xs_margin_0">
                                 <div class="basket-item__value col-md-4 col-lg-4 col-sm-9">
                                     <?= $item['~NAME'] ?>

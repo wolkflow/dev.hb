@@ -10,11 +10,17 @@
             event.preventDefault();
             
             var phone = $('#js-param-phone-id').val();
+            var password = $('#js-password-phone-id').val();
+            var confirm  = $('#js-confirm-phone-id').val();
             
             $('#js-param-phone-id').closest('.form-row').find('.input-error').remove();
             
             if (phone.length < 7) {
                 $('#js-param-phone-id').closest('.form-row').append('<div class="input-error">Не указан номер телефона</div>');
+            }
+            
+            if (password != confirm) {
+                $('#js-confirm-phone-id').closest('.form-row').append('<div class="input-error">Неверное подтверждение пароля</div>');
             }
             
             $.ajax({
@@ -35,13 +41,22 @@
     });
 </script>
 
-<? if (!empty($arResult['ERRORS'])) { ?>
-    <? foreach ($arResult["ERRORS"] as $key => $error) { ?>
-        <? if (intval($key) == 0 && $key !== 0) { ?>
-            <? $arResult['ERRORS'][$key] = str_replace('#FIELD_NAME#', "&quot;".GetMessage("REGISTER_FIELD_".$key)."&quot;", $error); ?>
-        <? } ?>
-    <? } ?>
-<? } ?>
+<?  // Ошибки.
+    if (!empty($arResult['ERRORS'])) {
+        $errors = array();
+        foreach ($arResult['ERRORS'] as $key => $error) {
+            if (intval($key) == 0 && $key !== 0) {
+                $arResult['ERRORS'][$key] = str_replace('#FIELD_NAME#', "&quot;".GetMessage("REGISTER_FIELD_".$key)."&quot;", $error); 
+            } elseif (mb_strpos($error, 'Неверное подтверждение пароля.') !== false) {
+                $arResult['ERRORS']['CONFIRM_PASSWORD'] = 'Неверное подтверждение пароля';
+            } elseif (mb_strpos($error, 'Неверный E-Mail.') !== false) {
+                $arResult['ERRORS']['EMAIL'] = 'Неверный E-mail';
+            } else {
+                $errors []= str_replace('#FIELD_NAME#', "&quot;".GetMessage("REGISTER_FIELD_".$key)."&quot;", $error); 
+            }
+        }
+    } 
+?>
 
 <h2>Регистрация</h2>
 <div class="zakaz-login__head">
@@ -56,6 +71,12 @@
                 <input type="hidden" name="backurl" value="<?= $arResult['BACKURL'] ?>" />
             <? } else { ?>
                 <input type="hidden" name="backurl" value="<?= (!empty($_COOKIE['backurl'])) ? (strval($_COOKIE['backurl'])) :("/") ?>" />
+            <? } ?>
+            
+            <? if (!empty($errors)) { ?>
+                <div class="errors">
+                    <?= implode('<br/>', $errors) ?>
+                </div>
             <? } ?>
             
             <div class="form-row">
@@ -105,7 +126,7 @@
             <div class="form-row">
                 <span class="label big">Пароль</span>
                 <div class="input">
-                    <input type="password" name="REGISTER[PASSWORD]" value="<?= $arResult['VALUES']['PASSWORD'] ?>" autocomplete="false" />
+                    <input type="password" name="REGISTER[PASSWORD]" value="<?= $arResult['VALUES']['PASSWORD'] ?>" autocomplete="false" id="js-param-password-id" />
                 </div>
                 <? if (!empty($arResult['ERRORS']['PASSWORD'])) { ?>
                     <div class="input-error">
@@ -116,7 +137,7 @@
             <div class="form-row">
                 <span class="label big">Подтвердите пароль</span>
                 <div class="input">
-                    <input type="password" name="REGISTER[CONFIRM_PASSWORD]" value="<?= $arResult['VALUES']['CONFIRM_PASSWORD'] ?>" autocomplete="false" />
+                    <input type="password" name="REGISTER[CONFIRM_PASSWORD]" value="<?= $arResult['VALUES']['CONFIRM_PASSWORD'] ?>" autocomplete="false"  id="js-param-confirm-id" />
                 </div>
                 <? if (!empty($arResult['ERRORS']['CONFIRM_PASSWORD'])) { ?>
                     <div class="input-error">
