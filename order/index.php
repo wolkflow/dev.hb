@@ -23,7 +23,7 @@
 							Ознакомьтесь с 
 							<a href="/upload/contract.pdf" target="_blank">договором</a> 
 							и 
-							<a href="/upload/delivery.pdf" target="_blank">>условиями доставки</a>
+							<a href="/upload/delivery.pdf" target="_blank">условиями доставки</a>
 						</p>
 					</div>
 					<div class="order_step">

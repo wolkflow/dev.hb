@@ -6678,7 +6678,7 @@ header {
     .categories__item.is-active {
     /*.categories__item:hover {*/
       color: #64b357; }
-      .categories__item.is-active svg, .categories__item:hover svg {
+      .categories__item.is-active svg, .categories__item:not(.disable):hover svg {
         stroke-width: 2; }
     .categories__item svg {
       display: block;
@@ -6696,6 +6696,7 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="search"],
+input[type="number"],
 input[type="tel"] {
   border: none;
   border-bottom: 1px solid #252525;
@@ -7160,7 +7161,7 @@ a.button, a.button-white {
       margin-left: -70px;
       height: 1px;
       background-color: #64b357; }
-    .main-programs__block:hover svg {
+    .main-programs__block:not(.disable):hover svg {
       stroke-width: 2; }
     .main-programs__block svg {
       display: block;
