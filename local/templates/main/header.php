@@ -11,8 +11,13 @@
         <script src="<?= SITE_TEMPLATE_PATH ?>/js/bootstrap.js"></script>
         <script src="<?= SITE_TEMPLATE_PATH ?>/js/jquery.tabslideout.js"></script>    
         <script src="<?= SITE_TEMPLATE_PATH ?>/js/jquery.maskedinput.js"></script>
-        <script src="<?= SITE_TEMPLATE_PATH ?>/js/slick.min.js"></script>
-        
+        <script src="<?= SITE_TEMPLATE_PATH ?>/js/jquery.bcSwipe.min.js"></script>
+	    <? /**
+	     *
+	     * Ох. Меняете слайдеры, убирайте старые скрипты.
+	     *
+         <script src="= SITE_TEMPLATE_PATH js/slick.min.js"></script>
+        */ ?>
         
         <? $APPLICATION->ShowHead() ?>
         

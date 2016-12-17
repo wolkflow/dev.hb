@@ -775,3 +775,7 @@ if ($('#homeSlider').length) {
 		sliderWidth()
 	});
 }
+// new
+if($('#carousel').length) {
+    $('#carousel').bcSwipe({ threshold: 50 });
+}
