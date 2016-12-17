@@ -38,6 +38,50 @@
                 }
             });
         });
+        
+        
+        $('#js-param-email-id').on('keyup', function() {
+            var $that   = $(this);
+            var email   = $that.val();
+            var pattern = /^.+@.+\.[a-z]{2,}$/i;
+            
+            if (pattern.test(email)) {
+                $that.closest('.form-row').find('.input-error').html('');
+            } else {
+                $that.closest('.form-row').find('.input-error').html('Проверьте корректность e-mail');
+            }
+        });
+        
+        
+        $('#js-param-password-id').on('keyup', function() {
+            var $pass = $('#js-param-password-id');
+            var $conf = $('#js-param-confirm-id');
+            
+            var password = $pass.val();
+            var confirm  = $conf.val();
+            
+            if (confirm.length > 0) {
+                if (password == confirm) {
+                    $conf.closest('.form-row').find('.input-error').html('');
+                } else {
+                    $conf.closest('.form-row').find('.input-error').html('Подтверждение и пароль не совпадают');
+                }
+            }
+        });
+        
+        $('#js-param-confirm-id').on('keyup', function() {
+            var $pass = $('#js-param-password-id');
+            var $conf = $('#js-param-confirm-id');
+            
+            var password = $pass.val();
+            var confirm  = $conf.val();
+            
+            if (password == confirm) {
+                $conf.closest('.form-row').find('.input-error').html('');
+            } else {
+                $conf.closest('.form-row').find('.input-error').html('Подтверждение и пароль не совпадают');
+            }
+        });
     });
 </script>
 
@@ -104,13 +148,13 @@
             <div class="form-row">
                 <span class="label big">E-mail</span>
                 <div class="input">
-                    <input type="text" name="REGISTER[EMAIL]" value="<?= $arResult['VALUES']['EMAIL'] ?>" />
+                    <input type="text" name="REGISTER[EMAIL]" value="<?= $arResult['VALUES']['EMAIL'] ?>" id="js-param-email-id" />
                 </div>
-                <? if (!empty($arResult['ERRORS']['EMAIL'])) { ?>
+                <? //if (!empty($arResult['ERRORS']['EMAIL'])) { ?>
                     <div class="input-error">
                         <?= $arResult['ERRORS']['EMAIL'] ?>
                     </div>
-                <? } ?>
+                <? //} ?>
             </div>
             <div class="form-row">
                 <span class="label big">Логин</span>
@@ -139,11 +183,11 @@
                 <div class="input">
                     <input type="password" name="REGISTER[CONFIRM_PASSWORD]" value="<?= $arResult['VALUES']['CONFIRM_PASSWORD'] ?>" autocomplete="false"  id="js-param-confirm-id" />
                 </div>
-                <? if (!empty($arResult['ERRORS']['CONFIRM_PASSWORD'])) { ?>
+                <? //if (!empty($arResult['ERRORS']['CONFIRM_PASSWORD'])) { ?>
                     <div class="input-error">
                         <?= $arResult['ERRORS']['CONFIRM_PASSWORD'] ?>
                     </div>
-                <? } ?>
+                <? //} ?>
             </div>
             <div class="form-row">
                 <span class="label big">Телефон</span>
