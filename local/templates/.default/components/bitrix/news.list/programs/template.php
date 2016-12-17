@@ -16,8 +16,9 @@
                     <? $link = ($item['PROPERTIES']['SOON']['VALUE'] == 'Y') ? ('javascript:void(0)') : ($item['DETAIL_PAGE_URL']) ?>
                     <a href="<?= $link ?>" class="main-programs__block col-sm-4 col-md-4 col-lg-4 col-xs-12 <?= ($item['PROPERTIES']['SOON']['VALUE'] == 'Y') ? ('disable') : ('') ?>">
                         <svg aria-hidden="true">
-                            <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/images/icons.svg#<?= $item['PROPERTIES']['CSS']['VALUE'] ?>"></use>
+                            <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/images/111.svg"></use>
                         </svg>
+
                         <?= $item['NAME'] ?>
                         <? if ($item['PROPERTIES']['SOON']['VALUE'] == 'Y') { ?>
                             <br/><span class="soon">(скоро в продаже)</span>
