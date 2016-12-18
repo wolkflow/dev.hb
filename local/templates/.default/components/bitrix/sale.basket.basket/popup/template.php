@@ -31,15 +31,13 @@
             var $wrap = $that.closest('.js-basket-item');
             var value = parseInt($that.val());
             
-            /*
             var $popup = $('#popup');
             $popup.animate({
-                scrollTop: ($wrap.offset().top - $popup.offset().top) + 'px'
+                scrollTop: ($wrap.position().top - $popup.position().top) + 'px'
             }, {
-                duration: 1000,
+                duration: 700,
                 easing: 'easeOutQuart'
             });
-            */
             
             $that.data('value', value);
             $that.val(value);
