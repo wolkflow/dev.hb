@@ -6665,6 +6665,13 @@ header {
   .categories__list a.disable {
     color: #777777;
   }
+   a.disable,
+   a.disable:hover,
+   a.disable:active,
+   a.disable:focus,
+   a.disable:visited  {
+    text-decoration: none;
+  }
   .categories__item {
     text-align: center;
     font-size: 12px;

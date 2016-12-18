@@ -4,12 +4,83 @@
 
 <? $arProps = $arResult['USER_PROPERTIES']['DATA'] ?>
 
+
+<script>
+    $(document).ready(function() {
+        
+        $('#js-profile-email-id').on('focusout', function() {
+            var $that   = $(this);
+            var email   = $that.val();
+            var pattern = /^.+@.+\.[a-z]{2,}$/i;
+            
+            if (pattern.test(email)) {
+                $that.closest('.form-row').find('.input-error').html('');
+            } else {
+                $that.closest('.form-row').find('.input-error').html('Проверьте корректность e-mail');
+            }
+        });
+        
+        
+        function noRussianSymbols($that, error)
+        {
+            var value = $that.val(); 
+            var pattern = /[а-яА-Я]/g; 
+            
+            $that.closest('.form-row').find('.input-error').html('');
+            
+            if (pattern.test(value)) {
+                $that.val(value.replace(pattern, ''));
+                $that.closest('.form-row').find('.input-error').html(error);
+            }
+        }
+        
+        $('#js-profile-password-id').on('keyup', function(e) {
+            noRussianSymbols($(this), 'Пароль не должен содержать кириллицу');
+        });
+        
+        $('#js-profile-confirm-id').on('keyup', function(e) {
+            noRussianSymbols($(this), 'Подтверждение пароля не должно содержать кириллицу');
+        });
+        
+        
+        $('#js-profile-password-id').on('focusout', function() {
+            var $pass = $('#js-profile-password-id');
+            var $conf = $('#js-profile-confirm-id');
+            
+            var password = $pass.val();
+            var confirm  = $conf.val();
+            
+            if (confirm.length > 0) {
+                if (password == confirm) {
+                    $conf.closest('.form-row').find('.input-error').html('');
+                } else {
+                    $conf.closest('.form-row').find('.input-error').html('Подтверждение и пароль не совпадают');
+                }
+            }
+        });
+        
+        $('#js-profile-confirm-id').on('focusout', function() {
+            var $pass = $('#js-profile-password-id');
+            var $conf = $('#js-profile-confirm-id');
+            
+            var password = $pass.val();
+            var confirm  = $conf.val();
+            
+            if (password == confirm) {
+                $conf.closest('.form-row').find('.input-error').html('');
+            } else {
+                $conf.closest('.form-row').find('.input-error').html('Подтверждение и пароль не совпадают');
+            }
+        });
+    });
+</script>
+
 <section>
-        <h1>Личный кабинет</h1>
-        <div class="cabinet-head__buttons">
-            <a href="javascript:void(0)" class="button-white is-active">Профиль</a>
-            <a href="/cabinet/orders/" class="button-white">Мои заказы</a>
-        </div>
+    <h1>Личный кабинет</h1>
+    <div class="cabinet-head__buttons">
+        <a href="javascript:void(0)" class="button-white is-active">Профиль</a>
+        <a href="/cabinet/orders/" class="button-white">Мои заказы</a>
+    </div>
     <div class="container main-unit hei4 cabinet_padding_20">
         <div class="row">
             <h2>О себе</h2>
@@ -32,8 +103,9 @@
                     <div class="form-row">
                         <span class="label big">E-mail</span>
                         <div class="input">
-                            <input type="text" name="EMAIL" value="<?= $arResult['arUser']['EMAIL'] ?>" />
+                            <input type="text" name="EMAIL" value="<?= $arResult['arUser']['EMAIL'] ?>" id="js-profile-email-id" />
                         </div>
+                        <div class="input-error"></div>
                     </div>
                     <div class="form-row">
                         <span class="label big">Логин</span>
@@ -44,14 +116,16 @@
                     <div class="form-row">
                         <span class="label big">Новый пароль</span>
                         <div class="input">
-                            <input type="password" name="NEW_PASSWORD" value="" autocomplete="off" />
+                            <input type="password" name="NEW_PASSWORD" value="" autocomplete="off" id="js-profile-password-id" />
                         </div>
+                        <div class="input-error"></div>
                     </div>
                     <div class="form-row">
                         <span class="label big">Повтор пароля</span>
                         <div class="input">
-                            <input type="password" name="NEW_PASSWORD_CONFIRM" value="" autocomplete="off" />
+                            <input type="password" name="NEW_PASSWORD_CONFIRM" value="" autocomplete="off" id="js-profile-confirm-id" />
                         </div>
+                        <div class="input-error"></div>
                     </div>
                     
                     <? /*
@@ -63,7 +137,7 @@
                     <div class="form-row">
                         <span class="label big">Телефон</span>
                         <div class="input">
-                            <input type="text" name="PERSONAL_MOBILE" value="<?= $arResult['arUser']['PERSONAL_MOBILE'] ?>" autocomplete="off" />
+                            <input type="tel" class="js-phone-mask" pattern="[0-9]*" name="PERSONAL_MOBILE" value="<?= $arResult['arUser']['PERSONAL_MOBILE'] ?>" autocomplete="off" />
                         </div>
                     </div>
                     <div class="form-row">

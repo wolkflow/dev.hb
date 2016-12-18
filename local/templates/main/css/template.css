@@ -1791,7 +1791,7 @@ input[type="tel"] {
 }
 .bl_catalog_filter_right {
     float: right;
-    width: 319px;
+    width: 100%;
     border-left: none;
     height: 90px;
     padding-top: 30px;
@@ -1804,6 +1804,8 @@ input[type="tel"] {
 .bl_filter_item {
     width: 40%;
     text-align: left;
+    float: left;
+    padding-left: 5px;
 }
 .bl_catalog_filter_left {
     margin: 0 0px 0 45px;
@@ -1873,6 +1875,8 @@ input[type="tel"] {
 .bl_filter_item + .bl_filter_item {
     margin-left: 0px;
     text-align: left;
+    float: right;
+    width: auto;
 }
 .hei9 {
     height: 360px;

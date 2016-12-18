@@ -99,7 +99,9 @@
                         <div class="bl_product_item_top">
                             <a href="<?= $item['DETAIL_PAGE_URL'] ?>">
                                 <span class="bl_product_item_image">
-                                    <img src="/i.php?src=<?= $item['PREVIEW_PICTURE']['SRC'] ?>&=143&h=219" />
+                                    <? if (!empty($item['PREVIEW_PICTURE']['SRC'])) { ?>
+                                        <img src="/i.php?src=<?= $item['PREVIEW_PICTURE']['SRC'] ?>&=143&h=219" />
+                                    <? } ?>
                                     <div class="bl_product_item_descr hidden-xs">
                                         <div class="bl_product_item_descr_tb">
                                             <div class="bl_product_item_descr_td">

@@ -53,6 +53,28 @@
         });
         
         
+        function noRussianSymbols($that, error)
+        {
+            var value = $that.val(); 
+            var pattern = /[а-яА-Я]/g; 
+            
+            $that.closest('.form-row').find('.input-error').html('');
+            
+            if (pattern.test(value)) {
+                $that.val(value.replace(pattern, ''));
+                $that.closest('.form-row').find('.input-error').html(error);
+            }
+        }
+        
+        $('#js-param-password-id').on('keyup', function(e) {
+            noRussianSymbols($(this), 'Пароль не должен содержать кириллицу');
+        });
+        
+        $('#js-param-confirm-id').on('keyup', function(e) {
+            noRussianSymbols($(this), 'Подтверждение пароля не должно содержать кириллицу');
+        });
+        
+        
         $('#js-param-password-id').on('focusout', function() {
             var $pass = $('#js-param-password-id');
             var $conf = $('#js-param-confirm-id');

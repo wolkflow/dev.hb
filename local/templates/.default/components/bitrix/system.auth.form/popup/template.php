@@ -37,7 +37,7 @@
                 <div class="form-row">
                     <span class="label">Пароль</span>
                     <div class="input">
-                        <input type="text" name="USER_PASSWORD" value="<?= strval($_REQUEST['USER_PASSWORD']) ?>" />
+                        <input type="password" name="USER_PASSWORD" value="<?= strval($_REQUEST['USER_PASSWORD']) ?>" />
                     </div>
                 </div>
                 <div class="form-row form-row-buttons">
