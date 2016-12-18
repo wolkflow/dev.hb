@@ -127,6 +127,7 @@
 <h2>Оформление заказа</h2>
 <div class="zakaz-login__head">
     <h3>Регистрация</h3>
+    <div class="hidden-sm hidden-lg hidden-md"></div>
     <a href="javascript:void(0)" class="popup-opener-remote" data-remote="authorize">Вход в систему</a>
 </div>
 <div class="zakaz-login__form">

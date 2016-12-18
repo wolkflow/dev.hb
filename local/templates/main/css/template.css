@@ -1651,12 +1651,12 @@ input[type="tel"] {
     position: relative;
     height: 516px;
     z-index: 100;
-    width: 425px;
-    top: 75px;
+    width: auto;
+    top: 115px;
 }
 .carousel_content1 h3 {
     font-family: DINPro;
-    font-size: 36px;
+    font-size: 27px;
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;
@@ -1679,12 +1679,13 @@ input[type="tel"] {
     width: -moz-calc(50% + 265px);
     width: -webkit-calc(50% + 265px);
     width: -webkit-calc(50% + 265px);
-    height: 456px;
+    height: 415px;
     opacity: 0.5;
     background-color: #ffffff;
     position: absolute;
     bottom: 0;
     z-index: 10;
+    left: -30px;
 }
 .hei8 {
     height: 516px;

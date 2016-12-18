@@ -7,8 +7,8 @@
     
         // Изменение количества.
         $(document).on('click', '.js-quantity-change', function() {
-            var $wrap = $(this).closest('.js-quantity-wrap');
-            var basket = $wrap.data('basket');
+            var $wrapper = $(this).closest('.js-quantity-wrap');
+            var basket   = $wrapper.data('basket');
             var quantity = $wrap.find('input').val();
             
             $.ajax({
@@ -19,12 +19,52 @@
                 success: function(response) {
                     if (response.status) {
                         $('#js-basket-total-price-id').html(response.data['total']);
-                        $wrap.closest('.js-basket-item').find('.js-basket-price').html(response.data['cost']);
+                        $wrapper.closest('.js-basket-item').find('.js-basket-price').html(response.data['cost']);
                         RefreshBasket();
                     }
                 }
             });
         });
+        
+        $(document).on('focus', '.js-quantity-input', function(e) {
+            var $that = $(this);
+            var value = parseInt($that.val());
+            
+            $that.data('value', value);
+            $that.val(value);
+        });
+        
+        $(document).on('blur', '.js-quantity-input', function(e) {
+            var $that = $(this);
+            var value = parseInt($that.val());
+            
+            $that.val(value + ' шт');
+        });
+        
+        $(document).on('keyup', '.js-quantity-input', function(e) {
+            var $wrapper = $(this).closest('.js-quantity-wrap');
+            var basket   = $wrapper.data('basket');
+            var quantity = parseInt($(this).val());
+            
+            if (isNaN(quantity) || quantity <= 0) {
+                quantity = 1;
+            }
+            
+            $.ajax({
+                url: '/remote/',
+                type: 'post',
+                data: {'action': 'quantity-cart', 'basket': basket, 'quantity': quantity},
+                dataType: 'json',
+                success: function(response) {
+                    if (response.status) {
+                        $('#js-basket-total-price-id').html(response.data['total']);
+                        $wrapper.closest('.js-basket-item').find('.js-basket-price').html(response.data['cost']);
+                        RefreshBasket();
+                    }
+                }
+            });
+        });
+        
        
         // Удаление товара.
         $(document).on('click', '.js-basket-remove', function() {
@@ -90,7 +130,7 @@
                                 </div>
                                 <div class="basket-item__value js-quantity-wrap col-md-2 col-lg-2 col-sm-6 " data-basket="<?= $item['ID'] ?>">
                                     <div class="basket-item__count-minus js-quantity-change"></div>
-                                    <input class="basket-item__count" type="text" value="<?= $item['QUANTITY'] ?> шт" data-quantity="<?= $item['QUANTITY'] ?>" />
+                                    <input class="basket-item__count js-quantity-input" type="text" value="<?= $item['QUANTITY'] ?> шт" data-quantity="<?= $item['QUANTITY'] ?>" />
                                     <div class="basket-item__count-plus js-quantity-change"></div>
                                 </div>
                                 <div class="basket-item__value col-md-2 col-lg-2 col-sm-3 xs_padding_0">
@@ -124,7 +164,7 @@
                                     <div class="row xs_margin_0">
                                         <div class="basket-item__value js-quantity-wrap col-xs-6 padding_top_22" data-basket="<?= $item['ID'] ?>">
                                             <div class="basket-item__count-minus js-quantity-change"></div>
-                                            <input class="basket-item__count" type="text" value="<?= $item['QUANTITY'] ?> шт" data-quantity="<?= $item['QUANTITY'] ?>" />
+                                            <input class="basket-item__count js-quantity-input" type="text" value="<?= $item['QUANTITY'] ?> шт" data-quantity="<?= $item['QUANTITY'] ?>" />
                                             <div class="basket-item__count-plus js-quantity-change"></div>
                                         </div>
                                         <div class="basket-item__value col-xs-6 xs_padding_0 padding_top_15">
