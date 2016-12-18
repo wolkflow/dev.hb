@@ -6972,7 +6972,7 @@ a.button, a.button-white {
 .popup-content {
   display: inline-block;
   vertical-align: top;
-  width: 90%;
+  width: 100%;
   text-align: left;
   /*overflow-y: auto;*/ }
   .popup-content h2 {
@@ -8686,4 +8686,14 @@ a.button, a.button-white {
     z-index: 1000;
     height: 220px;
     /*border: 1px dotted black;*/
+}
+
+@media (max-width: 766px) {
+  .error-text {
+    margin-bottom: 15px !important;
+    font-size: 12px !important;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #b36457;
+  }
 }

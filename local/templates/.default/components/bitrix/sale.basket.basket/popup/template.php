@@ -9,7 +9,7 @@
         $(document).on('click', '.js-quantity-change', function() {
             var $wrapper = $(this).closest('.js-quantity-wrap');
             var basket   = $wrapper.data('basket');
-            var quantity = $wrap.find('input').val();
+            var quantity = $wrapper.find('input').val();
             
             $.ajax({
                 url: '/remote/',
@@ -28,7 +28,18 @@
         
         $(document).on('focus', '.js-quantity-input', function(e) {
             var $that = $(this);
+            var $wrap = $that.closest('.js-basket-item');
             var value = parseInt($that.val());
+            
+            /*
+            var $popup = $('#popup');
+            $popup.animate({
+                scrollTop: ($wrap.offset().top - $popup.offset().top) + 'px'
+            }, {
+                duration: 1000,
+                easing: 'easeOutQuart'
+            });
+            */
             
             $that.data('value', value);
             $that.val(value);
