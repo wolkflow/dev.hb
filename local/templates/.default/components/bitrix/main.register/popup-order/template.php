@@ -39,7 +39,7 @@
         });
         
         
-        $('#js-param-email-id').on('keyup', function() {
+        $('#js-param-email-id').on('focusout', function() {
             var $that   = $(this);
             var email   = $that.val();
             var pattern = /^.+@.+\.[a-z]{2,}$/i;
@@ -52,7 +52,7 @@
         });
         
         
-        $('#js-param-password-id').on('keyup', function() {
+        $('#js-param-password-id').on('focusout', function() {
             var $pass = $('#js-param-password-id');
             var $conf = $('#js-param-confirm-id');
             
@@ -68,7 +68,7 @@
             }
         });
         
-        $('#js-param-confirm-id').on('keyup', function() {
+        $('#js-param-confirm-id').on('focusout', function() {
             var $pass = $('#js-param-password-id');
             var $conf = $('#js-param-confirm-id');
             
