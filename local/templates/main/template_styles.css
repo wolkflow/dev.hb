@@ -6895,12 +6895,10 @@ a.button, a.button-white {
       }
 
 .popup-container {
-  
-
   position: relative;
   border: 1px solid #252525;
   border-left: none;
-  margin: 50px 170px 0 0;
+  margin: 60px 170px 60px 0;
   background-color: white;
   padding: 56px 60px;
   text-align: right;
@@ -8629,10 +8627,6 @@ a.button, a.button-white {
 }
 */
 
-.ui-effects-transfer {
-    border: 1px dotted black;
-  }
-
 
 .input input {outline: none;}
 .input input:-webkit-autofill {
@@ -8674,4 +8668,15 @@ a.button, a.button-white {
     line-height: 20px;
     margin-bottom: 15px;
     font-size: 16px;
+}
+
+.ui-effects-transfer {
+   /* margin-top: 80px;*/
+    background: url("images/basket-icon.png") no-repeat;
+    background-position: 50% 50%;
+    min-height: 60px;
+    min-width: 60px;
+    z-index: 1000;
+    height: 220px;
+    /*border: 1px dotted black;*/
 }

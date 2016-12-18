@@ -122,17 +122,18 @@
                                 </div>
                                 <div class="basket-item__content col-xs-9 xs_padding_0">
                                     <div class="row xs_margin_0">
-                                        <div class="basket-item__value js-quantity-wrap col-xs-8 padding_top_15" data-basket="<?= $item['ID'] ?>">
+                                        <div class="basket-item__value js-quantity-wrap col-xs-6 padding_top_22" data-basket="<?= $item['ID'] ?>">
                                             <div class="basket-item__count-minus js-quantity-change"></div>
                                             <input class="basket-item__count" type="text" value="<?= $item['QUANTITY'] ?> шт" data-quantity="<?= $item['QUANTITY'] ?>" />
                                             <div class="basket-item__count-plus js-quantity-change"></div>
                                         </div>
-                                        <div class="basket-item__value col-xs-4 xs_padding_0 padding_top_15">
-                                            <span><?= $item['PRICE'] ?></span> ₽
-                                        </div>
-                                        <div class="basket-item__value col-xs-12 margin_top_8">
+                                        <div class="basket-item__value col-xs-6 xs_padding_0 padding_top_15">
                                             <span class="js-basket-price"><?= $item['PRICE'] * $item['QUANTITY'] ?></span> ₽
                                         </div>
+                                        <div class="basket-item__value col-xs-12 margin_top_8">
+                                            ( <span><?= $item['PRICE'] ?></span> ₽ за шт.)
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -147,7 +148,7 @@
                         <span id="js-basket-total-price-id"><?= $arResult['allSum'] ?> ₽</span>
                     </div>
                 </div>
-                <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-9 col-sm-10 col-md-10 col-lg-10">
                     <button data-remote="order" class="popup-opener-remote basket-button">Оформить заказ</button>
                 </div>   
             </div>

@@ -14,15 +14,15 @@
             </div>
             <? foreach ($arResult['ITEMS'] as $item) { ?>
                 <?  // Ссылка.
-                    $link = 'javascript:void(0)';
-                    if ($item['PROEPRTIES']['TYPE']['XML_ID'] == 'ARTICLE') {
+                    $link = null;
+                    if ($item['PROPERTIES']['TYPE']['VALUE_XML_ID'] == 'ARTICLE') {
                         $link = $item['DETAIL_PAGE_URL'];
-                    } elseif ($item['PROEPRTIES']['TYPE']['XML_ID'] == 'EXTERNAL') {
-                        $link = $item['PROEPRTIES']['LINK']['VALUE'];
+                    } elseif ($item['PROPERTIES']['TYPE']['VALUE_XML_ID'] == 'EXTERNAL') {
+                        $link = $item['PROPERTIES']['LINK']['VALUE'];
                     }
                 ?>
-                <div class="col-sm-4">
-                    <a class="idea-advantages__item" href="<?= $link ?>">
+                <div class="col-sm-4">                    
+                    <a class="idea-advantages__item <?= (empty($link)) ? ('nolink') : ('') ?>" href="<?= $link ?>">
                         <? if (!empty($item['PREVIEW_PICTURE']['SRC'])) { ?>
                             <img src="/i.php?src=<?= CFile::getPath($item['PREVIEW_PICTURE']['SRC']) ?>&w=324&h=160" />
                         <? } ?>

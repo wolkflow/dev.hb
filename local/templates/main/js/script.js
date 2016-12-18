@@ -113,6 +113,14 @@ $(function(){
     $('.js-phone-mask').mask("\+7 (999) 999-99-99"); 
     
     
+    $(document).on('focus', '.form-row .input input', function(e) {
+        var $that = $(this);
+        var $wrap = $that.closest('.form-row');
+        
+        $wrap.find('.input-error').html('');
+    });
+    
+    
     function slmenu($item)
     {
         var $wrap = $('#js-submenu-holder-id');
@@ -417,8 +425,7 @@ if ($(window).width() >= 768) {
         var tableOffsetTop = $table.offset().top;
         var maxTranslateY  = $table.height() - $days.height();
         
-        $(window).on('load scroll', function(){
-            
+        $(window).on('load scroll', function() {
             var delta = Math.min(window.pageYOffset - $table.offset().top + 20, maxTranslateY);
             
             if (delta < 0) {
@@ -432,7 +439,7 @@ if ($(window).width() >= 768) {
         var $periodCont = $('#js-menu-wrapper-id .bl_chose_days_c_top_days');
         var $checkboxes = $('#js-menu-wrapper-id .bl_chose_days_c_checkboxs').find('input[type="checkbox"]');
         var $days       = $('#js-menu-wrapper-id .bl_menu_table_day');
-        var $toggler    = $('#js-menu-wrapper-id .bl_menu_scroll_t');
+        var $toggler    = $('#js-menu-wrapper-id .bl_menu_scroll');
         var currentPeriod;
         var dotsSpace;
         var $slider = $('#js-menu-wrapper-id .bl_menu_scroll');
@@ -478,10 +485,9 @@ if ($(window).width() >= 768) {
 
         
         
-        var slide2day = true;
-        
         $slider.on('mousedown', function(event) {
-            cursorY = event.clientY;
+            
+            cursorY  = event.clientY;
             startPos = parseInt($toggler.data('translateY') || 0);
             
             $(document).on('mousemove', function(event) {
@@ -497,6 +503,7 @@ if ($(window).width() >= 768) {
                 
                 setDots(Math.max(Math.round((delta / maxDeltaSlider).toFixed(2) * dotsSpace), 0));
                 
+                /*
                 setTimeout(function() {
                     if (!slide2day) {
                         return;
@@ -515,6 +522,22 @@ if ($(window).width() >= 768) {
                         }
                     });
                 }, 800);
+                */
+            });
+            
+            $(document).on('mouseup', '.bl_chose_days_c', function(event) {
+                var $day = $('#js-menu-wrapper-id .js-selected-day.active');
+                
+                $('html, body').animate({
+                    scrollTop: ($day.offset().top - 2) + 'px'
+                }, {
+                    duration: 1150, 
+                    easing: 'easeOutQuart',
+                    always: function() {
+                        slide2day = true;
+                    }
+                });
+                $(document).off('mouseup', '.bl_chose_days_c');
             });
         });
         
@@ -541,7 +564,7 @@ if ($(window).width() >= 768) {
         var $periodCont = $('#js-menu-mobile-wrapper-id .bl_chose_days_c_top_days');
         var $checkboxes = $('#js-menu-mobile-wrapper-id .bl_chose_days_c_checkboxs').find('input[type="checkbox"]');
         var $days = $('#js-menu-mobile-wrapper-id .bl_menu_table_day');
-        var $toggler = $('#js-menu-mobile-wrapper-id .bl_menu_scroll_t');
+        var $toggler = $('#js-menu-mobile-wrapper-id .bl_menu_scroll');
         var currentPeriod;
         var dotsSpace;
         var $slider = $('#js-menu-mobile-wrapper-id .bl_menu_scroll');
@@ -609,6 +632,7 @@ if ($(window).width() >= 768) {
                 
                 setDots(Math.max(Math.round((delta / maxDeltaSlider).toFixed(2) * dotsSpace), 0));
                 
+                
                 setTimeout(function() {
                     if (!slide2day) {
                         return;
@@ -618,7 +642,7 @@ if ($(window).width() >= 768) {
                     var $day = $('#js-menu-mobile-wrapper-id .js-selected-day.active');
                     
                     $('html, body').animate({
-                        scrollTop: ($day.offset().top - 5) + 'px'
+                        scrollTop: ($day.offset().top - 2) + 'px'
                     }, {
                         duration: 1200, 
                         easing: 'easeOutQuart',
@@ -627,6 +651,20 @@ if ($(window).width() >= 768) {
                         }
                     });
                 }, 800);
+                
+                /*
+                $(document).on('touchend', '.bl_chose_days_c', function(event) {
+                    var $day = $('#js-menu-mobile-wrapper-id .js-selected-day.active');
+                    
+                    $('html, body').animate({
+                        scrollTop: ($day.offset().top - 2) + 'px'
+                    }, {
+                        duration: 1150, 
+                        easing: 'easeOutQuart'
+                    });
+                    $(document).off('touchend', '.bl_chose_days_c');
+                }); 
+                 */
             });
         });
         

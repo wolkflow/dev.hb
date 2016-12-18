@@ -10,7 +10,9 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-			<img class="page-header__img" src="/i.php?src=<?= $arResult['DETAIL_PICTURE']['SRC'] ?>" />
+            <? if (!empty($arResult['DETAIL_PICTURE']['SRC'])) { ?>
+                <img class="page-header__img" src="/i.php?src=<?= $arResult['DETAIL_PICTURE']['SRC'] ?>" />
+            <? } ?>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 			<div class="col-lg-12 col-md-12 hei1">
@@ -18,11 +20,13 @@
 					<?= $arResult['NAME'] ?>
 				</h1>
 			</div>
-			<div class="col-lg-12 col-md-12 col-sm-12 hei2">
-				<p class="page-header__text">
-					<?= $arResult['PREVIEW_TEXT'] ?>
-				</p>
-			</div>
+            <? if (!empty($arResult['PREVIEW_TEXT'])) { ?>
+                <div class="col-lg-12 col-md-12 col-sm-12 hei2">
+                    <p class="page-header__text">
+                        <?= $arResult['PREVIEW_TEXT'] ?>
+                    </p>
+                </div>
+            <? } ?>
 		</div>
 	</div>
     
@@ -30,7 +34,7 @@
         <div class="row">
             <div class="col-sm-7">
                 <article class="page-content__article text-unit">
-                    <?= $arResult['DETAIL_TEXT'] ?>
+                    <p><?= $arResult['DETAIL_TEXT'] ?></p>
                 </article>
             </div>
             <div class="col-sm-5"></div>

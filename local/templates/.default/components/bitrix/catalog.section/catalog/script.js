@@ -16,7 +16,7 @@ $(document).ready(function() {
                     if ($('#js-basket-button-id').length) {
                         $that.transfer({
                             to: '#js-basket-button-id',
-                            duration: 600
+                            duration: 1000,
                         });
                     }
                 }
