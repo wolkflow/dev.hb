@@ -16,12 +16,12 @@
             
             var phone = $('#js-param-phone-id').val();
             
-            $('#js-param-phone-id').closest('.form-row').find('.input-error').remove();
+            $('#js-param-phone-id').closest('.form-row').find('.input-error').html('');
             
             if (phone.length < 7) {
-                $('#js-param-phone-id').closest('.form-row').append('<div class="input-error">Не указан номер телефона</div>');
+                $('#js-param-phone-id').closest('.form-row').find('.input-error').html('Не указан номер телефона');
             }
-            
+                        
             $.ajax({
                 url: '/remote/',
                 data: {'action': 'register-sms-send', 'phone': phone},
@@ -32,8 +32,9 @@
                         $('#js-submit-phone-id').addClass('hide');
                         $('#js-submit-form-id').removeClass('hide');
                     } else {
-                        $('#js-param-phone-id').closest('.form-row').append('<div class="input-error">' + response.message + '</div>');
+                        $('#js-param-phone-id').closest('.form-row').find('.input-error').html(response.message);
                     }
+                    $('.js-phone-mask').mask("\+7 (999) 999-99-99"); 
                 }
             });
         });
@@ -128,77 +129,77 @@
                 <div class="input">
                     <input type="text" name="REGISTER[NAME]" value="<?= $arResult['VALUES']['NAME'] ?>" />
                 </div>
-                <? if (!empty($arResult['ERRORS']['NAME'])) { ?>
-                    <div class="input-error">
+                <div class="input-error">
+                    <? if (!empty($arResult['ERRORS']['NAME'])) { ?>
                         <?= $arResult['ERRORS']['NAME'] ?>
-                    </div>
-                <? } ?>
+                    <? } ?>
+                </div>
             </div>
             <div class="form-row">
                 <span class="label big">Фамилия</span>
                 <div class="input">
                     <input type="text" name="REGISTER[LAST_NAME]" value="<?= $arResult['VALUES']['LAST_NAME'] ?>" />
                 </div>
-                <? if (!empty($arResult['ERRORS']['LAST_NAME'])) { ?>
-                    <div class="input-error">
+                <div class="input-error">
+                    <? if (!empty($arResult['ERRORS']['LAST_NAME'])) { ?>
                         <?= $arResult['ERRORS']['LAST_NAME'] ?>
-                    </div>
-                <? } ?>
+                    <? } ?>
+                </div>
             </div>
             <div class="form-row">
                 <span class="label big">E-mail</span>
                 <div class="input">
                     <input type="text" name="REGISTER[EMAIL]" value="<?= $arResult['VALUES']['EMAIL'] ?>" id="js-param-email-id" />
                 </div>
-                <? // if (!empty($arResult['ERRORS']['EMAIL'])) { ?>
-                    <div class="input-error">
+                <div class="input-error">
+                    <? if (!empty($arResult['ERRORS']['EMAIL'])) { ?>
                         <?= $arResult['ERRORS']['EMAIL'] ?>
-                    </div>
-                <? // } ?>
+                    <? } ?>
+                </div>
             </div>
             <div class="form-row">
                 <span class="label big">Логин</span>
                 <div class="input">
                     <input type="text" name="REGISTER[LOGIN]" value="<?= $arResult['VALUES']['LOGIN'] ?>" />
                 </div>
-                <? if (!empty($arResult['ERRORS']['LOGIN'])) { ?>
-                    <div class="input-error">
+                <div class="input-error">
+                    <? if (!empty($arResult['ERRORS']['LOGIN'])) { ?>
                         <?= $arResult['ERRORS']['LOGIN'] ?>
-                    </div>
-                <? } ?>
+                    <? } ?>
+                </div>
             </div>
             <div class="form-row">
                 <span class="label big">Пароль</span>
                 <div class="input">
                     <input type="password" name="REGISTER[PASSWORD]" value="<?= $arResult['VALUES']['PASSWORD'] ?>"  autocomplete="false" id="js-param-password-id" />
                 </div>
-                <? if (!empty($arResult['ERRORS']['PASSWORD'])) { ?>
-                    <div class="input-error">
+                <div class="input-error">
+                    <? if (!empty($arResult['ERRORS']['PASSWORD'])) { ?>
                         <?= $arResult['ERRORS']['PASSWORD'] ?>
-                    </div>
-                <? } ?>
+                    <? } ?>
+                </div>
             </div>
             <div class="form-row">
                 <span class="label big">Подтвердите пароль</span>
                 <div class="input">
                     <input type="password" name="REGISTER[CONFIRM_PASSWORD]" value="<?= $arResult['VALUES']['CONFIRM_PASSWORD'] ?>" autocomplete="false" id="js-param-confirm-id" />
                 </div>
-                <? // if (!empty($arResult['ERRORS']['CONFIRM_PASSWORD'])) { ?>
-                    <div class="input-error">
+                <div class="input-error">
+                    <? if (!empty($arResult['ERRORS']['CONFIRM_PASSWORD'])) { ?>
                         <?= $arResult['ERRORS']['CONFIRM_PASSWORD'] ?>
-                    </div>
-                <? // } ?>
+                    <? } ?>
+                </div>
             </div>
             <div class="form-row">
                 <span class="label big">Телефон</span>
                 <div class="input">
                     <input type="tel" name="REGISTER[PERSONAL_MOBILE]" class="js-phone-mask" pattern="[0-9]*" value="<?= $arResult['VALUES']['PERSONAL_MOBILE'] ?>" id="js-param-phone-id" />
                 </div>
-                <? if (!empty($arResult['ERRORS']['PERSONAL_MOBILE'])) { ?>
-                    <div class="input-error">
+                <div class="input-error">
+                    <? if (!empty($arResult['ERRORS']['PERSONAL_MOBILE'])) { ?>
                         <?= $arResult['ERRORS']['PERSONAL_MOBILE'] ?>
-                    </div>
-                <? } ?>
+                    <? } ?>
+                </div>
             </div>
             <div class="form-row">
                 <span class="label big">Пол</span>
@@ -212,22 +213,22 @@
                         <span>женский</span>
                     </label>
                 </div>
-                <? if (!empty($arResult['ERRORS']['PERSONAL_GENDER'])) { ?>
-                    <div class="input-error">
+                <div class="input-error">
+                    <? if (!empty($arResult['ERRORS']['PERSONAL_GENDER'])) { ?>
                         <?= $arResult['ERRORS']['PERSONAL_GENDER'] ?>
-                    </div>
-                <? } ?>
+                    <? } ?>
+                </div>
             </div>
             <div class="form-row">
                 <span class="label big">Адрес доставки</span>
                 <div class="input">
                     <input type="text" name="REGISTER[PERSONAL_STREET]" value="<?= $arResult['VALUES']['PERSONAL_STREET'] ?>" />
                 </div>
-                <? if (!empty($arResult['ERRORS']['PERSONAL_STREET'])) { ?>
-                    <div class="input-error">
+                <div class="input-error">
+                    <? if (!empty($arResult['ERRORS']['PERSONAL_STREET'])) { ?>
                         <?= $arResult['ERRORS']['PERSONAL_STREET'] ?>
-                    </div>
-                <? } ?>
+                    <? } ?>
+                </div>
             </div>
             
             <div id="js-phone-confirm-id" class="form-row <?= (empty($_SESSION['SMS_CODE'])) ? ('hide') : ('') ?>">
@@ -235,11 +236,11 @@
                 <div class="input">
                     <input type="text" name="PHONE_CONFIRM" value="<?= strval($_REQUEST['PHONE_CONFIRM']) ?>" id="js-param-smscode-id" />
                 </div>
-                <? if (!empty($arResult['ERRORS']) && $arResult['ERRORS'][0] == 'Вы не подтвердили номер телефона') { ?>
-                    <div class="input-error">
+                <div class="input-error">
+                    <? if (!empty($arResult['ERRORS']) && $arResult['ERRORS'][0] == 'Вы не подтвердили номер телефона') { ?>
                         Вы не подтвердили номер телефона
-                    </div>
-                <? } ?>
+                    <? } ?>
+                </div>
             </div>
             
             <div class="form-row">
