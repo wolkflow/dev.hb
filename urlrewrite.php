@@ -18,6 +18,12 @@ $arUrlRewrite = array(
 		"ID" => "",
 		"PATH" => "/catalog/index.php",
 	),
+    array(
+		"CONDITION" => "#^/articles/(.+?)/#",
+		"RULE" => "ELEMENT=\$1&",
+		"ID" => "",
+		"PATH" => "/articles/detail.php",
+	),
 );
 
 ?>
