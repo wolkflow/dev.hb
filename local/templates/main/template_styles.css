@@ -8696,17 +8696,39 @@ a.button, a.button-white {
     line-height: 1.5;
     color: #b36457;
   }
+  .cabinet-orders-table__subtable {
+    display: none;
+    width: 100%;
+    float: right;
+    line-height: 32px;
+}
+.cabinet-orders-table__cell:nth-child(1) {
+      width: 25%; }
+     .cabinet-orders-table__cell:nth-child(2) {
+    width: 40%;
+    }
+    .basket-item__value:nth-child(4) {
+        margin-top: 20px;
+    }
+    .cabinet-orders-table__subtable .cabinet-orders-table__cell:nth-child(1) {
+    width: 55%;
+}
+.cabinet-orders-table__subtable .cabinet-orders-table__cell:nth-child(3) {
+    text-align: right;
+    width: 30%;
+    color: #252525;
+}
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
     .basket-item__value:nth-child(3) {
         padding: 0;
     }
+    
 }
+
 @media (min-width: 767px) and (max-width: 991px) {
-    .basket-item__value:nth-child(4) {
-        margin-top: 20px;
-    }
+
     .basket-popup-button {
         background: #fff;
         position: fixed;
