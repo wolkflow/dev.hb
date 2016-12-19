@@ -53,7 +53,7 @@ class MenuList
         $list = array();
         
         $section = \CIBlockSection::GetList(
-            array(), 
+            array('SORT' => 'ASC'), 
             array('IBLOCK_ID' => IBLOCK_MENU_ID, 'UF_PROGRAM' => $this->getProgram()->getID()), 
             false,
             array('ID'), 
@@ -61,7 +61,7 @@ class MenuList
         )->fetch();
         
         $items = Menu::getList(array(
-            'sort'   => array('SORT' => 'ASC'),
+            'order' => array('SORT' => 'ASC'),
             'filter' => array('ACTIVE' => 'Y', 'SECTION_ID' => $section['ID']),
             'limit'  => MENU_DAYS,
         ), true, null);
