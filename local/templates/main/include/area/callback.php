@@ -1,6 +1,6 @@
 <div id="callback-popup" class="popup">
     <div class="popup-container popup-container-right">
-        <div class="popup-close hidden-xs">закрыть</div>
+        <div class="popup-close">закрыть</div>
         <div class="popup-content">
             <?	// Форма обратного звонка.
                 $APPLICATION->IncludeComponent(
